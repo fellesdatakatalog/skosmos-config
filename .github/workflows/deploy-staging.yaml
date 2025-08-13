@@ -17,6 +17,10 @@ jobs:
         with:
           repository: NatLibFi/Skosmos
 
+      - name: Lowercase repository name
+        run: |
+          echo "REPO=${GITHUB_REPOSITORY@L}" >> $GITHUB_ENV
+
       - name: Create image name
         run: echo "IMAGE_NAME=ghcr.io/${REPO}" >> $GITHUB_ENV
 
@@ -49,6 +53,7 @@ jobs:
             latest=false
           tags: |
             type=raw,value=staging
+            type=raw,value=${{ github.sha }},priority=1000
             type=ref,event=branch  
 
       - name: Build and push
