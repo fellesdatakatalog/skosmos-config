@@ -21,15 +21,15 @@ jobs:
         app_name: [Skosmos]
     uses: Informasjonsforvaltning/workflows/.github/workflows/build-push.yaml@main
     with:
-      app_name: ${{ matrix.appname }}
+      app_name: ${{ matrix.app_name }}
       monorepo_app: true
       environment: staging
       gh_environment: staging
       build_env: true
       build_env_name: BINARY
-      build_env_value: ${{ matrix.appname }}
+      build_env_value: ${{ matrix.app_name }}
       cache_path: ./dist
-      dockerfile: apps/${{ matrix.appname }}/dockerfiles/Dockerfile.ubuntu
+      dockerfile: apps/${{ matrix.app_name }}/dockerfiles/Dockerfile.ubuntu
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
