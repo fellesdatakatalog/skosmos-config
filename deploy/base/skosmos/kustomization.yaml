@@ -6,5 +6,5 @@ resources:
   - skosmos-service.yaml
 images:
   - name: skosmos
-    newName: ghcr.io/informasjonsforvaltning/skosmos-config/skosmos
+    newName: ghcr.io/fellesdatakatalog/skosmos-config/skosmos
     newTag: $(GIT_COMMIT_SHA)
