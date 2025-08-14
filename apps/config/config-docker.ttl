@@ -77,7 +77,8 @@
     skosmos:language "en", "nn", "nb";
     skosmos:defaultLanguage "nn";
     void:sparqlEndpoint <https://sparql.staging.fellesdatakatalog.digdir.no> ;
-    skosmos:sparqlGraph <https://psi.norge.no/los/> .
+    #skosmos:sparqlGraph <https://psi.norge.no/los/> .
+    .
 
 :test_natur a skosmos:Vocabulary, void:Dataset ;
     dc:title "Test Natur og miljø"@en, "Test Natur og miljø"@nb, "Test Natur og miljø"@nn ;
@@ -87,7 +88,8 @@
     skosmos:language "en", "nn", "nb";
     skosmos:defaultLanguage "nn";
     void:sparqlEndpoint <https://sparql.staging.fellesdatakatalog.digdir.no> ;
-    skosmos:sparqlGraph <https://psi.norge.no/los/> .
+    #skosmos:sparqlGraph <https://psi.norge.no/los/> .
+    .
 
 :los a skosmos:Vocabulary, void:Dataset ;
     dc:title "Los"@en, "Los"@nb, "Los"@nn ;
@@ -97,4 +99,5 @@
     skosmos:language "en", "nn", "nb";
     skosmos:defaultLanguage "nn";
     void:sparqlEndpoint <https://sparql.staging.fellesdatakatalog.digdir.no> ;
-    skosmos:sparqlGraph <https://id.norge.no/los/> .
+    #skosmos:sparqlGraph <https://id.norge.no/los/> .
+    .
