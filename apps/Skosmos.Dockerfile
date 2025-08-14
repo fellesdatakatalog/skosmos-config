@@ -78,7 +78,7 @@ RUN rm index.html
 
 # composer and packages layer
 RUN curl -sS https://getcomposer.org/installer | php
-COPY composer.json /var/www/html
+COPY apps/Skosmos/composer.json /var/www/html
 RUN php composer.phar install --no-dev --no-autoloader
 
 # skosmos layer
