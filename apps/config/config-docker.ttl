@@ -18,7 +18,7 @@
 :config a skosmos:Configuration ;
     # SPARQL endpoint
     # a local Fuseki server is usually on localhost:3030
-    skosmos:sparqlEndpoint <http://fdk-sparql-service:8080/fuseki/fdk/query> ;
+    skosmos:sparqlEndpoint <https://sparql.staging.fellesdatakatalog.digdir.no> ;
     # sparql-query extension, or "Generic" for plain SPARQL 1.1
     # set to "JenaText" instead if you use Fuseki with jena-text index
     #skosmos:sparqlDialect "JenaText" ;
@@ -76,7 +76,7 @@
     void:uriSpace "https://psi.norge.no/los/";
     skosmos:language "en", "nn", "nb";
     skosmos:defaultLanguage "nn";
-    void:sparqlEndpoint <http://fdk-sparql-service:8080/fuseki/fdk/query> ;
+    void:sparqlEndpoint <https://sparql.staging.fellesdatakatalog.digdir.no> ;
     skosmos:sparqlGraph <https://psi.norge.no/los/> .
 
 :test_natur a skosmos:Vocabulary, void:Dataset ;
@@ -86,7 +86,7 @@
     void:uriSpace "https://psi.norge.no/los/";
     skosmos:language "en", "nn", "nb";
     skosmos:defaultLanguage "nn";
-    void:sparqlEndpoint <http://fdk-sparql-service:8080/fuseki/fdk/query> ;
+    void:sparqlEndpoint <https://sparql.staging.fellesdatakatalog.digdir.no> ;
     skosmos:sparqlGraph <https://psi.norge.no/los/> .
 
 :los a skosmos:Vocabulary, void:Dataset ;
@@ -96,5 +96,5 @@
     void:uriSpace "https://id.norge.no/los/";
     skosmos:language "en", "nn", "nb";
     skosmos:defaultLanguage "nn";
-    void:sparqlEndpoint <http://fdk-sparql-service:8080/fuseki/fdk/query> ;
+    void:sparqlEndpoint <https://sparql.staging.fellesdatakatalog.digdir.no> ;
     skosmos:sparqlGraph <https://id.norge.no/los/> .
