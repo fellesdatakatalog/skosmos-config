@@ -93,6 +93,6 @@ COPY apps/Skosmos/dockerfiles/config/config-docker.ttl /var/www/html/config.ttl
 
 HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD curl -f http://localhost || exit 1
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
