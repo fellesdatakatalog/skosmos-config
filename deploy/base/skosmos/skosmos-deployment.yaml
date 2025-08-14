@@ -25,26 +25,16 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
-          livenessProbe:
-            failureThreshold: 3
-            httpGet:
-              path: /ping
-              port: 8080
-              scheme: HTTP
-            periodSeconds: 30
-            successThreshold: 1
-            timeoutSeconds: 1
-            initialDelaySeconds: 20
           readinessProbe:
+            tcpSocket: { port: 8080 }
+            initialDelaySeconds: 5
+            periodSeconds: 5
             failureThreshold: 3
-            httpGet:
-              path: /ready
-              port: 8080
-              scheme: HTTP
-            periodSeconds: 30
-            successThreshold: 1
-            timeoutSeconds: 1
-            initialDelaySeconds: 20
+          livenessProbe:
+            tcpSocket: { port: 8080 }
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 6
           resources:
             requests:
               cpu: 100m
