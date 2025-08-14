@@ -1,71 +1,48 @@
-#name: Deploy to staging
-#
-#on:
-#  pull_request:
-#    types: [ready_for_review, opened, reopened, synchronize]
-#    branches:
-#      - main
-#
-#jobs:
-#  build-and-deploy:
-#    name: Build, test, publish and deploy to staging
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v5
-#        with:
-#          repository: NatLibFi/Skosmos
-#
-#      - name: Lowercase repository name
-#        run: |
-#          echo "REPO=${GITHUB_REPOSITORY@L}" >> $GITHUB_ENV
-#
-#      - name: Create image name
-#        run: echo "IMAGE_NAME=ghcr.io/${REPO}" >> $GITHUB_ENV
-#
-#      - name: Login to GitHub Container Registry
-#        id: login
-#        uses: docker/login-action@v3
-#        with:
-#          registry: ghcr.io
-#          username: ${{ github.actor }}
-#          password: ${{ github.token }}
-#
-#      - name: Cache Docker layers
-#        uses: actions/cache@v4
-#        with:
-#          path: .cache
-#          key: ${{ runner.os }}-buildx-${{ github.sha }}
-#          restore-keys: |
-#            ${{ runner.os }}-buildx-
-#
-#      - name: Set up Docker Buildx
-#        id: buildx
-#        uses: docker/setup-buildx-action@v3
-#
-#      - name: Docker meta
-#        id: meta
-#        uses: docker/metadata-action@v5
-#        with:
-#          images: ${{ env.IMAGE_NAME }}
-#          flavor: |
-#            latest=false
-#          tags: |
-#            type=raw,value=staging
-#            type=raw,value=${{ github.sha }},priority=1000
-#            type=ref,event=branch
-#
-#      - name: Build and push
-#        uses: docker/build-push-action@v6
-#        with:
-#          context: ./
-#          file: ./dockerfiles/Dockerfile.ubuntu
-#          push: true
-#          tags: ${{ steps.meta.outputs.tags }}
-#          labels: ${{ steps.meta.outputs.labels }}
-#          cache-from: type=gha
-#          cache-to: type=gha, mode=max
-#          provenance: false
-#          build-args:  |
-#            GITHUB_TOKEN=${{ secrets.GH_TOKEN }}
+name: Deploy to staging
+permissions:
+    contents: read
+    packages: write
+on:
+  pull_request:
+    types: [ready_for_review, opened, reopened, synchronize]
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+
+jobs:
+
+  build:
+    name: Build images
+    if: ${{ github.actor != 'dependabot[bot]' && github.event.pull_request.draft == false }}
+    strategy:
+      matrix:
+        app_name: [Skosmos]
+    uses: Informasjonsforvaltning/workflows/.github/workflows/build-push.yaml@main
+    with:
+      app_name: ${{ matrix.appname }}
+      monorepo_app: true
+      environment: staging
+      gh_environment: staging
+      build_env: true
+      build_env_name: BINARY
+      build_env_value: ${{ matrix.appname }}
+      cache_path: ./dist
+      dockerfile: apps/${{ matrix.appname }}/dockerfiles/Dockerfile.ubuntu
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy:
+    name: Deploy images to staging environment
+    if: github.event.pull_request.draft == false
+    needs: [build]
+    uses: Informasjonsforvaltning/workflows/.github/workflows/kustomize-deploy.yaml@main
+    with:
+      app_name: skosmos-config
+      environment: staging
+      cluster: digdir-fdk-dev
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      DIGDIR_FDK_AUTODEPLOY: ${{ secrets.DIGDIR_FDK_DEV_AUTODEPLOY }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
