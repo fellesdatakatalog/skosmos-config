@@ -28,7 +28,6 @@ jobs:
       build_env: true
       build_env_name: BINARY
       build_env_value: ${{ matrix.app_name }}
-      cache_path: ./dist
       dockerfile: apps/${{ matrix.app_name }}/dockerfiles/Dockerfile.ubuntu
       submodule: true
     secrets:
