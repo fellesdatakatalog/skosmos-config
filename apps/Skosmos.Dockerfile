@@ -82,7 +82,7 @@ COPY apps/Skosmos/composer.json /var/www/html
 RUN php composer.phar install --no-dev --no-autoloader
 
 # skosmos layer
-COPY . /var/www/html
+COPY apps/Skosmos/. /var/www/html
 RUN php composer.phar install --no-dev
 
 # install Node modules (from npm-installer stage)
