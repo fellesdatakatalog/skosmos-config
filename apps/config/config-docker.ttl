@@ -73,7 +73,7 @@
     dc:title "Test Trafikk"@en, "Test Trafikk"@nb, "Test"@nn ;
     skosmos:shortName "Test Trafikk";
     dc:subject <https://psi.norge.no/los/tema/trafikk-og-transport> ;
-    void:uriSpace "https://psi.norge.no/los";
+    void:uriSpace "https://psi.norge.no/los/";
     skosmos:language "en", "nn", "nb";
     skosmos:defaultLanguage "nn";
     void:sparqlEndpoint <http://fdk-sparql-service:8080/fuseki/fdk/query> ;
@@ -83,7 +83,7 @@
     dc:title "Test Natur og miljø"@en, "Test Natur og miljø"@nb, "Test Natur og miljø"@nn ;
     skosmos:shortName "Test Natur og miljø";
     dc:subject <https://psi.norge.no/los/tema/natur-og-miljoe> ;
-    void:uriSpace "https://psi.norge.no/los";
+    void:uriSpace "https://psi.norge.no/los/";
     skosmos:language "en", "nn", "nb";
     skosmos:defaultLanguage "nn";
     void:sparqlEndpoint <http://fdk-sparql-service:8080/fuseki/fdk/query> ;
