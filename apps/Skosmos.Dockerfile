@@ -2,7 +2,7 @@
 FROM node:18-alpine AS npm-installer
 
 WORKDIR /usr/src/app
-COPY Skosmos/package.json ./
+COPY apps/Skosmos/package.json ./
 
 # install node.js dependencies e.g. Vue (but not the development dependencies)
 RUN npm install --omit=dev --ignore-scripts
