@@ -2,7 +2,7 @@
 FROM node:18-alpine AS npm-installer
 
 WORKDIR /usr/src/app
-COPY package.json ./
+COPY Skosmos/package.json ./
 
 # install node.js dependencies e.g. Vue (but not the development dependencies)
 RUN npm install --omit=dev --ignore-scripts
@@ -62,7 +62,7 @@ ENV LANG=en_US.UTF-8
 # timezone
 RUN sed -i 's/;date.timezone =/date.timezone = "UTC"/g' /etc/php/8.3/apache2/php.ini
 
-COPY dockerfiles/config/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY Skosmos/dockerfiles/config/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 RUN a2enmod rewrite
 RUN a2enmod expires
