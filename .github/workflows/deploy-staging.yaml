@@ -61,7 +61,7 @@ jobs:
         with:
           context: ./
           file: ./dockerfiles/Dockerfile.ubuntu
-          push: false
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
@@ -69,4 +69,3 @@ jobs:
           provenance: false
           build-args:  |
             GITHUB_TOKEN=${{ secrets.GH_TOKEN }}
-            
