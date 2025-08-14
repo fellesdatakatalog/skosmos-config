@@ -42,6 +42,7 @@ jobs:
       app_name: skosmos-config
       environment: staging
       cluster: digdir-fdk-dev
+      monorepo_app: true
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       DIGDIR_FDK_AUTODEPLOY: ${{ secrets.DIGDIR_FDK_DEV_AUTODEPLOY }}
