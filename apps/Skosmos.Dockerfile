@@ -89,7 +89,7 @@ RUN php composer.phar install --no-dev
 COPY --from=npm-installer /usr/src/app/node_modules /var/www/html/node_modules
 
 # Configure Skosmos
-COPY apps/Skosmos/dockerfiles/config/config-docker.ttl /var/www/html/config.ttl
+COPY apps/config/config-docker.ttl /var/www/html/config.ttl
 
 HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD curl -f http://localhost || exit 1
 
