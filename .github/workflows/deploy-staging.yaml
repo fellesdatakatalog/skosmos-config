@@ -30,6 +30,7 @@ jobs:
       build_env_value: ${{ matrix.app_name }}
       cache_path: ./dist
       dockerfile: apps/${{ matrix.app_name }}/dockerfiles/Dockerfile.ubuntu
+      submodule: true
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
