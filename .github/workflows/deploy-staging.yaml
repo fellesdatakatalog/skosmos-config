@@ -28,7 +28,7 @@ jobs:
       build_env: true
       build_env_name: BINARY
       build_env_value: ${{ matrix.app_name }}
-      dockerfile: apps/${{ matrix.app_name }}.Dockerfile
+      dockerfile: apps/${{ matrix.app_name }}.skosmos-store.Dockerfile
       submodule: true
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
