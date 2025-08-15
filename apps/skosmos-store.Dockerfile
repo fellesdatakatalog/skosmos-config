@@ -25,5 +25,8 @@ RUN adduser -D $USER \
 
 USER $USER
 
+RUN mkdir $HOME/config && chmod 777 $HOME/config
+RUN mkdir $HOME/store && chmod 777 $HOME/store
+
 COPY --from=builder --chown=$USER app/target/app.jar app.jar
 CMD ["java", "-XX:+UseZGC", "-Xmx2g", "-jar", "app.jar"]
