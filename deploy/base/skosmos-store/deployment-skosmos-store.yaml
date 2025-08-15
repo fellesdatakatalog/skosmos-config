@@ -1,0 +1,51 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skosmos-store
+  labels:
+    app: skosmos-store
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skosmos-store
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: skosmos-store
+      annotations:
+        prometheus.io/scrape: "false"
+    spec:
+      containers:
+        - name: skosmos-store
+          image: skosmos-store
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /fuseki/$/ping
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 5
+          readinessProbe:
+            httpGet:
+              path: /fuseki/$/stats/skosmos
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            successThreshold: 1
+            failureThreshold: 5
+          resources:
+            requests:
+              memory: 3Gi
+      securityContext:
+        runAsUser: 1001
+        runAsGroup: 1001
+        fsGroup: 1001
+      restartPolicy: Always
