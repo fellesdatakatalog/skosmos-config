@@ -16,10 +16,10 @@
 # Skosmos main configuration
 
 :config a skosmos:Configuration ;
-    # Custom config
+    # data.norge.no config
     skosmos:explicitLanguageTags true ;
-    #skosmos:fallbackLanguages ("nn" "nb" "en") ;
-
+    skosmos:baseHref <https://skosmos.staging.fellesdatakatalog.digdir.no/> ;
+    
     # SPARQL endpoint
     # a local Fuseki server is usually on localhost:3030
     skosmos:sparqlEndpoint <http://skosmos-store:8080/fuseki/skosmos/query> ;
@@ -84,5 +84,6 @@
     skosmos:groupClass skos:Collection ;
     skosmos:language "en", "nn", "nb";
     skosmos:defaultLanguage "nn";
+    skosmos:fallbackLanguages ("nn" "nb" "en") ;
     void:sparqlEndpoint <http://skosmos-store:8080/fuseki/skosmos/query> ;
     skosmos:sparqlGraph <https://id.norge.no/los> .
