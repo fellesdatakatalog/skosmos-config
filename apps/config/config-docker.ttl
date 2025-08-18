@@ -18,7 +18,7 @@
 :config a skosmos:Configuration ;
     # SPARQL endpoint
     # a local Fuseki server is usually on localhost:3030
-    skosmos:sparqlEndpoint <https://sparql.staging.fellesdatakatalog.digdir.no> ;
+    skosmos:sparqlEndpoint <http://skosmos-store:8080/fuseki/skosmos/query> ;
     # sparql-query extension, or "Generic" for plain SPARQL 1.1
     # set to "JenaText" instead if you use Fuseki with jena-text index
     #skosmos:sparqlDialect "JenaText" ;
@@ -78,4 +78,3 @@
     skosmos:defaultLanguage "nn";
     void:sparqlEndpoint <http://skosmos-store:8080/fuseki/skosmos/query> ;
     skosmos:sparqlGraph <https://id.norge.no/los> .
-    .
