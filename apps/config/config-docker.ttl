@@ -73,7 +73,9 @@
     dc:title "Los"@en, "Los"@nb, "Los"@nn ;
     skosmos:shortName "Los";
     dc:subject <https://id.norge.no/los> ;
-    void:uriSpace "https://id.norge.no/los";
+    void:uriSpace "https://id.norge.no/los" ;
+    skosmos:mainConceptScheme <https://id.norge.no/los> ;
+    skosmos:groupClass skos:Collection ;
     skosmos:language "en", "nn", "nb";
     skosmos:defaultLanguage "nn";
     void:sparqlEndpoint <http://skosmos-store:8080/fuseki/skosmos/query> ;
