@@ -17,8 +17,8 @@
 
 :config a skosmos:Configuration ;
     # Custom config
-    skosmos:explicitLanguageTags true;
-    skosmos:fallbackLanguages ("nn" "nb" "en") ;
+    skosmos:explicitLanguageTags true ;
+    #skosmos:fallbackLanguages ("nn" "nb" "en") ;
 
     # SPARQL endpoint
     # a local Fuseki server is usually on localhost:3030
