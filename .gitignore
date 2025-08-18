@@ -1,2 +1,6 @@
 .idea
 .env
+.DS_Store
+/apps/skosmos-store/config
+/apps/skosmos-store/target
+/apps/skosmos-store/store

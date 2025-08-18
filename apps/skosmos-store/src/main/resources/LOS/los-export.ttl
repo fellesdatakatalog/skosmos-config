@@ -1,0 +1,5182 @@
+@prefix los: <https://id.norge.no/los/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xkos: <http://rdf-vocabulary.ddialliance.org/xkos#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix euvoc: <https://publications.europa.eu/ontology/euvoc#> .
+@prefix concept-status: <http://publications.europa.eu/resource/authority/concept-status/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://id.norge.no/los> a skos:ConceptScheme ;
+    dct:description "Los is a shared vocabulary for public services and assets in Norway."@en ;
+    dct:description "Los er et felles vokabular for klassifisering av offentlige tjenester og ressurser i Norge"@nb ;
+    dct:description "Los er et felles vokabular for klassifisering av offentlege tenester og ressursar i Norge"@nn ;
+    dct:hasVersion "4.0-beta" ;
+    dct:issued "2025-08-05" ;
+    dct:publisher "The Norwegian Digitalisation Agency"@en ;
+    dct:publisher "Digitaliseringsdirektoratet"@nb ;
+    dct:publisher "Digitaliseringsdirektoratet"@nn ;
+    dct:title "Los"@en ;
+    dct:title "Los"@nb ;
+    dct:title "Los"@nn ;
+    owl:versionInfo "Testversjon før publisering av 4.0" ;
+    skos:hasTopConcept los:01001 ;
+    skos:hasTopConcept los:02001 ;
+    skos:hasTopConcept los:03001 ;
+    skos:hasTopConcept los:04001 ;
+    skos:hasTopConcept los:05001 ;
+    skos:hasTopConcept los:06001 ;
+    skos:hasTopConcept los:07001 ;
+    skos:hasTopConcept los:08001 ;
+    skos:hasTopConcept los:09001 ;
+    skos:hasTopConcept los:10001 ;
+    skos:hasTopConcept los:11001 ;
+    skos:hasTopConcept los:12001 ;
+    skos:hasTopConcept los:13001 ;
+    skos:hasTopConcept los:14001 ;
+    skos:hasTopConcept los:15001 .
+
+los:01001 a skos:Concept ;
+    skos:prefLabel "Employment"@en ;
+    skos:prefLabel "Arbeid"@nb ;
+    skos:prefLabel "Arbeid"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:01002 ;
+    skos:narrower los:01003 ;
+    skos:narrower los:01004 ;
+    xkos:hasPart los:01002 ;
+    xkos:hasPart los:01003 ;
+    xkos:hasPart los:01004 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01002 a skos:Concept ;
+    skos:prefLabel "Working life"@en ;
+    skos:prefLabel "Arbeidsliv (i jobb)"@nb ;
+    skos:prefLabel "Arbeidsliv (i jobb)"@nn ;
+    skos:broader los:01001 ;
+    xkos:isPartOf los:01001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:01005 ;
+    skos:narrower los:01006 ;
+    skos:narrower los:01012 ;
+    xkos:hasPart los:01005 ;
+    xkos:hasPart los:01006 ;
+    xkos:hasPart los:01012 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01003 a skos:Concept ;
+    skos:prefLabel "Looking for a job"@en ;
+    skos:prefLabel "Arbeidssøking (skaffe jobb)"@nb ;
+    skos:prefLabel "Arbeidssøking (skaffe jobb)"@nn ;
+    skos:broader los:01001 ;
+    xkos:isPartOf los:01001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:01007 ;
+    skos:narrower los:01008 ;
+    skos:narrower los:01010 ;
+    skos:narrower los:01011 ;
+    skos:narrower los:01014 ;
+    xkos:hasPart los:01007 ;
+    xkos:hasPart los:01008 ;
+    xkos:hasPart los:01010 ;
+    xkos:hasPart los:01011 ;
+    xkos:hasPart los:01014 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01004 a skos:Concept ;
+    skos:prefLabel "At the workplace"@en ;
+    skos:prefLabel "Arbeidsplass (på jobb)"@nb ;
+    skos:prefLabel "Arbeidsplass (på jobb)"@nn ;
+    skos:broader los:01001 ;
+    xkos:isPartOf los:01001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:01009 ;
+    skos:narrower los:01013 ;
+    xkos:hasPart los:01009 ;
+    xkos:hasPart los:01013 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01005 a skos:Concept ;
+    skos:prefLabel "Terms of employment"@en ;
+    skos:prefLabel "Arbeidsforhold"@nb ;
+    skos:prefLabel "Arbeidsforhold"@nn ;
+    skos:broader los:01002 ;
+    xkos:isPartOf los:01002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "arbeidsavtale, arbeidsgivar, arbeidstakar/frilansar, fagorganisering, tilsetting og oppseiing"@nn ;
+    skos:scopeNote "Inkluderer arbeidsavtale, arbeidsgivar, arbeidstakar/frilansar, fagorganisering, tilsetting og oppseiing"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01006 a skos:Concept ;
+    skos:prefLabel "Employment income"@en ;
+    skos:prefLabel "Arbeidsinntekt"@nb ;
+    skos:prefLabel "Arbeidsinntekt"@nn ;
+    skos:broader los:01002 ;
+    xkos:isPartOf los:01002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "feriepengar, lønn"@nn ;
+    skos:scopeNote "Inkluderer feriepengar, lønn"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01007 a skos:Concept ;
+    skos:prefLabel "Work permit"@en ;
+    skos:prefLabel "Arbeidstillatelse"@nb ;
+    skos:prefLabel "Arbeidsløyve"@nn ;
+    skos:broader los:01003 ;
+    xkos:isPartOf los:01003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01008 a skos:Concept ;
+    skos:prefLabel "Labour market measures"@en ;
+    skos:prefLabel "Arbeidsmarkedstiltak"@nb ;
+    skos:prefLabel "Arbeidsmarknadstiltak"@nn ;
+    skos:broader los:01003 ;
+    xkos:isPartOf los:01003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01009 a skos:Concept ;
+    skos:prefLabel "Work environment"@en ;
+    skos:prefLabel "Arbeidsmiljø"@nb ;
+    skos:prefLabel "Arbeidsmiljø"@nn ;
+    skos:broader los:01004 ;
+    xkos:isPartOf los:01004 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "innemiljø"@nn ;
+    skos:scopeNote "Inkluderer innemiljø"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01010 a skos:Concept ;
+    skos:prefLabel "CV (Curriculum Vitae)"@en ;
+    skos:prefLabel "CV (Curriculum Vitae)"@nb ;
+    skos:prefLabel "CV (Curriculum Vitae)"@nn ;
+    skos:broader los:01003 ;
+    xkos:isPartOf los:01003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01011 a skos:Concept ;
+    skos:prefLabel "Qualification program"@en ;
+    skos:prefLabel "Kvalifiseringsprogram"@nb ;
+    skos:prefLabel "Kvalifiseringsprogram"@nn ;
+    skos:broader los:01003 ;
+    xkos:isPartOf los:01003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01012 a skos:Concept ;
+    skos:prefLabel "Rights and responsibilities"@en ;
+    skos:prefLabel "Rettigheter og plikter"@nb ;
+    skos:prefLabel "Rettar og plikter"@nn ;
+    skos:broader los:01002 ;
+    xkos:isPartOf los:01002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "ferierettar, inkluderande arbeidsliv, lønnsfastsetting, mot sosial dumping, oppseiing, permisjon, permittering, sjukefråvær"@nn ;
+    skos:scopeNote "Inkluderer ferierettar, inkluderande arbeidsliv, lønnsfastsetting, mot sosial dumping, oppseiing, permisjon, permittering, sjukefråvær"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01013 a skos:Concept ;
+    skos:prefLabel "Adapted work"@en ;
+    skos:prefLabel "Tilrettelagt arbeid"@nb ;
+    skos:prefLabel "Tilrettelagt arbeid"@nn ;
+    skos:broader los:01004 ;
+    xkos:isPartOf los:01004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:01014 a skos:Concept ;
+    skos:prefLabel "Professional license"@en ;
+    skos:prefLabel "Yrkesautorisasjon"@nb ;
+    skos:prefLabel "Yrkesautorisasjon"@nn ;
+    skos:broader los:01003 ;
+    xkos:isPartOf los:01003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02001 a skos:Concept ;
+    skos:prefLabel "Democracy and governance"@en ;
+    skos:prefLabel "Demokrati og styresett"@nb ;
+    skos:prefLabel "Demokrati og styresett"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:02002 ;
+    skos:narrower los:02003 ;
+    skos:narrower los:02004 ;
+    skos:narrower los:02005 ;
+    xkos:hasPart los:02002 ;
+    xkos:hasPart los:02003 ;
+    xkos:hasPart los:02004 ;
+    xkos:hasPart los:02005 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02002 a skos:Concept ;
+    skos:prefLabel "Public participation"@en ;
+    skos:prefLabel "Medvirkning"@nb ;
+    skos:prefLabel "Medverknad"@nn ;
+    skos:broader los:02001 ;
+    xkos:isPartOf los:02001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:02006 ;
+    skos:narrower los:02008 ;
+    skos:narrower los:02009 ;
+    xkos:hasPart los:02006 ;
+    xkos:hasPart los:02008 ;
+    xkos:hasPart los:02009 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02003 a skos:Concept ;
+    skos:prefLabel "Politics and elections"@en ;
+    skos:prefLabel "Politikk og valg"@nb ;
+    skos:prefLabel "Politikk og val"@nn ;
+    skos:broader los:02001 ;
+    xkos:isPartOf los:02001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:02007 ;
+    skos:narrower los:02011 ;
+    skos:narrower los:02014 ;
+    skos:narrower los:02015 ;
+    skos:narrower los:02017 ;
+    xkos:hasPart los:02007 ;
+    xkos:hasPart los:02011 ;
+    xkos:hasPart los:02014 ;
+    xkos:hasPart los:02015 ;
+    xkos:hasPart los:02017 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02004 a skos:Concept ;
+    skos:prefLabel "Transparency"@en ;
+    skos:prefLabel "Åpenhet"@nb ;
+    skos:prefLabel "Openheit"@nn ;
+    skos:broader los:02001 ;
+    xkos:isPartOf los:02001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:02010 ;
+    skos:narrower los:02013 ;
+    xkos:hasPart los:02010 ;
+    xkos:hasPart los:02013 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02005 a skos:Concept ;
+    skos:prefLabel "Law and justice"@en ;
+    skos:prefLabel "Lov og rett"@nb ;
+    skos:prefLabel "Lov og rett"@nn ;
+    skos:broader los:02001 ;
+    xkos:isPartOf los:02001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:02012 ;
+    skos:narrower los:02016 ;
+    xkos:hasPart los:02012 ;
+    xkos:hasPart los:02016 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02006 a skos:Concept ;
+    skos:prefLabel "Public meeting"@en ;
+    skos:prefLabel "Folkemøte"@nb ;
+    skos:prefLabel "Folkemøte"@nn ;
+    skos:broader los:02002 ;
+    xkos:isPartOf los:02002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02007 a skos:Concept ;
+    skos:prefLabel "County council"@en ;
+    skos:prefLabel "Fylkesting"@nb ;
+    skos:prefLabel "Fylkesting"@nn ;
+    skos:broader los:02003 ;
+    xkos:isPartOf los:02003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "fylkestingval"@nn ;
+    skos:scopeNote "Inkluderer fylkestingval"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02008 a skos:Concept ;
+    skos:prefLabel "Public consultation"@en ;
+    skos:prefLabel "Høring"@nb ;
+    skos:prefLabel "Høyring"@nn ;
+    skos:broader los:02002 ;
+    xkos:isPartOf los:02002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02009 a skos:Concept ;
+    skos:prefLabel "Citizen proposal"@en ;
+    skos:prefLabel "Innbyggerforslag"@nb ;
+    skos:prefLabel "Innbyggjarforslag"@nn ;
+    skos:broader los:02002 ;
+    xkos:isPartOf los:02002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02010 a skos:Concept ;
+    skos:prefLabel "Right of access"@en ;
+    skos:prefLabel "Innsynsrett"@nb ;
+    skos:prefLabel "Innsynsrett"@nn ;
+    skos:broader los:02004 ;
+    xkos:isPartOf los:02004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02011 a skos:Concept ;
+    skos:prefLabel "Municipal council"@en ;
+    skos:prefLabel "Kommunestyre"@nb ;
+    skos:prefLabel "Kommunestyre"@nn ;
+    skos:broader los:02003 ;
+    xkos:isPartOf los:02003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "kommuneval"@nn ;
+    skos:scopeNote "Inkluderer kommuneval"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02012 a skos:Concept ;
+    skos:prefLabel "Crime and punishment"@en ;
+    skos:prefLabel "Lovbrudd og straff"@nb ;
+    skos:prefLabel "Lovbrot og straff"@nn ;
+    skos:broader los:02005 ;
+    xkos:isPartOf los:02005 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "bot, førelegg, politimelding, anmeldelse, påtaleunnlating, samfunnsstraff, soning"@nn ;
+    skos:scopeNote "Inkluderer bot, førelegg, politimelding, anmeldelse, påtaleunnlating, samfunnsstraff, soning"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02013 a skos:Concept ;
+    skos:prefLabel "Public record journal"@en ;
+    skos:prefLabel "Offentlig postjournal"@nb ;
+    skos:prefLabel "Offentleg postjournal"@nn ;
+    skos:broader los:02004 ;
+    xkos:isPartOf los:02004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02014 a skos:Concept ;
+    skos:prefLabel "Political party"@en ;
+    skos:prefLabel "Politisk parti"@nb ;
+    skos:prefLabel "Politisk parti"@nn ;
+    skos:broader los:02003 ;
+    xkos:isPartOf los:02003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02015 a skos:Concept ;
+    skos:prefLabel "Government"@en ;
+    skos:prefLabel "Regjering"@nb ;
+    skos:prefLabel "Regjering"@nn ;
+    skos:broader los:02003 ;
+    xkos:isPartOf los:02003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02016 a skos:Concept ;
+    skos:prefLabel "Judiciary"@en ;
+    skos:prefLabel "Rettsvesen"@nb ;
+    skos:prefLabel "Rettsstell"@nn ;
+    skos:broader los:02005 ;
+    xkos:isPartOf los:02005 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "dom, domstol, høyesterett, lagmannsrett, mekling, namsmakt, notarius publicus, rettshjelp, rettssak, tingrett"@nn ;
+    skos:scopeNote "Inkluderer dom, domstol, høyesterett, lagmannsrett, mekling, namsmakt, notarius publicus, rettshjelp, rettssak, tingrett"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:02017 a skos:Concept ;
+    skos:prefLabel "Parliament"@en ;
+    skos:prefLabel "Storting"@nb ;
+    skos:prefLabel "Storting"@nn ;
+    skos:broader los:02003 ;
+    xkos:isPartOf los:02003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "stortingsval"@nn ;
+    skos:scopeNote "Inkluderer stortingsval"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03001 a skos:Concept ;
+    skos:prefLabel "Family and children"@en ;
+    skos:prefLabel "Familie og barn"@nb ;
+    skos:prefLabel "Familie og barn"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:03002 ;
+    skos:narrower los:03003 ;
+    skos:narrower los:03004 ;
+    xkos:hasPart los:03002 ;
+    xkos:hasPart los:03003 ;
+    xkos:hasPart los:03004 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03002 a skos:Concept ;
+    skos:prefLabel "The child's right to care"@en ;
+    skos:prefLabel "Barnets rett til omsorg"@nb ;
+    skos:prefLabel "Barnet sin rett til omsorg"@nn ;
+    skos:broader los:03001 ;
+    xkos:isPartOf los:03001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:03005 ;
+    skos:narrower los:03007 ;
+    skos:narrower los:03010 ;
+    xkos:hasPart los:03005 ;
+    xkos:hasPart los:03007 ;
+    xkos:hasPart los:03010 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03003 a skos:Concept ;
+    skos:prefLabel "Cohabitation"@en ;
+    skos:prefLabel "Samliv"@nb ;
+    skos:prefLabel "Samliv"@nn ;
+    skos:broader los:03001 ;
+    xkos:isPartOf los:03001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:03006 ;
+    skos:narrower los:03011 ;
+    skos:narrower los:03012 ;
+    xkos:hasPart los:03006 ;
+    xkos:hasPart los:03011 ;
+    xkos:hasPart los:03012 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03004 a skos:Concept ;
+    skos:prefLabel "Parental responsibility"@en ;
+    skos:prefLabel "Foreldreansvar"@nb ;
+    skos:prefLabel "Foreldreansvar"@nn ;
+    skos:broader los:03001 ;
+    xkos:isPartOf los:03001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:03008 ;
+    skos:narrower los:03009 ;
+    skos:narrower los:03013 ;
+    xkos:hasPart los:03008 ;
+    xkos:hasPart los:03009 ;
+    xkos:hasPart los:03013 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03005 a skos:Concept ;
+    skos:prefLabel "Child development"@en ;
+    skos:prefLabel "Barnets utvikling"@nb ;
+    skos:prefLabel "Barnet si utvikling"@nn ;
+    skos:broader los:03002 ;
+    xkos:isPartOf los:03002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03006 a skos:Concept ;
+    skos:prefLabel "Marriage"@en ;
+    skos:prefLabel "Ekteskap"@nb ;
+    skos:prefLabel "Ekteskap"@nn ;
+    skos:broader los:03003 ;
+    xkos:isPartOf los:03003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03007 a skos:Concept ;
+    skos:prefLabel "Family and environment"@en ;
+    skos:prefLabel "Familie og miljø"@nb ;
+    skos:prefLabel "Familie og miljø"@nn ;
+    skos:broader los:03002 ;
+    xkos:isPartOf los:03002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03008 a skos:Concept ;
+    skos:prefLabel "Establishing parentage"@en ;
+    skos:prefLabel "Fastsettelse av foreldreskap"@nb ;
+    skos:prefLabel "Fastsetting av foreldreskap"@nn ;
+    skos:broader los:03004 ;
+    xkos:isPartOf los:03004 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "adopsjon og omsorgsovertaking"@nn ;
+    skos:scopeNote "Inkluderer adopsjon og omsorgsovertaking"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03009 a skos:Concept ;
+    skos:prefLabel "Parental cooperation"@en ;
+    skos:prefLabel "Foreldresamarbeid"@nb ;
+    skos:prefLabel "Foreldresamarbeid"@nn ;
+    skos:broader los:03004 ;
+    xkos:isPartOf los:03004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03010 a skos:Concept ;
+    skos:prefLabel "Care from parents"@en ;
+    skos:prefLabel "Omsorg fra foreldrene"@nb ;
+    skos:prefLabel "Omsorg frå foreldra"@nn ;
+    skos:broader los:03002 ;
+    xkos:isPartOf los:03002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03011 a skos:Concept ;
+    skos:prefLabel "Non-marital cohabitation"@en ;
+    skos:prefLabel "Samboerskap"@nb ;
+    skos:prefLabel "Sambuarskap"@nn ;
+    skos:broader los:03003 ;
+    xkos:isPartOf los:03003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03012 a skos:Concept ;
+    skos:prefLabel "Relationship breakdown"@en ;
+    skos:prefLabel "Samlivsbrudd"@nb ;
+    skos:prefLabel "Samlivsbrot"@nn ;
+    skos:broader los:03003 ;
+    xkos:isPartOf los:03003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "brudd på sambuarskap, separasjon, skilsmisse"@nn ;
+    skos:scopeNote "Inkluderer brudd på sambuarskap, separasjon, skilsmisse"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:03013 a skos:Concept ;
+    skos:prefLabel "Contact and residence"@en ;
+    skos:prefLabel "Samvær og bosted"@nb ;
+    skos:prefLabel "Samvær og bustad"@nn ;
+    skos:broader los:03004 ;
+    xkos:isPartOf los:03004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04001 a skos:Concept ;
+    skos:prefLabel "Health and care"@en ;
+    skos:prefLabel "Helse og omsorg"@nb ;
+    skos:prefLabel "Helse og omsorg"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:04002 ;
+    skos:narrower los:04003 ;
+    skos:narrower los:04004 ;
+    skos:narrower los:04005 ;
+    skos:narrower los:04006 ;
+    skos:narrower los:04007 ;
+    skos:narrower los:04008 ;
+    xkos:hasPart los:04002 ;
+    xkos:hasPart los:04003 ;
+    xkos:hasPart los:04004 ;
+    xkos:hasPart los:04005 ;
+    xkos:hasPart los:04006 ;
+    xkos:hasPart los:04007 ;
+    xkos:hasPart los:04008 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04002 a skos:Concept ;
+    skos:prefLabel "Emergency medical assistance"@en ;
+    skos:prefLabel "Akutt helsehjelp"@nb ;
+    skos:prefLabel "Akutt helsehjelp"@nn ;
+    skos:broader los:04001 ;
+    xkos:isPartOf los:04001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:04009 ;
+    skos:narrower los:04011 ;
+    skos:narrower los:04018 ;
+    skos:narrower los:04029 ;
+    skos:narrower los:04031 ;
+    skos:narrower los:04044 ;
+    skos:narrower los:04049 ;
+    xkos:hasPart los:04009 ;
+    xkos:hasPart los:04011 ;
+    xkos:hasPart los:04018 ;
+    xkos:hasPart los:04029 ;
+    xkos:hasPart los:04031 ;
+    xkos:hasPart los:04044 ;
+    xkos:hasPart los:04049 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04003 a skos:Concept ;
+    skos:prefLabel "Relief and support"@en ;
+    skos:prefLabel "Avlastning og støtte"@nb ;
+    skos:prefLabel "Avlasting og støtte"@nn ;
+    skos:broader los:04001 ;
+    xkos:isPartOf los:04001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:04010 ;
+    skos:narrower los:04041 ;
+    skos:narrower los:04046 ;
+    xkos:hasPart los:04010 ;
+    xkos:hasPart los:04041 ;
+    xkos:hasPart los:04046 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04004 a skos:Concept ;
+    skos:prefLabel "Patient rights and obligations"@en ;
+    skos:prefLabel "Pasientrettigheter og plikter"@nb ;
+    skos:prefLabel "Pasientrettar og plikter"@nn ;
+    skos:broader los:04001 ;
+    xkos:isPartOf los:04001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:04012 ;
+    skos:narrower los:04015 ;
+    skos:narrower los:04017 ;
+    skos:narrower los:04025 ;
+    skos:narrower los:04027 ;
+    skos:narrower los:04034 ;
+    skos:narrower los:04035 ;
+    skos:narrower los:04036 ;
+    skos:narrower los:04047 ;
+    skos:narrower los:04050 ;
+    xkos:hasPart los:04012 ;
+    xkos:hasPart los:04015 ;
+    xkos:hasPart los:04017 ;
+    xkos:hasPart los:04025 ;
+    xkos:hasPart los:04027 ;
+    xkos:hasPart los:04034 ;
+    xkos:hasPart los:04035 ;
+    xkos:hasPart los:04036 ;
+    xkos:hasPart los:04047 ;
+    xkos:hasPart los:04050 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04005 a skos:Concept ;
+    skos:prefLabel "Organ and blood donation"@en ;
+    skos:prefLabel "Organ-/bloddonasjon"@nb ;
+    skos:prefLabel "Organ-/bloddonasjon"@nn ;
+    skos:broader los:04001 ;
+    xkos:isPartOf los:04001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:04013 ;
+    skos:narrower los:04032 ;
+    skos:narrower los:04033 ;
+    xkos:hasPart los:04013 ;
+    xkos:hasPart los:04032 ;
+    xkos:hasPart los:04033 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04006 a skos:Concept ;
+    skos:prefLabel "Nursing and care"@en ;
+    skos:prefLabel "Pleie og omsorg"@nb ;
+    skos:prefLabel "Pleie og omsorg"@nn ;
+    skos:broader los:04001 ;
+    xkos:isPartOf los:04001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:04014 ;
+    skos:narrower los:04022 ;
+    skos:narrower los:04026 ;
+    skos:narrower los:04037 ;
+    skos:narrower los:04045 ;
+    xkos:hasPart los:04014 ;
+    xkos:hasPart los:04022 ;
+    xkos:hasPart los:04026 ;
+    xkos:hasPart los:04037 ;
+    xkos:hasPart los:04045 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04007 a skos:Concept ;
+    skos:prefLabel "Health promotion and prevention"@en ;
+    skos:prefLabel "Helsefremming og forebygging"@nb ;
+    skos:prefLabel "Helsefremming og førebygging"@nn ;
+    skos:broader los:04001 ;
+    xkos:isPartOf los:04001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:04016 ;
+    skos:narrower los:04019 ;
+    skos:narrower los:04020 ;
+    skos:narrower los:04021 ;
+    skos:narrower los:04023 ;
+    skos:narrower los:04030 ;
+    skos:narrower los:04039 ;
+    skos:narrower los:04043 ;
+    skos:narrower los:04048 ;
+    xkos:hasPart los:04016 ;
+    xkos:hasPart los:04019 ;
+    xkos:hasPart los:04020 ;
+    xkos:hasPart los:04021 ;
+    xkos:hasPart los:04023 ;
+    xkos:hasPart los:04030 ;
+    xkos:hasPart los:04039 ;
+    xkos:hasPart los:04043 ;
+    xkos:hasPart los:04048 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04008 a skos:Concept ;
+    skos:prefLabel "Treatment, habilitation and rehabilitation"@en ;
+    skos:prefLabel "Behandling, habilitering og rehabilitering"@nb ;
+    skos:prefLabel "Behandling, habilitering og rehabilitering"@nn ;
+    skos:broader los:04001 ;
+    xkos:isPartOf los:04001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:04024 ;
+    skos:narrower los:04028 ;
+    skos:narrower los:04038 ;
+    skos:narrower los:04040 ;
+    skos:narrower los:04042 ;
+    xkos:hasPart los:04024 ;
+    xkos:hasPart los:04028 ;
+    xkos:hasPart los:04038 ;
+    xkos:hasPart los:04040 ;
+    xkos:hasPart los:04042 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04009 a skos:Concept ;
+    skos:prefLabel "Ambulance service"@en ;
+    skos:prefLabel "Ambulansetjeneste"@nb ;
+    skos:prefLabel "Ambulanseteneste"@nn ;
+    skos:broader los:04002 ;
+    xkos:isPartOf los:04002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04010 a skos:Concept ;
+    skos:prefLabel "Respite measures"@en ;
+    skos:prefLabel "Avlastningstiltak"@nb ;
+    skos:prefLabel "Avlastningstiltak"@nn ;
+    skos:broader los:04003 ;
+    xkos:isPartOf los:04003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "avlastningsopphald, omsorgsavlasting"@nn ;
+    skos:scopeNote "Inkluderer avlastningsopphald, omsorgsavlasting"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04011 a skos:Concept ;
+    skos:prefLabel "Child welfare emergency service"@en ;
+    skos:prefLabel "Barnevernvakt"@nb ;
+    skos:prefLabel "Barnevernvakt"@nn ;
+    skos:broader los:04002 ;
+    xkos:isPartOf los:04002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04012 a skos:Concept ;
+    skos:prefLabel "Medical treatment abroad"@en ;
+    skos:prefLabel "Behandlingsreise"@nb ;
+    skos:prefLabel "Behandlingsreise"@nn ;
+    skos:broader los:04004 ;
+    xkos:isPartOf los:04004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04013 a skos:Concept ;
+    skos:prefLabel "Blood donation"@en ;
+    skos:prefLabel "Blodgiving"@nb ;
+    skos:prefLabel "Blodgiving"@nn ;
+    skos:broader los:04005 ;
+    xkos:isPartOf los:04005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04014 a skos:Concept ;
+    skos:prefLabel "Day care and activity services"@en ;
+    skos:prefLabel "Dag- og aktivitetstilbud"@nb ;
+    skos:prefLabel "Dag- og aktivitetstilbod"@nn ;
+    skos:broader los:04006 ;
+    xkos:isPartOf los:04006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04015 a skos:Concept ;
+    skos:prefLabel "Co-payment"@en ;
+    skos:prefLabel "Egenbetaling"@nb ;
+    skos:prefLabel "Eigenbetaling"@nn ;
+    skos:broader los:04004 ;
+    xkos:isPartOf los:04004 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "frikort"@nn ;
+    skos:scopeNote "Inkluderer frikort"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04016 a skos:Concept ;
+    skos:prefLabel "Nutrition and diet"@en ;
+    skos:prefLabel "Ernæring og kosthold"@nb ;
+    skos:prefLabel "Ernæring og kosthold"@nn ;
+    skos:broader los:04007 ;
+    xkos:isPartOf los:04007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04017 a skos:Concept ;
+    skos:prefLabel "European Health Insurance Card"@en ;
+    skos:prefLabel "Europeisk helsetrygdkort"@nb ;
+    skos:prefLabel "Europeisk helsetrygdkort"@nn ;
+    skos:broader los:04004 ;
+    xkos:isPartOf los:04004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04018 a skos:Concept ;
+    skos:prefLabel "Poison information"@en ;
+    skos:prefLabel "Giftinformasjon"@nb ;
+    skos:prefLabel "Giftinformasjon"@nn ;
+    skos:broader los:04002 ;
+    xkos:isPartOf los:04002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04019 a skos:Concept ;
+    skos:prefLabel "Health – children and youth"@en ;
+    skos:prefLabel "Helse – barn og unge"@nb ;
+    skos:prefLabel "Helse - barn og unge"@nn ;
+    skos:broader los:04007 ;
+    xkos:isPartOf los:04007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04020 a skos:Concept ;
+    skos:prefLabel "Health – pregnancy and infant care"@en ;
+    skos:prefLabel "Helse – svangerskap og spedbarnsomsorg"@nb ;
+    skos:prefLabel "Helse - svangerskap og spebarnsomsorg"@nn ;
+    skos:broader los:04007 ;
+    xkos:isPartOf los:04007 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "abort, prevensjon, spebarnsomsorg, svangerskapsomsorg"@nn ;
+    skos:scopeNote "Inkluderer abort, prevensjon, spebarnsomsorg, svangerskapsomsorg"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04021 a skos:Concept ;
+    skos:prefLabel "Health – adolescents"@en ;
+    skos:prefLabel "Helse – ungdom"@nb ;
+    skos:prefLabel "Helse - ungdom"@nn ;
+    skos:broader los:04007 ;
+    xkos:isPartOf los:04007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04022 a skos:Concept ;
+    skos:prefLabel "Home health care"@en ;
+    skos:prefLabel "Helsehjelp i hjemmet"@nb ;
+    skos:prefLabel "Helsehjelp i heimen"@nn ;
+    skos:broader los:04006 ;
+    xkos:isPartOf los:04006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04023 a skos:Concept ;
+    skos:prefLabel "Health literacy"@en ;
+    skos:prefLabel "Helsekompetanse hos befolkningen"@nb ;
+    skos:prefLabel "Helsekompetanse hos befolkningen"@nn ;
+    skos:broader los:04007 ;
+    xkos:isPartOf los:04007 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "livsmestring, rusmiddelførebygging"@nn ;
+    skos:scopeNote "Inkluderer livsmestring, rusmiddelførebygging"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04024 a skos:Concept ;
+    skos:prefLabel "Assistive devices"@en ;
+    skos:prefLabel "Hjelpemidler"@nb ;
+    skos:prefLabel "Hjelpemiddel"@nn ;
+    skos:broader los:04008 ;
+    xkos:isPartOf los:04008 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "behandlingshjelpemiddel, hjelpemiddel og tilrettelegging for person med funksjonsnedsetting, se https://www.nav.no/om-hjelpemidler (https://www.nav.no/om-hjelpemidler)"@nn ;
+    skos:scopeNote "Inkluderer behandlingshjelpemiddel, hjelpemiddel og tilrettelegging for person med funksjonsnedsetting, se https://www.nav.no/om-hjelpemidler (https://www.nav.no/om-hjelpemidler)"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04025 a skos:Concept ;
+    skos:prefLabel "Individual care plan"@en ;
+    skos:prefLabel "Individuell plan"@nb ;
+    skos:prefLabel "Individuell plan"@nn ;
+    skos:broader los:04004 ;
+    xkos:isPartOf los:04004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04026 a skos:Concept ;
+    skos:prefLabel "Health and care institution"@en ;
+    skos:prefLabel "Institusjon innen helse og omsorg"@nb ;
+    skos:prefLabel "Institusjon innen helse og omsorg"@nn ;
+    skos:broader los:04006 ;
+    xkos:isPartOf los:04006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04027 a skos:Concept ;
+    skos:prefLabel "Appeal against decision on health and care services"@en ;
+    skos:prefLabel "Klage på vedtak om helse- og omsorgstjenester"@nb ;
+    skos:prefLabel "Klage på vedtak om helse- og omsorgstenester"@nn ;
+    skos:broader los:04004 ;
+    xkos:isPartOf los:04004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04028 a skos:Concept ;
+    skos:prefLabel "Medicines"@en ;
+    skos:prefLabel "Legemidler"@nb ;
+    skos:prefLabel "Legemiddel"@nn ;
+    skos:broader los:04008 ;
+    xkos:isPartOf los:04008 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "apotek, biverknad, import av legemiddel til personleg bruk"@nn ;
+    skos:scopeNote "Inkluderer apotek, biverknad, import av legemiddel til personleg bruk"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04029 a skos:Concept ;
+    skos:prefLabel "Emergency clinic"@en ;
+    skos:prefLabel "Legevakt"@nb ;
+    skos:prefLabel "Legevakt"@nn ;
+    skos:broader los:04002 ;
+    xkos:isPartOf los:04002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04030 a skos:Concept ;
+    skos:prefLabel "Lifestyle"@en ;
+    skos:prefLabel "Livsstil"@nb ;
+    skos:prefLabel "Livsstil"@nn ;
+    skos:broader los:04007 ;
+    xkos:isPartOf los:04007 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "fysisk aktivitet, skjermbruk, søvn"@nn ;
+    skos:scopeNote "Inkluderer fysisk aktivitet, skjermbruk, søvn"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04031 a skos:Concept ;
+    skos:prefLabel "Medical emergency communication service"@en ;
+    skos:prefLabel "Medisinsk nødmeldingstjeneste"@nb ;
+    skos:prefLabel "Medisinsk nødmeldeteneste"@nn ;
+    skos:broader los:04002 ;
+    xkos:isPartOf los:04002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04032 a skos:Concept ;
+    skos:prefLabel "Breast milk donation"@en ;
+    skos:prefLabel "Morsmelkgivning"@nb ;
+    skos:prefLabel "Morsmjølkgiving"@nn ;
+    skos:broader los:04005 ;
+    xkos:isPartOf los:04005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04033 a skos:Concept ;
+    skos:prefLabel "Organ donation"@en ;
+    skos:prefLabel "Organdonasjon"@nb ;
+    skos:prefLabel "Organdonasjon"@nn ;
+    skos:broader los:04005 ;
+    xkos:isPartOf los:04005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04034 a skos:Concept ;
+    skos:prefLabel "Patient and user advocate"@en ;
+    skos:prefLabel "Pasient- og brukerombud"@nb ;
+    skos:prefLabel "Pasient- og brukarombod"@nn ;
+    skos:broader los:04004 ;
+    xkos:isPartOf los:04004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04035 a skos:Concept ;
+    skos:prefLabel "Patient travel"@en ;
+    skos:prefLabel "Pasientreise"@nb ;
+    skos:prefLabel "Pasientreise"@nn ;
+    skos:broader los:04004 ;
+    xkos:isPartOf los:04004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04036 a skos:Concept ;
+    skos:prefLabel "Patient injury compensation"@en ;
+    skos:prefLabel "Pasientskadeerstatning"@nb ;
+    skos:prefLabel "Pasientskadeerstatning"@nn ;
+    skos:broader los:04004 ;
+    xkos:isPartOf los:04004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04037 a skos:Concept ;
+    skos:prefLabel "Personal assistance at home"@en ;
+    skos:prefLabel "Personlig assistanse i hjemmet"@nb ;
+    skos:prefLabel "Personleg assitanse i heimen"@nn ;
+    skos:broader los:04006 ;
+    xkos:isPartOf los:04006 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "heimehjelp, matlevering"@nn ;
+    skos:scopeNote "Inkluderer heimehjelp, matlevering"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04038 a skos:Concept ;
+    skos:prefLabel "Mental health, substance abuse and addiction"@en ;
+    skos:prefLabel "Psykisk helse, rus og avhengighet"@nb ;
+    skos:prefLabel "Psykisk helse, rus og avhengigheit"@nn ;
+    skos:broader los:04008 ;
+    xkos:isPartOf los:04008 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "akolhol, aktivitetar og livsmeistring for rusavhengige, doping, narkotika, psykisk helsehjelp, rusavhengigheit, speleavhengigheit, tobakk"@nn ;
+    skos:scopeNote "Inkluderer akolhol, aktivitetar og livsmeistring for rusavhengige, doping, narkotika, psykisk helsehjelp, rusavhengigheit, speleavhengigheit, tobakk"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04039 a skos:Concept ;
+    skos:prefLabel "Infection control"@en ;
+    skos:prefLabel "Smittevern"@nb ;
+    skos:prefLabel "Smittevern"@nn ;
+    skos:broader los:04007 ;
+    xkos:isPartOf los:04007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04040 a skos:Concept ;
+    skos:prefLabel "Somatic health"@en ;
+    skos:prefLabel "Somatisk helse"@nb ;
+    skos:prefLabel "Somatisk helse"@nn ;
+    skos:broader los:04008 ;
+    xkos:isPartOf los:04008 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04041 a skos:Concept ;
+    skos:prefLabel "Support"@en ;
+    skos:prefLabel "Støtte"@nb ;
+    skos:prefLabel "Støtte"@nn ;
+    skos:broader los:04003 ;
+    xkos:isPartOf los:04003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "brukerstyrt personleg assistance (bpa), omsorgsperson/pårørende, omsorgsstønad, opplæring og veiledning, rettleiing og kurs, støtte til familie, støttekontakt"@nn ;
+    skos:scopeNote "Inkluderer brukerstyrt personleg assistance (bpa), omsorgsperson/pårørende, omsorgsstønad, opplæring og veiledning, rettleiing og kurs, støtte til familie, støttekontakt"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04042 a skos:Concept ;
+    skos:prefLabel "Dental health"@en ;
+    skos:prefLabel "Tannhelse"@nb ;
+    skos:prefLabel "Tannhelse"@nn ;
+    skos:broader los:04008 ;
+    xkos:isPartOf los:04008 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "kjeveortopedisk behandling, privatpraktiserande tannlækjar, tannhelse - barn og unge, tannimplantat, tannpleie, tannregulering"@nn ;
+    skos:scopeNote "Inkluderer kjeveortopedisk behandling, privatpraktiserande tannlækjar, tannhelse - barn og unge, tannimplantat, tannpleie, tannregulering"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04043 a skos:Concept ;
+    skos:prefLabel "Dental health promotion and disease prevention"@en ;
+    skos:prefLabel "Tannhelsefremming og forebygging av tannsykdom"@nb ;
+    skos:prefLabel "Tannhelsefremming og tannsjukdomsførebygging"@nn ;
+    skos:broader los:04007 ;
+    xkos:isPartOf los:04007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04044 a skos:Concept ;
+    skos:prefLabel "Emergency dental service"@en ;
+    skos:prefLabel "Tannlegevakt"@nb ;
+    skos:prefLabel "Tannlegevakt"@nn ;
+    skos:broader los:04002 ;
+    xkos:isPartOf los:04002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04045 a skos:Concept ;
+    skos:prefLabel "Adapted housing services"@en ;
+    skos:prefLabel "Tilrettelagt botilbud"@nb ;
+    skos:prefLabel "Tilrettelagt butilbod"@nn ;
+    skos:broader los:04006 ;
+    xkos:isPartOf los:04006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04046 a skos:Concept ;
+    skos:prefLabel "Facilitation"@en ;
+    skos:prefLabel "Tilrettelegging"@nb ;
+    skos:prefLabel "Tilrettelegging"@nn ;
+    skos:broader los:04003 ;
+    xkos:isPartOf los:04003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "følgjebevis"@nn ;
+    skos:scopeNote "Inkluderer følgjebevis"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04047 a skos:Concept ;
+    skos:prefLabel "Social security reimbursement"@en ;
+    skos:prefLabel "Trygderefusjon"@nb ;
+    skos:prefLabel "Trygderefusjon"@nn ;
+    skos:broader los:04004 ;
+    xkos:isPartOf los:04004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04048 a skos:Concept ;
+    skos:prefLabel "Vaccination"@en ;
+    skos:prefLabel "Vaksinasjon"@nb ;
+    skos:prefLabel "Vaksinasjon"@nn ;
+    skos:broader los:04007 ;
+    xkos:isPartOf los:04007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04049 a skos:Concept ;
+    skos:prefLabel "Violence and abuse"@en ;
+    skos:prefLabel "Vold og overgrep"@nb ;
+    skos:prefLabel "Vald og overgrep"@nn ;
+    skos:broader los:04002 ;
+    xkos:isPartOf los:04002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:04050 a skos:Concept ;
+    skos:prefLabel "Decision on adapted transport"@en ;
+    skos:prefLabel "Vedtak om tilrettelagt transport"@nb ;
+    skos:prefLabel "Vedtak om tilrettelagd transport"@nn ;
+    skos:broader los:04004 ;
+    xkos:isPartOf los:04004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05001 a skos:Concept ;
+    skos:prefLabel "Citizen"@en ;
+    skos:prefLabel "Innbygger"@nb ;
+    skos:prefLabel "Innbyggjar"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:05002 ;
+    skos:narrower los:05003 ;
+    skos:narrower los:05004 ;
+    skos:narrower los:05005 ;
+    xkos:hasPart los:05002 ;
+    xkos:hasPart los:05003 ;
+    xkos:hasPart los:05004 ;
+    xkos:hasPart los:05005 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05002 a skos:Concept ;
+    skos:prefLabel "Death, inheritance and probate"@en ;
+    skos:prefLabel "Dødsfall, arv og skifte"@nb ;
+    skos:prefLabel "Dødsfall, arv og skifte"@nn ;
+    skos:broader los:05001 ;
+    xkos:isPartOf los:05001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:05006 ;
+    skos:narrower los:05008 ;
+    skos:narrower los:05011 ;
+    skos:narrower los:05012 ;
+    xkos:hasPart los:05006 ;
+    xkos:hasPart los:05008 ;
+    xkos:hasPart los:05011 ;
+    xkos:hasPart los:05012 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05003 a skos:Concept ;
+    skos:prefLabel "National population registry"@en ;
+    skos:prefLabel "Folkeregistrering"@nb ;
+    skos:prefLabel "Folkeregistrering"@nn ;
+    skos:broader los:05001 ;
+    xkos:isPartOf los:05001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:05007 ;
+    skos:narrower los:05010 ;
+    xkos:hasPart los:05007 ;
+    xkos:hasPart los:05010 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05004 a skos:Concept ;
+    skos:prefLabel "Citizen rights"@en ;
+    skos:prefLabel "Innbyggerrettigheter"@nb ;
+    skos:prefLabel "Innbyggjarettar"@nn ;
+    skos:broader los:05001 ;
+    xkos:isPartOf los:05001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:05009 ;
+    skos:narrower los:05013 ;
+    skos:narrower los:05015 ;
+    skos:narrower los:05016 ;
+    skos:narrower los:05017 ;
+    skos:narrower los:05018 ;
+    xkos:hasPart los:05009 ;
+    xkos:hasPart los:05013 ;
+    xkos:hasPart los:05015 ;
+    xkos:hasPart los:05016 ;
+    xkos:hasPart los:05017 ;
+    xkos:hasPart los:05018 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05005 a skos:Concept ;
+    skos:prefLabel "Entry and residence"@en ;
+    skos:prefLabel "Innreise og opphold"@nb ;
+    skos:prefLabel "Innreise og opphald"@nn ;
+    skos:broader los:05001 ;
+    xkos:isPartOf los:05001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:05014 ;
+    skos:narrower los:05019 ;
+    xkos:hasPart los:05014 ;
+    xkos:hasPart los:05019 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05006 a skos:Concept ;
+    skos:prefLabel "Inheritance and estate settlement"@en ;
+    skos:prefLabel "Arv og skifte ved dødsfall"@nb ;
+    skos:prefLabel "Arv og skifte ved dødsfall"@nn ;
+    skos:broader los:05002 ;
+    xkos:isPartOf los:05002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05007 a skos:Concept ;
+    skos:prefLabel "Residential address"@en ;
+    skos:prefLabel "Bostedsadresse"@nb ;
+    skos:prefLabel "Bustadadresse"@nn ;
+    skos:broader los:05003 ;
+    xkos:isPartOf los:05003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "adresseendring og flyttemelding, bustadattest"@nn ;
+    skos:scopeNote "Inkluderer adresseendring og flyttemelding, bustadattest"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05008 a skos:Concept ;
+    skos:prefLabel "Death certificate"@en ;
+    skos:prefLabel "Dødsattest"@nb ;
+    skos:prefLabel "Dødsattest"@nn ;
+    skos:broader los:05002 ;
+    xkos:isPartOf los:05002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05009 a skos:Concept ;
+    skos:prefLabel "Refugee Convention"@en ;
+    skos:prefLabel "Flyktningkonvensjon"@nb ;
+    skos:prefLabel "Flyktningkonvensjon"@nn ;
+    skos:broader los:05004 ;
+    xkos:isPartOf los:05004 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "fullmakt, verjemål"@nn ;
+    skos:scopeNote "Inkluderer fullmakt, verjemål"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05010 a skos:Concept ;
+    skos:prefLabel "National identity number"@en ;
+    skos:prefLabel "Fødselsnummer"@nb ;
+    skos:prefLabel "Fødselsnummer"@nn ;
+    skos:broader los:05003 ;
+    xkos:isPartOf los:05003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "d-nummer"@nn ;
+    skos:scopeNote "Inkluderer d-nummer"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05011 a skos:Concept ;
+    skos:prefLabel "Funeral"@en ;
+    skos:prefLabel "Gravferd"@nb ;
+    skos:prefLabel "Gravferd"@nn ;
+    skos:broader los:05002 ;
+    xkos:isPartOf los:05002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05012 a skos:Concept ;
+    skos:prefLabel "Cemetery"@en ;
+    skos:prefLabel "Gravplass"@nb ;
+    skos:prefLabel "Gravplass"@nn ;
+    skos:broader los:05002 ;
+    xkos:isPartOf los:05002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05013 a skos:Concept ;
+    skos:prefLabel "Gender equality"@en ;
+    skos:prefLabel "Likestilling"@nb ;
+    skos:prefLabel "Likestilling"@nn ;
+    skos:broader los:05004 ;
+    xkos:isPartOf los:05004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05014 a skos:Concept ;
+    skos:prefLabel "Residence permit"@en ;
+    skos:prefLabel "Oppholdstillatelse"@nb ;
+    skos:prefLabel "Opphaldsløyve"@nn ;
+    skos:broader los:05005 ;
+    xkos:isPartOf los:05005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05015 a skos:Concept ;
+    skos:prefLabel "Passport and ID card"@en ;
+    skos:prefLabel "Pass og identitetskort"@nb ;
+    skos:prefLabel "Pass og identitetskort"@nn ;
+    skos:broader los:05004 ;
+    xkos:isPartOf los:05004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05016 a skos:Concept ;
+    skos:prefLabel "Representation"@en ;
+    skos:prefLabel "Representasjon"@nb ;
+    skos:prefLabel "Representasjon"@nn ;
+    skos:broader los:05004 ;
+    xkos:isPartOf los:05004 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "fullmakt, verjemål"@nn ;
+    skos:scopeNote "Inkluderer fullmakt, verjemål"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05017 a skos:Concept ;
+    skos:prefLabel "Citizenship"@en ;
+    skos:prefLabel "Statsborgerskap"@nb ;
+    skos:prefLabel "Statsborgarskap"@nn ;
+    skos:broader los:05004 ;
+    xkos:isPartOf los:05004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05018 a skos:Concept ;
+    skos:prefLabel "Interpreter"@en ;
+    skos:prefLabel "Tolk"@nb ;
+    skos:prefLabel "Tolk"@nn ;
+    skos:broader los:05004 ;
+    xkos:isPartOf los:05004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:05019 a skos:Concept ;
+    skos:prefLabel "Visa"@en ;
+    skos:prefLabel "Visum"@nb ;
+    skos:prefLabel "Visum"@nn ;
+    skos:broader los:05005 ;
+    xkos:isPartOf los:05005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06001 a skos:Concept ;
+    skos:prefLabel "Culture, sports and leisure"@en ;
+    skos:prefLabel "Kultur, idrett og fritid"@nb ;
+    skos:prefLabel "Kultur, idrett og fritid"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:06002 ;
+    skos:narrower los:06003 ;
+    skos:narrower los:06004 ;
+    skos:narrower los:06005 ;
+    skos:narrower los:06006 ;
+    skos:narrower los:06007 ;
+    skos:narrower los:06008 ;
+    xkos:hasPart los:06002 ;
+    xkos:hasPart los:06003 ;
+    xkos:hasPart los:06004 ;
+    xkos:hasPart los:06005 ;
+    xkos:hasPart los:06006 ;
+    xkos:hasPart los:06007 ;
+    xkos:hasPart los:06008 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06002 a skos:Concept ;
+    skos:prefLabel "Outdoor recreation"@en ;
+    skos:prefLabel "Friluftsliv"@nb ;
+    skos:prefLabel "Friluftsliv"@nn ;
+    skos:broader los:06001 ;
+    xkos:isPartOf los:06001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:06009 ;
+    skos:narrower los:06013 ;
+    skos:narrower los:06032 ;
+    xkos:hasPart los:06009 ;
+    xkos:hasPart los:06013 ;
+    xkos:hasPart los:06032 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06003 a skos:Concept ;
+    skos:prefLabel "Library"@en ;
+    skos:prefLabel "Bibliotek"@nb ;
+    skos:prefLabel "Bibliotek"@nn ;
+    skos:broader los:06001 ;
+    xkos:isPartOf los:06001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:06010 ;
+    skos:narrower los:06034 ;
+    xkos:hasPart los:06010 ;
+    xkos:hasPart los:06034 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06004 a skos:Concept ;
+    skos:prefLabel "Culture"@en ;
+    skos:prefLabel "Kultur"@nb ;
+    skos:prefLabel "Kultur"@nn ;
+    skos:broader los:06001 ;
+    xkos:isPartOf los:06001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:06011 ;
+    skos:narrower los:06012 ;
+    skos:narrower los:06018 ;
+    skos:narrower los:06020 ;
+    skos:narrower los:06023 ;
+    xkos:hasPart los:06011 ;
+    xkos:hasPart los:06012 ;
+    xkos:hasPart los:06018 ;
+    xkos:hasPart los:06020 ;
+    xkos:hasPart los:06023 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06005 a skos:Concept ;
+    skos:prefLabel "Sports"@en ;
+    skos:prefLabel "Idrett"@nb ;
+    skos:prefLabel "Idrett"@nn ;
+    skos:broader los:06001 ;
+    xkos:isPartOf los:06001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:06014 ;
+    skos:narrower los:06015 ;
+    skos:narrower los:06016 ;
+    skos:narrower los:06027 ;
+    skos:narrower los:06033 ;
+    xkos:hasPart los:06014 ;
+    xkos:hasPart los:06015 ;
+    xkos:hasPart los:06016 ;
+    xkos:hasPart los:06027 ;
+    xkos:hasPart los:06033 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06006 a skos:Concept ;
+    skos:prefLabel "Grants for culture, sports and leisure"@en ;
+    skos:prefLabel "Tilskudd til kultur, idrett og fritid"@nb ;
+    skos:prefLabel "Tilskot til kultur, idrett og fritid"@nn ;
+    skos:broader los:06001 ;
+    xkos:isPartOf los:06001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:06017 ;
+    skos:narrower los:06019 ;
+    skos:narrower los:06024 ;
+    skos:narrower los:06028 ;
+    skos:narrower los:06029 ;
+    skos:narrower los:06030 ;
+    xkos:hasPart los:06017 ;
+    xkos:hasPart los:06019 ;
+    xkos:hasPart los:06024 ;
+    xkos:hasPart los:06028 ;
+    xkos:hasPart los:06029 ;
+    xkos:hasPart los:06030 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06007 a skos:Concept ;
+    skos:prefLabel "Leisure"@en ;
+    skos:prefLabel "Fritid"@nb ;
+    skos:prefLabel "Fritid"@nn ;
+    skos:broader los:06001 ;
+    xkos:isPartOf los:06001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:06021 ;
+    skos:narrower los:06026 ;
+    skos:narrower los:06031 ;
+    xkos:hasPart los:06021 ;
+    xkos:hasPart los:06026 ;
+    xkos:hasPart los:06031 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06008 a skos:Concept ;
+    skos:prefLabel "Lotteries and gambling"@en ;
+    skos:prefLabel "Lotteri og pengespill"@nb ;
+    skos:prefLabel "Lotteri og pengespel"@nn ;
+    skos:broader los:06001 ;
+    xkos:isPartOf los:06001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:06022 ;
+    skos:narrower los:06025 ;
+    xkos:hasPart los:06022 ;
+    xkos:hasPart los:06025 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06009 a skos:Concept ;
+    skos:prefLabel "Swimming area"@en ;
+    skos:prefLabel "Badeplass"@nb ;
+    skos:prefLabel "Badeplass"@nn ;
+    skos:broader los:06002 ;
+    xkos:isPartOf los:06002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06010 a skos:Concept ;
+    skos:prefLabel "Library activities"@en ;
+    skos:prefLabel "Bibliotekaktivitet"@nb ;
+    skos:prefLabel "Bibliotekaktivitet"@nn ;
+    skos:broader los:06003 ;
+    xkos:isPartOf los:06003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06011 a skos:Concept ;
+    skos:prefLabel "Festival"@en ;
+    skos:prefLabel "Festival"@nb ;
+    skos:prefLabel "Festival"@nn ;
+    skos:broader los:06004 ;
+    xkos:isPartOf los:06004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06012 a skos:Concept ;
+    skos:prefLabel "Film and cinema"@en ;
+    skos:prefLabel "Film og kino"@nb ;
+    skos:prefLabel "Film og kino"@nn ;
+    skos:broader los:06004 ;
+    xkos:isPartOf los:06004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06013 a skos:Concept ;
+    skos:prefLabel "Public outdoor area"@en ;
+    skos:prefLabel "Friområde"@nb ;
+    skos:prefLabel "Friområde"@nn ;
+    skos:broader los:06002 ;
+    xkos:isPartOf los:06002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06014 a skos:Concept ;
+    skos:prefLabel "Sports facilities"@en ;
+    skos:prefLabel "Idrettsanlegg"@nb ;
+    skos:prefLabel "Idrettsanlegg"@nn ;
+    skos:broader los:06005 ;
+    xkos:isPartOf los:06005 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "fotballbane, symjehall"@nn ;
+    skos:scopeNote "Inkluderer fotballbane, symjehall"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06015 a skos:Concept ;
+    skos:prefLabel "Sports event"@en ;
+    skos:prefLabel "Idrettsarrangement"@nb ;
+    skos:prefLabel "Idrettsarrangement"@nn ;
+    skos:broader los:06005 ;
+    xkos:isPartOf los:06005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06016 a skos:Concept ;
+    skos:prefLabel "Sports club"@en ;
+    skos:prefLabel "Idrettslag"@nb ;
+    skos:prefLabel "Idrettslag"@nn ;
+    skos:broader los:06005 ;
+    xkos:isPartOf los:06005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06017 a skos:Concept ;
+    skos:prefLabel "Sports funding"@en ;
+    skos:prefLabel "Idrettsmidler"@nb ;
+    skos:prefLabel "Idrettsmidlar"@nn ;
+    skos:broader los:06006 ;
+    xkos:isPartOf los:06006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06018 a skos:Concept ;
+    skos:prefLabel "Cultural building"@en ;
+    skos:prefLabel "Kulturbygg"@nb ;
+    skos:prefLabel "Kulturbygg"@nn ;
+    skos:broader los:06004 ;
+    xkos:isPartOf los:06004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06019 a skos:Concept ;
+    skos:prefLabel "Cultural funding"@en ;
+    skos:prefLabel "Kulturmidler"@nb ;
+    skos:prefLabel "Kulturmidlar"@nn ;
+    skos:broader los:06006 ;
+    xkos:isPartOf los:06006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06020 a skos:Concept ;
+    skos:prefLabel "Cultural heritage"@en ;
+    skos:prefLabel "Kulturminne"@nb ;
+    skos:prefLabel "Kulturminne"@nn ;
+    skos:broader los:06004 ;
+    xkos:isPartOf los:06004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06021 a skos:Concept ;
+    skos:prefLabel "Clubs and associations"@en ;
+    skos:prefLabel "Lag og foreninger"@nb ;
+    skos:prefLabel "Lag og foreiningar"@nn ;
+    skos:broader los:06007 ;
+    xkos:isPartOf los:06007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06022 a skos:Concept ;
+    skos:prefLabel "Lottery"@en ;
+    skos:prefLabel "Lotteri"@nb ;
+    skos:prefLabel "Lotteri"@nn ;
+    skos:broader los:06008 ;
+    xkos:isPartOf los:06008 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "bingo"@nn ;
+    skos:scopeNote "Inkluderer bingo"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06023 a skos:Concept ;
+    skos:prefLabel "Museum"@en ;
+    skos:prefLabel "Museum"@nb ;
+    skos:prefLabel "Museum"@nn ;
+    skos:broader los:06004 ;
+    xkos:isPartOf los:06004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06024 a skos:Concept ;
+    skos:prefLabel "Local community grants"@en ;
+    skos:prefLabel "Nærmiljøtilskudd"@nb ;
+    skos:prefLabel "Nærmiljøtilskot"@nn ;
+    skos:broader los:06006 ;
+    xkos:isPartOf los:06006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06025 a skos:Concept ;
+    skos:prefLabel "Slot machine"@en ;
+    skos:prefLabel "Spilleautomat"@nb ;
+    skos:prefLabel "Speleautomat"@nn ;
+    skos:broader los:06008 ;
+    xkos:isPartOf los:06008 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06026 a skos:Concept ;
+    skos:prefLabel "Adapted leisure activities"@en ;
+    skos:prefLabel "Tilrettelagt fritid"@nb ;
+    skos:prefLabel "Tilrettelagd fritid"@nn ;
+    skos:broader los:06007 ;
+    xkos:isPartOf los:06007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06027 a skos:Concept ;
+    skos:prefLabel "Adapted sports"@en ;
+    skos:prefLabel "Tilrettelagt idrett"@nb ;
+    skos:prefLabel "Tilrettelagd idrett"@nn ;
+    skos:broader los:06005 ;
+    xkos:isPartOf los:06005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06028 a skos:Concept ;
+    skos:prefLabel "Grants for outdoor recreation"@en ;
+    skos:prefLabel "Tilskudd til friluftsliv"@nb ;
+    skos:prefLabel "Tilskot til friluftsliv"@nn ;
+    skos:broader los:06006 ;
+    xkos:isPartOf los:06006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06029 a skos:Concept ;
+    skos:prefLabel "Grants for health and elderly"@en ;
+    skos:prefLabel "Tilskudd til helse og eldre"@nb ;
+    skos:prefLabel "Tilskot til helse og eldre"@nn ;
+    skos:broader los:06006 ;
+    xkos:isPartOf los:06006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06030 a skos:Concept ;
+    skos:prefLabel "Grants for faith and belief"@en ;
+    skos:prefLabel "Tilskudd til tro og livssyn"@nb ;
+    skos:prefLabel "Tilskot til tru og livssyn"@nn ;
+    skos:broader los:06006 ;
+    xkos:isPartOf los:06006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06031 a skos:Concept ;
+    skos:prefLabel "Faith and belief"@en ;
+    skos:prefLabel "Tro og livssyn"@nb ;
+    skos:prefLabel "Tru og livssyn"@nn ;
+    skos:broader los:06007 ;
+    xkos:isPartOf los:06007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06032 a skos:Concept ;
+    skos:prefLabel "Hiking trails"@en ;
+    skos:prefLabel "Turløyper"@nb ;
+    skos:prefLabel "Turløyper"@nn ;
+    skos:broader los:06002 ;
+    xkos:isPartOf los:06002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06033 a skos:Concept ;
+    skos:prefLabel "Borrowing and rental"@en ;
+    skos:prefLabel "Utlån og leie"@nb ;
+    skos:prefLabel "Utlån og leige"@nn ;
+    skos:broader los:06005 ;
+    xkos:isPartOf los:06005 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "lokale, idrettsanlegg, utstyr"@nn ;
+    skos:scopeNote "Inkluderer lokale, idrettsanlegg, utstyr"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:06034 a skos:Concept ;
+    skos:prefLabel "Borrowing and reservations"@en ;
+    skos:prefLabel "Utlån og reservasjon"@nb ;
+    skos:prefLabel "Utlån og reservasjon"@nn ;
+    skos:broader los:06003 ;
+    xkos:isPartOf los:06003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07001 a skos:Concept ;
+    skos:prefLabel "Nature, climate and environment"@en ;
+    skos:prefLabel "Natur, klima og miljø"@nb ;
+    skos:prefLabel "Natur, klima og miljø"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:07002 ;
+    skos:narrower los:07003 ;
+    skos:narrower los:07004 ;
+    skos:narrower los:07005 ;
+    skos:narrower los:07006 ;
+    skos:narrower los:07007 ;
+    xkos:hasPart los:07002 ;
+    xkos:hasPart los:07003 ;
+    xkos:hasPart los:07004 ;
+    xkos:hasPart los:07005 ;
+    xkos:hasPart los:07006 ;
+    xkos:hasPart los:07007 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07002 a skos:Concept ;
+    skos:prefLabel "Nature management"@en ;
+    skos:prefLabel "Naturforvaltning"@nb ;
+    skos:prefLabel "Naturforvaltning"@nn ;
+    skos:broader los:07001 ;
+    xkos:isPartOf los:07001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:07008 ;
+    skos:narrower los:07009 ;
+    skos:narrower los:07016 ;
+    skos:narrower los:07017 ;
+    skos:narrower los:07018 ;
+    skos:narrower los:07024 ;
+    skos:narrower los:07025 ;
+    skos:narrower los:07026 ;
+    skos:narrower los:07038 ;
+    skos:narrower los:07040 ;
+    xkos:hasPart los:07008 ;
+    xkos:hasPart los:07009 ;
+    xkos:hasPart los:07016 ;
+    xkos:hasPart los:07017 ;
+    xkos:hasPart los:07018 ;
+    xkos:hasPart los:07024 ;
+    xkos:hasPart los:07025 ;
+    xkos:hasPart los:07026 ;
+    xkos:hasPart los:07038 ;
+    xkos:hasPart los:07040 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07003 a skos:Concept ;
+    skos:prefLabel "Energy"@en ;
+    skos:prefLabel "Energi"@nb ;
+    skos:prefLabel "Energi"@nn ;
+    skos:broader los:07001 ;
+    xkos:isPartOf los:07001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:07010 ;
+    skos:narrower los:07011 ;
+    skos:narrower los:07014 ;
+    xkos:hasPart los:07010 ;
+    xkos:hasPart los:07011 ;
+    xkos:hasPart los:07014 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07004 a skos:Concept ;
+    skos:prefLabel "Waste management"@en ;
+    skos:prefLabel "Avfallshåndtering"@nb ;
+    skos:prefLabel "Avfallshandtering"@nn ;
+    skos:broader los:07001 ;
+    xkos:isPartOf los:07001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:07012 ;
+    skos:narrower los:07022 ;
+    skos:narrower los:07028 ;
+    skos:narrower los:07029 ;
+    xkos:hasPart los:07012 ;
+    xkos:hasPart los:07022 ;
+    xkos:hasPart los:07028 ;
+    xkos:hasPart los:07029 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07005 a skos:Concept ;
+    skos:prefLabel "Weather and climate"@en ;
+    skos:prefLabel "Vær og klima"@nb ;
+    skos:prefLabel "Vêr og klima"@nn ;
+    skos:broader los:07001 ;
+    xkos:isPartOf los:07001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:07013 ;
+    skos:narrower los:07019 ;
+    skos:narrower los:07020 ;
+    skos:narrower los:07021 ;
+    skos:narrower los:07030 ;
+    skos:narrower los:07031 ;
+    skos:narrower los:07041 ;
+    xkos:hasPart los:07013 ;
+    xkos:hasPart los:07019 ;
+    xkos:hasPart los:07020 ;
+    xkos:hasPart los:07021 ;
+    xkos:hasPart los:07030 ;
+    xkos:hasPart los:07031 ;
+    xkos:hasPart los:07041 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07006 a skos:Concept ;
+    skos:prefLabel "Pollution and radiation"@en ;
+    skos:prefLabel "Forurensning og stråling"@nb ;
+    skos:prefLabel "Forureining og stråling"@nn ;
+    skos:broader los:07001 ;
+    xkos:isPartOf los:07001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:07015 ;
+    skos:narrower los:07023 ;
+    skos:narrower los:07027 ;
+    skos:narrower los:07032 ;
+    skos:narrower los:07033 ;
+    skos:narrower los:07037 ;
+    skos:narrower los:07039 ;
+    xkos:hasPart los:07015 ;
+    xkos:hasPart los:07023 ;
+    xkos:hasPart los:07027 ;
+    xkos:hasPart los:07032 ;
+    xkos:hasPart los:07033 ;
+    xkos:hasPart los:07037 ;
+    xkos:hasPart los:07039 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07007 a skos:Concept ;
+    skos:prefLabel "Environmental grants"@en ;
+    skos:prefLabel "Miljøtilskudd"@nb ;
+    skos:prefLabel "Miljøtilskot"@nn ;
+    skos:broader los:07001 ;
+    xkos:isPartOf los:07001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:07034 ;
+    skos:narrower los:07035 ;
+    skos:narrower los:07036 ;
+    xkos:hasPart los:07034 ;
+    xkos:hasPart los:07035 ;
+    xkos:hasPart los:07036 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07008 a skos:Concept ;
+    skos:prefLabel "Right to roam"@en ;
+    skos:prefLabel "Allemannsrett"@nb ;
+    skos:prefLabel "Allemannsrett"@nn ;
+    skos:broader los:07002 ;
+    xkos:isPartOf los:07002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07009 a skos:Concept ;
+    skos:prefLabel "Campfires"@en ;
+    skos:prefLabel "Bålbrenning"@nb ;
+    skos:prefLabel "Bålbrenning"@nn ;
+    skos:broader los:07002 ;
+    xkos:isPartOf los:07002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07010 a skos:Concept ;
+    skos:prefLabel "Energy use"@en ;
+    skos:prefLabel "Energibruk"@nb ;
+    skos:prefLabel "Energibruk"@nn ;
+    skos:broader los:07003 ;
+    xkos:isPartOf los:07003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07011 a skos:Concept ;
+    skos:prefLabel "Energy labeling"@en ;
+    skos:prefLabel "Energimerking"@nb ;
+    skos:prefLabel "Energimerking"@nn ;
+    skos:broader los:07003 ;
+    xkos:isPartOf los:07003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07012 a skos:Concept ;
+    skos:prefLabel "Hazardous waste"@en ;
+    skos:prefLabel "Farlig avfall"@nb ;
+    skos:prefLabel "Farleg avfall"@nn ;
+    skos:broader los:07004 ;
+    xkos:isPartOf los:07004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07013 a skos:Concept ;
+    skos:prefLabel "Flood"@en ;
+    skos:prefLabel "Flom"@nb ;
+    skos:prefLabel "Flaum"@nn ;
+    skos:broader los:07005 ;
+    xkos:isPartOf los:07005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07014 a skos:Concept ;
+    skos:prefLabel "Renewable energy"@en ;
+    skos:prefLabel "Fornybar energi"@nb ;
+    skos:prefLabel "Fornybar energi"@nn ;
+    skos:broader los:07003 ;
+    xkos:isPartOf los:07003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07015 a skos:Concept ;
+    skos:prefLabel "Contaminated soil"@en ;
+    skos:prefLabel "Forurenset grunn"@nb ;
+    skos:prefLabel "Forureina grunn"@nn ;
+    skos:broader los:07006 ;
+    xkos:isPartOf los:07006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07016 a skos:Concept ;
+    skos:prefLabel "Public outdoor area (duplikat 06013)"@en ;
+    skos:prefLabel "Friområde (duplikat 06013)"@nb ;
+    skos:prefLabel "Friområde (duplikat 06013)"@nn ;
+    skos:broader los:07002 ;
+    xkos:isPartOf los:07002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07017 a skos:Concept ;
+    skos:prefLabel "Recreational fishing"@en ;
+    skos:prefLabel "Fritidsfiske"@nb ;
+    skos:prefLabel "Fritidsfiske"@nn ;
+    skos:broader los:07002 ;
+    xkos:isPartOf los:07002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07018 a skos:Concept ;
+    skos:prefLabel "Hunting and trapping"@en ;
+    skos:prefLabel "Jakt og fangst"@nb ;
+    skos:prefLabel "Jakt og fangst"@nn ;
+    skos:broader los:07002 ;
+    xkos:isPartOf los:07002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07019 a skos:Concept ;
+    skos:prefLabel "Climate change"@en ;
+    skos:prefLabel "Klimaendring"@nb ;
+    skos:prefLabel "Klimaendring"@nn ;
+    skos:broader los:07005 ;
+    xkos:isPartOf los:07005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07020 a skos:Concept ;
+    skos:prefLabel "Carbon quota"@en ;
+    skos:prefLabel "Klimakvote"@nb ;
+    skos:prefLabel "Klimakvote"@nn ;
+    skos:broader los:07005 ;
+    xkos:isPartOf los:07005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07021 a skos:Concept ;
+    skos:prefLabel "Climate measures"@en ;
+    skos:prefLabel "Klimatiltak"@nb ;
+    skos:prefLabel "Klimatiltak"@nn ;
+    skos:broader los:07005 ;
+    xkos:isPartOf los:07005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07022 a skos:Concept ;
+    skos:prefLabel "Composting"@en ;
+    skos:prefLabel "Kompostering"@nb ;
+    skos:prefLabel "Kompostering"@nn ;
+    skos:broader los:07004 ;
+    xkos:isPartOf los:07004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07023 a skos:Concept ;
+    skos:prefLabel "Air quality"@en ;
+    skos:prefLabel "Luftkvalitet"@nb ;
+    skos:prefLabel "Luftkvalitet"@nn ;
+    skos:broader los:07006 ;
+    xkos:isPartOf los:07006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07024 a skos:Concept ;
+    skos:prefLabel "Motor traffic in uncultivated land"@en ;
+    skos:prefLabel "Motorferdsel i utmark"@nb ;
+    skos:prefLabel "Motorferdsel i utmark"@nn ;
+    skos:broader los:07002 ;
+    xkos:isPartOf los:07002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07025 a skos:Concept ;
+    skos:prefLabel "Nature and environmental protection"@en ;
+    skos:prefLabel "Natur- og miljøvern"@nb ;
+    skos:prefLabel "Natur- og miljøvern"@nn ;
+    skos:broader los:07002 ;
+    xkos:isPartOf los:07002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "akvakultur, marint vern"@nn ;
+    skos:scopeNote "Inkluderer akvakultur, marint vern"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07026 a skos:Concept ;
+    skos:prefLabel "Plant cultivation"@en ;
+    skos:prefLabel "Plantedyrking"@nb ;
+    skos:prefLabel "Plantedyrking"@nn ;
+    skos:broader los:07002 ;
+    xkos:isPartOf los:07002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07027 a skos:Concept ;
+    skos:prefLabel "Radon measurement (duplikat 10023)"@en ;
+    skos:prefLabel "Radonmåling (duplikat 10023)"@nb ;
+    skos:prefLabel "Radonmåling (duplikat 10023)"@nn ;
+    skos:broader los:07006 ;
+    xkos:isPartOf los:07006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07028 a skos:Concept ;
+    skos:prefLabel "Waste collection"@en ;
+    skos:prefLabel "Renovasjon"@nb ;
+    skos:prefLabel "Renovasjon"@nn ;
+    skos:broader los:07004 ;
+    xkos:isPartOf los:07004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07029 a skos:Concept ;
+    skos:prefLabel "Return schemes"@en ;
+    skos:prefLabel "Returordninger"@nb ;
+    skos:prefLabel "Returordningar"@nn ;
+    skos:broader los:07004 ;
+    xkos:isPartOf los:07004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07030 a skos:Concept ;
+    skos:prefLabel "Forest fire"@en ;
+    skos:prefLabel "Skogbrann"@nb ;
+    skos:prefLabel "Skogbrann"@nn ;
+    skos:broader los:07005 ;
+    xkos:isPartOf los:07005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07031 a skos:Concept ;
+    skos:prefLabel "Landslide"@en ;
+    skos:prefLabel "Skred"@nb ;
+    skos:prefLabel "Skred"@nn ;
+    skos:broader los:07005 ;
+    xkos:isPartOf los:07005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07032 a skos:Concept ;
+    skos:prefLabel "Radiation protection"@en ;
+    skos:prefLabel "Strålevern"@nb ;
+    skos:prefLabel "Strålevern"@nn ;
+    skos:broader los:07006 ;
+    xkos:isPartOf los:07006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07033 a skos:Concept ;
+    skos:prefLabel "Noise"@en ;
+    skos:prefLabel "Støy"@nb ;
+    skos:prefLabel "Støy"@nn ;
+    skos:broader los:07006 ;
+    xkos:isPartOf los:07006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07034 a skos:Concept ;
+    skos:prefLabel "Grants for outdoor recreation (duplikat 0628)"@en ;
+    skos:prefLabel "Tilskudd til friluftsliv (duplikat 06028)"@nb ;
+    skos:prefLabel "Tilskot til friluftsliv (duplikat 0628)"@nn ;
+    skos:broader los:07007 ;
+    xkos:isPartOf los:07007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07035 a skos:Concept ;
+    skos:prefLabel "Grants for environmental measures"@en ;
+    skos:prefLabel "Tilskudd til miljøtiltak"@nb ;
+    skos:prefLabel "Tilskot til miljøtiltak"@nn ;
+    skos:broader los:07007 ;
+    xkos:isPartOf los:07007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07036 a skos:Concept ;
+    skos:prefLabel "Grants for wildlife management"@en ;
+    skos:prefLabel "Tilskudd til viltformål"@nb ;
+    skos:prefLabel "Tilskot til viltformål"@nn ;
+    skos:broader los:07007 ;
+    xkos:isPartOf los:07007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07037 a skos:Concept ;
+    skos:prefLabel "Emissions"@en ;
+    skos:prefLabel "Utslipp"@nb ;
+    skos:prefLabel "Utslepp"@nn ;
+    skos:broader los:07006 ;
+    xkos:isPartOf los:07006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07038 a skos:Concept ;
+    skos:prefLabel "Watercourse"@en ;
+    skos:prefLabel "Vassdrag"@nb ;
+    skos:prefLabel "Vassdrag"@nn ;
+    skos:broader los:07002 ;
+    xkos:isPartOf los:07002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07039 a skos:Concept ;
+    skos:prefLabel "Water pollution"@en ;
+    skos:prefLabel "Vannforurensning"@nb ;
+    skos:prefLabel "Vassforureining"@nn ;
+    skos:broader los:07006 ;
+    xkos:isPartOf los:07006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07040 a skos:Concept ;
+    skos:prefLabel "Wildlife management"@en ;
+    skos:prefLabel "Viltforvaltning"@nb ;
+    skos:prefLabel "Viltforvaltning"@nn ;
+    skos:broader los:07002 ;
+    xkos:isPartOf los:07002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:07041 a skos:Concept ;
+    skos:prefLabel "Weather/extreme weather"@en ;
+    skos:prefLabel "Vær/ekstremvær"@nb ;
+    skos:prefLabel "Vêr/ekstremvêr"@nn ;
+    skos:broader los:07005 ;
+    xkos:isPartOf los:07005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:08001 a skos:Concept ;
+    skos:prefLabel "Economy, finance and insurance"@en ;
+    skos:prefLabel "Økonomi, finans og forsikring"@nb ;
+    skos:prefLabel "Økonomi, finans og forsikring"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:08002 ;
+    skos:narrower los:08003 ;
+    xkos:hasPart los:08002 ;
+    xkos:hasPart los:08003 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:08002 a skos:Concept ;
+    skos:prefLabel "Bank"@en ;
+    skos:prefLabel "Bank"@nb ;
+    skos:prefLabel "Bank"@nn ;
+    skos:broader los:08001 ;
+    xkos:isPartOf los:08001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:08004 ;
+    skos:narrower los:08005 ;
+    xkos:hasPart los:08004 ;
+    xkos:hasPart los:08005 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:08003 a skos:Concept ;
+    skos:prefLabel "Insurance"@en ;
+    skos:prefLabel "Forsikring"@nb ;
+    skos:prefLabel "Forsikring"@nn ;
+    skos:broader los:08001 ;
+    xkos:isPartOf los:08001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:08006 ;
+    xkos:hasPart los:08006 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:08004 a skos:Concept ;
+    skos:prefLabel "Capital income"@en ;
+    skos:prefLabel "Kapitalinntekt"@nb ;
+    skos:prefLabel "Kapitalinntekt"@nn ;
+    skos:broader los:08002 ;
+    xkos:isPartOf los:08002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:08005 a skos:Concept ;
+    skos:prefLabel "Account number"@en ;
+    skos:prefLabel "Kontonummer"@nb ;
+    skos:prefLabel "Kontonummer"@nn ;
+    skos:broader los:08002 ;
+    xkos:isPartOf los:08002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:08006 a skos:Concept ;
+    skos:prefLabel "Accident insurance for pupils and adult participants"@en ;
+    skos:prefLabel "Ulykkesforsikring for elever og voksne deltakere"@nb ;
+    skos:prefLabel "Ulykkesforsikring for elevar og vaksne deltakarar"@nn ;
+    skos:broader los:08003 ;
+    xkos:isPartOf los:08003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09001 a skos:Concept ;
+    skos:prefLabel "Education and training"@en ;
+    skos:prefLabel "Opplæring og utdanning"@nb ;
+    skos:prefLabel "Opplæring og utdanning"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:09002 ;
+    skos:narrower los:09003 ;
+    skos:narrower los:09004 ;
+    skos:narrower los:09005 ;
+    skos:narrower los:09006 ;
+    skos:narrower los:09007 ;
+    skos:narrower los:09008 ;
+    skos:narrower los:09009 ;
+    skos:narrower los:09010 ;
+    skos:narrower los:09011 ;
+    skos:narrower los:09012 ;
+    xkos:hasPart los:09002 ;
+    xkos:hasPart los:09003 ;
+    xkos:hasPart los:09004 ;
+    xkos:hasPart los:09005 ;
+    xkos:hasPart los:09006 ;
+    xkos:hasPart los:09007 ;
+    xkos:hasPart los:09008 ;
+    xkos:hasPart los:09009 ;
+    xkos:hasPart los:09010 ;
+    xkos:hasPart los:09011 ;
+    xkos:hasPart los:09012 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09002 a skos:Concept ;
+    skos:prefLabel "Early childhood education"@en ;
+    skos:prefLabel "Opplæring i barnehage"@nb ;
+    skos:prefLabel "Opplæring i barnehage"@nn ;
+    skos:broader los:09001 ;
+    xkos:isPartOf los:09001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:09013 ;
+    skos:narrower los:09014 ;
+    skos:narrower los:09020 ;
+    skos:narrower los:09023 ;
+    skos:narrower los:09035 ;
+    skos:narrower los:09042 ;
+    skos:narrower los:09050 ;
+    skos:narrower los:09081 ;
+    xkos:hasPart los:09013 ;
+    xkos:hasPart los:09014 ;
+    xkos:hasPart los:09020 ;
+    xkos:hasPart los:09023 ;
+    xkos:hasPart los:09035 ;
+    xkos:hasPart los:09042 ;
+    xkos:hasPart los:09050 ;
+    xkos:hasPart los:09081 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09003 a skos:Concept ;
+    skos:prefLabel "School-home cooperation"@en ;
+    skos:prefLabel "Skole-hjem-samarbeid"@nb ;
+    skos:prefLabel "Skule-heim-samarbeid"@nn ;
+    skos:broader los:09001 ;
+    xkos:isPartOf los:09001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:09015 ;
+    skos:narrower los:09022 ;
+    skos:narrower los:09085 ;
+    xkos:hasPart los:09015 ;
+    xkos:hasPart los:09022 ;
+    xkos:hasPart los:09085 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09004 a skos:Concept ;
+    skos:prefLabel "Learning objectives and curricula"@en ;
+    skos:prefLabel "Læringsmål og planer"@nb ;
+    skos:prefLabel "Læringsmål og planar"@nn ;
+    skos:broader los:09001 ;
+    xkos:isPartOf los:09001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:09016 ;
+    skos:narrower los:09039 ;
+    skos:narrower los:09040 ;
+    skos:narrower los:09059 ;
+    xkos:hasPart los:09016 ;
+    xkos:hasPart los:09039 ;
+    xkos:hasPart los:09040 ;
+    xkos:hasPart los:09059 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09005 a skos:Concept ;
+    skos:prefLabel "Higher education"@en ;
+    skos:prefLabel "Høyere utdanning"@nb ;
+    skos:prefLabel "Høgare utdanning"@nn ;
+    skos:broader los:09001 ;
+    xkos:isPartOf los:09001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:09017 ;
+    skos:narrower los:09045 ;
+    skos:narrower los:09048 ;
+    skos:narrower los:09053 ;
+    skos:narrower los:09083 ;
+    skos:narrower los:09084 ;
+    xkos:hasPart los:09017 ;
+    xkos:hasPart los:09045 ;
+    xkos:hasPart los:09048 ;
+    xkos:hasPart los:09053 ;
+    xkos:hasPart los:09083 ;
+    xkos:hasPart los:09084 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09006 a skos:Concept ;
+    skos:prefLabel "Upper secondary education"@en ;
+    skos:prefLabel "Videregående opplæring"@nb ;
+    skos:prefLabel "Vidaregåande opplæring"@nn ;
+    skos:broader los:09001 ;
+    xkos:isPartOf los:09001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:09018 ;
+    skos:narrower los:09024 ;
+    skos:narrower los:09031 ;
+    skos:narrower los:09033 ;
+    skos:narrower los:09046 ;
+    skos:narrower los:09054 ;
+    skos:narrower los:09064 ;
+    skos:narrower los:09067 ;
+    skos:narrower los:09070 ;
+    skos:narrower los:09075 ;
+    skos:narrower los:09078 ;
+    skos:narrower los:09087 ;
+    skos:narrower los:09088 ;
+    xkos:hasPart los:09018 ;
+    xkos:hasPart los:09024 ;
+    xkos:hasPart los:09031 ;
+    xkos:hasPart los:09033 ;
+    xkos:hasPart los:09046 ;
+    xkos:hasPart los:09054 ;
+    xkos:hasPart los:09064 ;
+    xkos:hasPart los:09067 ;
+    xkos:hasPart los:09070 ;
+    xkos:hasPart los:09075 ;
+    xkos:hasPart los:09078 ;
+    xkos:hasPart los:09087 ;
+    xkos:hasPart los:09088 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09007 a skos:Concept ;
+    skos:prefLabel "Tertiary vocational education"@en ;
+    skos:prefLabel "Høyere yrkesfaglig utdanning"@nb ;
+    skos:prefLabel "Høgare yrkesfagleg utdanning"@nn ;
+    skos:broader los:09001 ;
+    xkos:isPartOf los:09001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:09019 ;
+    skos:narrower los:09047 ;
+    xkos:hasPart los:09019 ;
+    xkos:hasPart los:09047 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09008 a skos:Concept ;
+    skos:prefLabel "Skills development"@en ;
+    skos:prefLabel "Ferdighetsutvikling"@nb ;
+    skos:prefLabel "Ferdigheitsutvikling"@nn ;
+    skos:broader los:09001 ;
+    xkos:isPartOf los:09001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:09021 ;
+    skos:narrower los:09036 ;
+    skos:narrower los:09082 ;
+    xkos:hasPart los:09021 ;
+    xkos:hasPart los:09036 ;
+    xkos:hasPart los:09082 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09009 a skos:Concept ;
+    skos:prefLabel "School environment"@en ;
+    skos:prefLabel "Skolemiljø"@nb ;
+    skos:prefLabel "Skulemiljø"@nn ;
+    skos:broader los:09001 ;
+    xkos:isPartOf los:09001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:09025 ;
+    skos:narrower los:09041 ;
+    skos:narrower los:09055 ;
+    skos:narrower los:09056 ;
+    skos:narrower los:09061 ;
+    xkos:hasPart los:09025 ;
+    xkos:hasPart los:09041 ;
+    xkos:hasPart los:09055 ;
+    xkos:hasPart los:09056 ;
+    xkos:hasPart los:09061 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09010 a skos:Concept ;
+    skos:prefLabel "Adapted education and individual facilitation"@en ;
+    skos:prefLabel "Tilpasset opplæring og individuell tilrettelegging"@nb ;
+    skos:prefLabel "Tilpassa opplæring og individuell tilrettelegging"@nn ;
+    skos:broader los:09001 ;
+    xkos:isPartOf los:09001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:09026 ;
+    skos:narrower los:09030 ;
+    skos:narrower los:09049 ;
+    skos:narrower los:09062 ;
+    skos:narrower los:09080 ;
+    xkos:hasPart los:09026 ;
+    xkos:hasPart los:09030 ;
+    xkos:hasPart los:09049 ;
+    xkos:hasPart los:09062 ;
+    xkos:hasPart los:09080 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09011 a skos:Concept ;
+    skos:prefLabel "Adult education"@en ;
+    skos:prefLabel "Voksenopplæring"@nb ;
+    skos:prefLabel "Vaksenopplæring"@nn ;
+    skos:broader los:09001 ;
+    xkos:isPartOf los:09001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:09027 ;
+    skos:narrower los:09028 ;
+    skos:narrower los:09034 ;
+    skos:narrower los:09043 ;
+    skos:narrower los:09063 ;
+    skos:narrower los:09066 ;
+    skos:narrower los:09069 ;
+    skos:narrower los:09072 ;
+    skos:narrower los:09074 ;
+    skos:narrower los:09077 ;
+    skos:narrower los:09086 ;
+    skos:narrower los:09089 ;
+    xkos:hasPart los:09027 ;
+    xkos:hasPart los:09028 ;
+    xkos:hasPart los:09034 ;
+    xkos:hasPart los:09043 ;
+    xkos:hasPart los:09063 ;
+    xkos:hasPart los:09066 ;
+    xkos:hasPart los:09069 ;
+    xkos:hasPart los:09072 ;
+    xkos:hasPart los:09074 ;
+    xkos:hasPart los:09077 ;
+    xkos:hasPart los:09086 ;
+    xkos:hasPart los:09089 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09012 a skos:Concept ;
+    skos:prefLabel "Primary and lower secondary education"@en ;
+    skos:prefLabel "Grunnskoleopplæring"@nb ;
+    skos:prefLabel "Grunnskuleopplæring"@nn ;
+    skos:broader los:09001 ;
+    xkos:isPartOf los:09001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:09029 ;
+    skos:narrower los:09032 ;
+    skos:narrower los:09037 ;
+    skos:narrower los:09038 ;
+    skos:narrower los:09044 ;
+    skos:narrower los:09051 ;
+    skos:narrower los:09052 ;
+    skos:narrower los:09057 ;
+    skos:narrower los:09058 ;
+    skos:narrower los:09060 ;
+    skos:narrower los:09065 ;
+    skos:narrower los:09068 ;
+    skos:narrower los:09071 ;
+    skos:narrower los:09073 ;
+    skos:narrower los:09076 ;
+    skos:narrower los:09079 ;
+    xkos:hasPart los:09029 ;
+    xkos:hasPart los:09032 ;
+    xkos:hasPart los:09037 ;
+    xkos:hasPart los:09038 ;
+    xkos:hasPart los:09044 ;
+    xkos:hasPart los:09051 ;
+    xkos:hasPart los:09052 ;
+    xkos:hasPart los:09057 ;
+    xkos:hasPart los:09058 ;
+    xkos:hasPart los:09060 ;
+    xkos:hasPart los:09065 ;
+    xkos:hasPart los:09068 ;
+    xkos:hasPart los:09071 ;
+    xkos:hasPart los:09073 ;
+    xkos:hasPart los:09076 ;
+    xkos:hasPart los:09079 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09013 a skos:Concept ;
+    skos:prefLabel "Preschool content and quality"@en ;
+    skos:prefLabel "Barnehageinnhold og kvalitet"@nb ;
+    skos:prefLabel "Barnehageinnhald og kvalitet"@nn ;
+    skos:broader los:09002 ;
+    xkos:isPartOf los:09002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09014 a skos:Concept ;
+    skos:prefLabel "Preschool placement"@en ;
+    skos:prefLabel "Barnehageplass"@nb ;
+    skos:prefLabel "Barnehageplass"@nn ;
+    skos:broader los:09002 ;
+    xkos:isPartOf los:09002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "(redusert) foreldrebetaling"@nn ;
+    skos:scopeNote "Inkluderer (redusert) foreldrebetaling"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09015 a skos:Concept ;
+    skos:prefLabel "User involvement"@en ;
+    skos:prefLabel "Brukermedvirkning"@nb ;
+    skos:prefLabel "Brukarmedverknad"@nn ;
+    skos:broader los:09003 ;
+    xkos:isPartOf los:09003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "elevråd, fau, skulemiljøutvalg"@nn ;
+    skos:scopeNote "Inkluderer elevråd, fau, skulemiljøutvalg"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09016 a skos:Concept ;
+    skos:prefLabel "Exams, grades and assessment"@en ;
+    skos:prefLabel "Eksamen, karakterer og vurdering"@nb ;
+    skos:prefLabel "Eksamen, karakterar og vurdering"@nn ;
+    skos:broader los:09004 ;
+    xkos:isPartOf los:09004 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "fagbrev, vitnemål"@nn ;
+    skos:scopeNote "Inkluderer fagbrev, vitnemål"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09017 a skos:Concept ;
+    skos:prefLabel "Continuing and further education"@en ;
+    skos:prefLabel "Etter- og videreutdanning"@nb ;
+    skos:prefLabel "Etter- og vidareutdanning"@nn ;
+    skos:broader los:09005 ;
+    xkos:isPartOf los:09005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09018 a skos:Concept ;
+    skos:prefLabel "Trade certificate without apprenticeship or school"@en ;
+    skos:prefLabel "Fag- og svenneprøve uten læreforhold og skole"@nb ;
+    skos:prefLabel "Fag- og sveineprøve utan læreforhold og skule"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09019 a skos:Concept ;
+    skos:prefLabel "Vocational college"@en ;
+    skos:prefLabel "Fagskole"@nb ;
+    skos:prefLabel "Fagskule"@nn ;
+    skos:broader los:09007 ;
+    xkos:isPartOf los:09007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09020 a skos:Concept ;
+    skos:prefLabel "Vocational school"@en ;
+    skos:prefLabel "Familiebarnehage"@nb ;
+    skos:prefLabel "Familiebarnehage"@nn ;
+    skos:broader los:09002 ;
+    xkos:isPartOf los:09002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09021 a skos:Concept ;
+    skos:prefLabel "Folk high school"@en ;
+    skos:prefLabel "Folkehøyskole"@nb ;
+    skos:prefLabel "Folkehøgskule"@nn ;
+    skos:broader los:09008 ;
+    xkos:isPartOf los:09008 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09022 a skos:Concept ;
+    skos:prefLabel "Parent meeting"@en ;
+    skos:prefLabel "Foreldremøte"@nb ;
+    skos:prefLabel "Foreldremøte"@nn ;
+    skos:broader los:09003 ;
+    xkos:isPartOf los:09003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09023 a skos:Concept ;
+    skos:prefLabel "Parent-teacher conference"@en ;
+    skos:prefLabel "Foreldresamtale"@nb ;
+    skos:prefLabel "Foreldresamtale"@nn ;
+    skos:broader los:09002 ;
+    xkos:isPartOf los:09002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09024 a skos:Concept ;
+    skos:prefLabel "Full workplace-based training"@en ;
+    skos:prefLabel "Full opplæring i bedrift"@nb ;
+    skos:prefLabel "Full opplæring i bedrift"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09025 a skos:Concept ;
+    skos:prefLabel "Physical school environment"@en ;
+    skos:prefLabel "Fysisk skolemiljø"@nb ;
+    skos:prefLabel "Fysisk skulemiljø"@nn ;
+    skos:broader los:09009 ;
+    xkos:isPartOf los:09009 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09026 a skos:Concept ;
+    skos:prefLabel "Physical adaptation"@en ;
+    skos:prefLabel "Fysisk tilrettelegging"@nb ;
+    skos:prefLabel "Fysisk tilrettelegging"@nn ;
+    skos:broader los:09010 ;
+    xkos:isPartOf los:09010 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "fysisk tilrettelegging og tekniske hjelpemiddel"@nn ;
+    skos:scopeNote "Inkluderer fysisk tilrettelegging og tekniske hjelpemiddel"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09027 a skos:Concept ;
+    skos:prefLabel "Preparatory education for adults"@en ;
+    skos:prefLabel "Forberedende opplæring for voksne"@nb ;
+    skos:prefLabel "Førebuande opplæring for vaksne"@nn ;
+    skos:broader los:09011 ;
+    xkos:isPartOf los:09011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09028 a skos:Concept ;
+    skos:prefLabel "General university entrance qualification for adults"@en ;
+    skos:prefLabel "Generell studiekompetanse for voksne"@nb ;
+    skos:prefLabel "Generell studiekompetanse for vaksne"@nn ;
+    skos:broader los:09011 ;
+    xkos:isPartOf los:09011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09029 a skos:Concept ;
+    skos:prefLabel "Primary education in institutions"@en ;
+    skos:prefLabel "Grunnskoleopplæring i institusjon"@nb ;
+    skos:prefLabel "Grunnskuleopplæring i institusjon"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "barnevernsinstitusjon, fengsel, helseinstitusjon"@nn ;
+    skos:scopeNote "Inkluderer barnevernsinstitusjon, fengsel, helseinstitusjon"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09030 a skos:Concept ;
+    skos:prefLabel "Home education for sick students"@en ;
+    skos:prefLabel "Hjemmeundervisning for syke elever"@nb ;
+    skos:prefLabel "Heimeundervisning for sjuke elevar"@nn ;
+    skos:broader los:09010 ;
+    xkos:isPartOf los:09010 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09031 a skos:Concept ;
+    skos:prefLabel "Introduction education for upper secondary school students who have lived in Norway for a short time"@en ;
+    skos:prefLabel "Innføringsopplæring for elever i videregående opplæring som har bodd kort tid i Norge"@nb ;
+    skos:prefLabel "Innføringsopplæring for elevar i den vidaregåande opplæringa som har budd kort tid i Noreg"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09032 a skos:Concept ;
+    skos:prefLabel "Introduction education for primary school students who have lived in Norway for a short time"@en ;
+    skos:prefLabel "Innføringsopplæring for elever i grunnskolen som har bodd kort tid i Norge"@nb ;
+    skos:prefLabel "Innføringsopplæring for elevar i grunnskulen som har budd kort tid i Noreg"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09033 a skos:Concept ;
+    skos:prefLabel "Intake"@en ;
+    skos:prefLabel "Inntak"@nb ;
+    skos:prefLabel "Inntak"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09034 a skos:Concept ;
+    skos:prefLabel "Introduction program for immigrants"@en ;
+    skos:prefLabel "Introduksjonsprogram for innvandrere"@nb ;
+    skos:prefLabel "Introduksjonsprogram for innvandrarar"@nn ;
+    skos:broader los:09011 ;
+    xkos:isPartOf los:09011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09035 a skos:Concept ;
+    skos:prefLabel "Municipal kindergarten"@en ;
+    skos:prefLabel "Kommunal barnehage"@nb ;
+    skos:prefLabel "Kommunal barnehage"@nn ;
+    skos:broader los:09002 ;
+    xkos:isPartOf los:09002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09036 a skos:Concept ;
+    skos:prefLabel "Cultural school"@en ;
+    skos:prefLabel "Kulturskole"@nb ;
+    skos:prefLabel "Kulturskule"@nn ;
+    skos:broader los:09008 ;
+    xkos:isPartOf los:09008 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09037 a skos:Concept ;
+    skos:prefLabel "Camping school and other school trips"@en ;
+    skos:prefLabel "Leirskole og annen skoletur"@nb ;
+    skos:prefLabel "Leirskule og anna skuletur"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09038 a skos:Concept ;
+    skos:prefLabel "Homework assistance"@en ;
+    skos:prefLabel "Leksehjelp"@nb ;
+    skos:prefLabel "Leksehjelp"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09039 a skos:Concept ;
+    skos:prefLabel "Learning materials"@en ;
+    skos:prefLabel "Læremidler"@nb ;
+    skos:prefLabel "Læremiddel"@nn ;
+    skos:broader los:09004 ;
+    xkos:isPartOf los:09004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09040 a skos:Concept ;
+    skos:prefLabel "Learning objectives"@en ;
+    skos:prefLabel "Læringsmål"@nb ;
+    skos:prefLabel "Læringsmål"@nn ;
+    skos:broader los:09004 ;
+    xkos:isPartOf los:09004 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "emne, fagplan, fritak, læreplan, rammeplan, studiekatalog, studieplan, studieprogram, ukeplan, årsplan"@nn ;
+    skos:scopeNote "Inkluderer emne, fagplan, fritak, læreplan, rammeplan, studiekatalog, studieplan, studieprogram, ukeplan, årsplan"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09041 a skos:Concept ;
+    skos:prefLabel "Food and meals"@en ;
+    skos:prefLabel "Mat og måltid"@nb ;
+    skos:prefLabel "Mat og måltid"@nn ;
+    skos:broader los:09009 ;
+    xkos:isPartOf los:09009 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09042 a skos:Concept ;
+    skos:prefLabel "Participation and collaboration"@en ;
+    skos:prefLabel "Medvirkning og samarbeid"@nb ;
+    skos:prefLabel "Medverknad og samarbeid"@nn ;
+    skos:broader los:09002 ;
+    xkos:isPartOf los:09002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09043 a skos:Concept ;
+    skos:prefLabel "Norwegian language training"@en ;
+    skos:prefLabel "Norskopplæring"@nb ;
+    skos:prefLabel "Norskopplæring"@nn ;
+    skos:broader los:09011 ;
+    xkos:isPartOf los:09011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09044 a skos:Concept ;
+    skos:prefLabel "Public primary school"@en ;
+    skos:prefLabel "Offentlig grunnskole"@nb ;
+    skos:prefLabel "Offentleg grunnskule"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09045 a skos:Concept ;
+    skos:prefLabel "Public college"@en ;
+    skos:prefLabel "Offentlig høyskole"@nb ;
+    skos:prefLabel "Offentleg høgskule"@nn ;
+    skos:broader los:09005 ;
+    xkos:isPartOf los:09005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09046 a skos:Concept ;
+    skos:prefLabel "Public high school"@en ;
+    skos:prefLabel "Offentlig videregående skole"@nb ;
+    skos:prefLabel "Offentleg vidaregåande skule"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09047 a skos:Concept ;
+    skos:prefLabel "Admission to vocational college"@en ;
+    skos:prefLabel "Opptak til fagskole"@nb ;
+    skos:prefLabel "Opptak til fagskule"@nn ;
+    skos:broader los:09007 ;
+    xkos:isPartOf los:09007 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "høyere utdanning fra utlandet, samordna opptak"@nn ;
+    skos:scopeNote "Inkluderer høyere utdanning fra utlandet, samordna opptak"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09048 a skos:Concept ;
+    skos:prefLabel "Admission to university and university college"@en ;
+    skos:prefLabel "Opptak til universitet og høyskole"@nb ;
+    skos:prefLabel "Opptak til universitet og høgskule"@nn ;
+    skos:broader los:09005 ;
+    xkos:isPartOf los:09005 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "høyere utdanning fra utlandet, samordna opptak"@nn ;
+    skos:scopeNote "Inkluderer høyere utdanning fra utlandet, samordna opptak"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09049 a skos:Concept ;
+    skos:prefLabel "Educational adaptation"@en ;
+    skos:prefLabel "Pedagogisk tilrettelegging"@nb ;
+    skos:prefLabel "Pedagogisk tilrettelegging"@nn ;
+    skos:broader los:09010 ;
+    xkos:isPartOf los:09010 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "individuelt tilrettelagd opplæring, intensiv opplæring, pedagogisk-psykologisk teneste (ppt)"@nn ;
+    skos:scopeNote "Inkluderer individuelt tilrettelagd opplæring, intensiv opplæring, pedagogisk-psykologisk teneste (ppt)"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09050 a skos:Concept ;
+    skos:prefLabel "Private preschool"@en ;
+    skos:prefLabel "Privat barnehage"@nb ;
+    skos:prefLabel "Privat barnehage"@nn ;
+    skos:broader los:09002 ;
+    xkos:isPartOf los:09002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09051 a skos:Concept ;
+    skos:prefLabel "Private primary school"@en ;
+    skos:prefLabel "Privat grunnskole"@nb ;
+    skos:prefLabel "Privat grunnskule"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09052 a skos:Concept ;
+    skos:prefLabel "Private primary education in the home"@en ;
+    skos:prefLabel "Privat grunnskoleopplæring i hjemmet"@nb ;
+    skos:prefLabel "Privat grunnskuleopplæring i heimen"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09053 a skos:Concept ;
+    skos:prefLabel "Private university college"@en ;
+    skos:prefLabel "Privat høyskole"@nb ;
+    skos:prefLabel "Privat høgskule"@nn ;
+    skos:broader los:09005 ;
+    xkos:isPartOf los:09005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09054 a skos:Concept ;
+    skos:prefLabel "Private upper secondary school"@en ;
+    skos:prefLabel "Privat videregående skole"@nb ;
+    skos:prefLabel "Privat vidaregåande skule"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09055 a skos:Concept ;
+    skos:prefLabel "Psychosocial school environment"@en ;
+    skos:prefLabel "Psykososialt skolemiljø"@nb ;
+    skos:prefLabel "Psykososialt skulemiljø"@nn ;
+    skos:broader los:09009 ;
+    xkos:isPartOf los:09009 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "skulereglar"@nn ;
+    skos:scopeNote "Inkluderer skulereglar"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09056 a skos:Concept ;
+    skos:prefLabel "School library"@en ;
+    skos:prefLabel "Skolebibliotek"@nb ;
+    skos:prefLabel "Skulebibliotek"@nn ;
+    skos:broader los:09009 ;
+    xkos:isPartOf los:09009 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09057 a skos:Concept ;
+    skos:prefLabel "Before- and after-school care"@en ;
+    skos:prefLabel "Skolefritidsordning (SFO)"@nb ;
+    skos:prefLabel "Skulefritidsordning (SFO)"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09058 a skos:Concept ;
+    skos:prefLabel "School district"@en ;
+    skos:prefLabel "Skolekrets"@nb ;
+    skos:prefLabel "Skulekrins"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09059 a skos:Concept ;
+    skos:prefLabel "School calendar"@en ;
+    skos:prefLabel "Skolerute"@nb ;
+    skos:prefLabel "Skulerute"@nn ;
+    skos:broader los:09004 ;
+    xkos:isPartOf los:09004 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "ferie og fridagar, fråvær, permisjon"@nn ;
+    skos:scopeNote "Inkluderer ferie og fridagar, fråvær, permisjon"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09060 a skos:Concept ;
+    skos:prefLabel "School start"@en ;
+    skos:prefLabel "Skolestart"@nb ;
+    skos:prefLabel "Skulestart"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "innskriving, overgang frå barnehage til skule, skulebytte, tidlig skulestart, utsatt skulestart"@nn ;
+    skos:scopeNote "Inkluderer innskriving, overgang frå barnehage til skule, skulebytte, tidlig skulestart, utsatt skulestart"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09061 a skos:Concept ;
+    skos:prefLabel "Way to school"@en ;
+    skos:prefLabel "Skolevei"@nb ;
+    skos:prefLabel "Skuleveg"@nn ;
+    skos:broader los:09009 ;
+    xkos:isPartOf los:09009 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "innlosjering, vedtak om skuleskyss"@nn ;
+    skos:scopeNote "Inkluderer innlosjering, vedtak om skuleskyss"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09062 a skos:Concept ;
+    skos:prefLabel "Social adaptation"@en ;
+    skos:prefLabel "Sosial tilrettelegging"@nb ;
+    skos:prefLabel "Sosial tilrettelegging"@nn ;
+    skos:broader los:09010 ;
+    xkos:isPartOf los:09010 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "personleg assistanse"@nn ;
+    skos:scopeNote "Inkluderer personleg assistanse"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09063 a skos:Concept ;
+    skos:prefLabel "Special right to mother tongue education for adult participants"@en ;
+    skos:prefLabel "Særskilt rett til opplæring i morsmål for voksne deltakere"@nb ;
+    skos:prefLabel "Særskild rett til opplæring i morsmål for vaksne deltakarar"@nn ;
+    skos:broader los:09011 ;
+    xkos:isPartOf los:09011 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "samisk"@nn ;
+    skos:scopeNote "Inkluderer samisk"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09064 a skos:Concept ;
+    skos:prefLabel "Special right to mother tongue education in upper secondary education"@en ;
+    skos:prefLabel "Særskilt rett til opplæring i morsmål i videregående opplæring"@nb ;
+    skos:prefLabel "Særskild rett til opplæring i morsmål i den vidaregåande opplæringa"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "samisk"@nn ;
+    skos:scopeNote "Inkluderer samisk"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09065 a skos:Concept ;
+    skos:prefLabel "Special right to mother tongue education in primary school"@en ;
+    skos:prefLabel "Særskilt rett til opplæring i morsmål i grunnskolen"@nb ;
+    skos:prefLabel "Særskild rett til opplæring i morsmål i grunnskulen"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "kvensk eller finsk, samisk"@nn ;
+    skos:scopeNote "Inkluderer kvensk eller finsk, samisk"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09066 a skos:Concept ;
+    skos:prefLabel "Special right to Norwegian sign language education for adult participants"@en ;
+    skos:prefLabel "Særskilt rett til opplæring i norsk tegnspråk for voksne deltakere"@nb ;
+    skos:prefLabel "Særskild rett til opplæring i norsk teiknspråk for vaksne deltakarar"@nn ;
+    skos:broader los:09011 ;
+    xkos:isPartOf los:09011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09067 a skos:Concept ;
+    skos:prefLabel "Special right to Norwegian sign language education in upper secondary education"@en ;
+    skos:prefLabel "Særskilt rett til opplæring i norsk tegnspråk i videregående opplæring"@nb ;
+    skos:prefLabel "Særskild rett til opplæring i norsk teiknspråk i den vidaregåande opplæringa"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09068 a skos:Concept ;
+    skos:prefLabel "Special right to Norwegian sign language education in primary school"@en ;
+    skos:prefLabel "Særskilt rett til opplæring i norsk tegnspråk i grunnskolen"@nb ;
+    skos:prefLabel "Særskild rett til opplæring i norsk teiknspråk i grunnskulen"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09069 a skos:Concept ;
+    skos:prefLabel "Special right to braille education for adult participants"@en ;
+    skos:prefLabel "Særskilt rett til opplæring i punktskrift for voksne deltakere"@nb ;
+    skos:prefLabel "Særskild rett til opplæring i punktskrift for vaksne deltakarar"@nn ;
+    skos:broader los:09011 ;
+    xkos:isPartOf los:09011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09070 a skos:Concept ;
+    skos:prefLabel "Special right to braille education in upper secondary education"@en ;
+    skos:prefLabel "Særskilt rett til opplæring i punktskrift i videregående opplæring"@nb ;
+    skos:prefLabel "Særskild rett til opplæring i punktskrift i den vidaregåande opplæringa"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09071 a skos:Concept ;
+    skos:prefLabel "Special right to braille education in primary school"@en ;
+    skos:prefLabel "Særskilt rett til opplæring i punktskrift i grunnskolen"@nb ;
+    skos:prefLabel "Særskild rett til opplæring i punktskrift i grunnskulen"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09072 a skos:Concept ;
+    skos:prefLabel "Special right to eduacation in mother tongue adult participants"@en ;
+    skos:prefLabel "Særskilt rett til opplæring på morsmål for voksne deltakere"@nb ;
+    skos:prefLabel "Særskild rett til opplæring på morsmål for vaksne deltakarar"@nn ;
+    skos:broader los:09011 ;
+    xkos:isPartOf los:09011 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "samisk"@nn ;
+    skos:scopeNote "Inkluderer samisk"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09073 a skos:Concept ;
+    skos:prefLabel "Special right to education in mother tongue in primary school"@en ;
+    skos:prefLabel "Særskilt rett til opplæring på morsmål i grunnskolen"@nb ;
+    skos:prefLabel "Særskild rett til opplæring på morsmål i grunnskulen"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "samisk"@nn ;
+    skos:scopeNote "Inkluderer samisk"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09074 a skos:Concept ;
+    skos:prefLabel "Special right to education in Norwegian sign language for adult participants"@en ;
+    skos:prefLabel "Særskilt rett til opplæring på norsk tegnspråk for voksne deltakere"@nb ;
+    skos:prefLabel "Særskild rett til opplæring på norsk teiknspråk for vaksne deltakarar"@nn ;
+    skos:broader los:09011 ;
+    xkos:isPartOf los:09011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09075 a skos:Concept ;
+    skos:prefLabel "Special right to education in upper secondary education in Norwegian sign language"@en ;
+    skos:prefLabel "Særskilt rett til opplæring på norsk tegnspråk i videregående opplæring"@nb ;
+    skos:prefLabel "Særskild rett til opplæring på norsk teiknspråk i den vidaregåande opplæringa"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09076 a skos:Concept ;
+    skos:prefLabel "Special right to education in primary school in Norwegian sign language"@en ;
+    skos:prefLabel "Særskilt rett til opplæring på norsk tegnspråk i grunnskolen"@nb ;
+    skos:prefLabel "Særskild rett til opplæring på norsk teiknspråk i grunnskulen"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09077 a skos:Concept ;
+    skos:prefLabel "Special right to special language education for adult participants"@en ;
+    skos:prefLabel "Særskilt rett til særskilt språkopplæring for voksne deltakere"@nb ;
+    skos:prefLabel "Særskild rett til særskild språkopplæring for vaksne deltakarar"@nn ;
+    skos:broader los:09011 ;
+    xkos:isPartOf los:09011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09078 a skos:Concept ;
+    skos:prefLabel "Special right to special language education in upper secondary education"@en ;
+    skos:prefLabel "Særskilt rett til særskilt språkopplæring i videregående opplæring"@nb ;
+    skos:prefLabel "Særskild rett til særskild språkopplæring i den vidaregåande opplæringa"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09079 a skos:Concept ;
+    skos:prefLabel "Special right to special language education in primary school"@en ;
+    skos:prefLabel "Særskilt rett til særskilt språkopplæring i grunnskolen"@nb ;
+    skos:prefLabel "Særskild rett til særskild språkopplæring i grunnskulen"@nn ;
+    skos:broader los:09012 ;
+    xkos:isPartOf los:09012 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09080 a skos:Concept ;
+    skos:prefLabel "Technical facilitation"@en ;
+    skos:prefLabel "Teknisk tilrettelegging"@nb ;
+    skos:prefLabel "Teknisk tilrettelegging"@nn ;
+    skos:broader los:09010 ;
+    xkos:isPartOf los:09010 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "alternativ og supplerande kommunikasjon (ask)"@nn ;
+    skos:scopeNote "Inkluderer alternativ og supplerande kommunikasjon (ask)"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09081 a skos:Concept ;
+    skos:prefLabel "Supervision and approval of kindergartens"@en ;
+    skos:prefLabel "Tilsyn og godkjenning av barnehager"@nb ;
+    skos:prefLabel "Tilsyn og godkjenning av barnehagar"@nn ;
+    skos:broader los:09002 ;
+    xkos:isPartOf los:09002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09082 a skos:Concept ;
+    skos:prefLabel "Traffic school"@en ;
+    skos:prefLabel "Trafikkskole"@nb ;
+    skos:prefLabel "Trafikkskule"@nn ;
+    skos:broader los:09008 ;
+    xkos:isPartOf los:09008 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09083 a skos:Concept ;
+    skos:prefLabel "University"@en ;
+    skos:prefLabel "Universitet"@nb ;
+    skos:prefLabel "Universitet"@nn ;
+    skos:broader los:09005 ;
+    xkos:isPartOf los:09005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09084 a skos:Concept ;
+    skos:prefLabel "University library"@en ;
+    skos:prefLabel "Universitetsbibliotek"@nb ;
+    skos:prefLabel "Universitetsbibliotek"@nn ;
+    skos:broader los:09005 ;
+    xkos:isPartOf los:09005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09085 a skos:Concept ;
+    skos:prefLabel "Development conversation"@en ;
+    skos:prefLabel "Utviklingssamtale"@nb ;
+    skos:prefLabel "Utviklingssamtale"@nn ;
+    skos:broader los:09003 ;
+    xkos:isPartOf los:09003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09086 a skos:Concept ;
+    skos:prefLabel "Upper secondary education for adults"@en ;
+    skos:prefLabel "Videregående opplæring for voksne"@nb ;
+    skos:prefLabel "Vidaregåande opplæring for vaksne"@nn ;
+    skos:broader los:09011 ;
+    xkos:isPartOf los:09011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09087 a skos:Concept ;
+    skos:prefLabel "Higher education in an institution"@en ;
+    skos:prefLabel "Videregående opplæring i institusjon"@nb ;
+    skos:prefLabel "Vidaregåande opplæring i institusjon"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "barnevernsinstitusjon, fengsel, helseinstitusjon"@nn ;
+    skos:scopeNote "Inkluderer barnevernsinstitusjon, fengsel, helseinstitusjon"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09088 a skos:Concept ;
+    skos:prefLabel "Upper secondary education abroad"@en ;
+    skos:prefLabel "Videregående opplæring i utlandet"@nb ;
+    skos:prefLabel "Vidaregåande opplæring i utlandet"@nn ;
+    skos:broader los:09006 ;
+    xkos:isPartOf los:09006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:09089 a skos:Concept ;
+    skos:prefLabel "Vocational retraining"@en ;
+    skos:prefLabel "Yrkesfaglig rekvalifisering"@nb ;
+    skos:prefLabel "Yrkesfagleg rekvalifisering"@nn ;
+    skos:broader los:09011 ;
+    xkos:isPartOf los:09011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10001 a skos:Concept ;
+    skos:prefLabel "Planning, construction and property"@en ;
+    skos:prefLabel "Plan, bygg og eiendom"@nb ;
+    skos:prefLabel "Plan, bygg og eigedom"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:10002 ;
+    skos:narrower los:10003 ;
+    skos:narrower los:10004 ;
+    xkos:hasPart los:10002 ;
+    xkos:hasPart los:10003 ;
+    xkos:hasPart los:10004 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10002 a skos:Concept ;
+    skos:prefLabel "Property"@en ;
+    skos:prefLabel "Eiendom"@nb ;
+    skos:prefLabel "Eigedom"@nn ;
+    skos:broader los:10001 ;
+    xkos:isPartOf los:10001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:10005 ;
+    skos:narrower los:10006 ;
+    skos:narrower los:10007 ;
+    skos:narrower los:10009 ;
+    skos:narrower los:10010 ;
+    skos:narrower los:10011 ;
+    skos:narrower los:10015 ;
+    skos:narrower los:10021 ;
+    skos:narrower los:10023 ;
+    skos:narrower los:10026 ;
+    skos:narrower los:10028 ;
+    xkos:hasPart los:10005 ;
+    xkos:hasPart los:10006 ;
+    xkos:hasPart los:10007 ;
+    xkos:hasPart los:10009 ;
+    xkos:hasPart los:10010 ;
+    xkos:hasPart los:10011 ;
+    xkos:hasPart los:10015 ;
+    xkos:hasPart los:10021 ;
+    xkos:hasPart los:10023 ;
+    xkos:hasPart los:10026 ;
+    xkos:hasPart los:10028 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10003 a skos:Concept ;
+    skos:prefLabel "Construction"@en ;
+    skos:prefLabel "Bygging"@nb ;
+    skos:prefLabel "Bygging"@nn ;
+    skos:broader los:10001 ;
+    xkos:isPartOf los:10001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:10008 ;
+    skos:narrower los:10013 ;
+    skos:narrower los:10014 ;
+    skos:narrower los:10016 ;
+    skos:narrower los:10018 ;
+    skos:narrower los:10019 ;
+    skos:narrower los:10020 ;
+    xkos:hasPart los:10008 ;
+    xkos:hasPart los:10013 ;
+    xkos:hasPart los:10014 ;
+    xkos:hasPart los:10016 ;
+    xkos:hasPart los:10018 ;
+    xkos:hasPart los:10019 ;
+    xkos:hasPart los:10020 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10004 a skos:Concept ;
+    skos:prefLabel "Zoning and land-use plans"@en ;
+    skos:prefLabel "Areal- og reguleringsplaner"@nb ;
+    skos:prefLabel "Areal- og reguleringsplanar"@nn ;
+    skos:broader los:10001 ;
+    xkos:isPartOf los:10001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:10012 ;
+    skos:narrower los:10017 ;
+    skos:narrower los:10022 ;
+    skos:narrower los:10024 ;
+    skos:narrower los:10025 ;
+    skos:narrower los:10027 ;
+    xkos:hasPart los:10012 ;
+    xkos:hasPart los:10017 ;
+    xkos:hasPart los:10022 ;
+    xkos:hasPart los:10024 ;
+    xkos:hasPart los:10025 ;
+    xkos:hasPart los:10027 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10005 a skos:Concept ;
+    skos:prefLabel "Addressing"@en ;
+    skos:prefLabel "Adressering"@nb ;
+    skos:prefLabel "Adressering"@nn ;
+    skos:broader los:10002 ;
+    xkos:isPartOf los:10002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "adressetildeling"@nn ;
+    skos:scopeNote "Inkluderer adressetildeling"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10006 a skos:Concept ;
+    skos:prefLabel "Residential obligation"@en ;
+    skos:prefLabel "Boplikt"@nb ;
+    skos:prefLabel "Buplikt"@nn ;
+    skos:broader los:10002 ;
+    xkos:isPartOf los:10002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10007 a skos:Concept ;
+    skos:prefLabel "Housing cooperative and joint ownership"@en ;
+    skos:prefLabel "Borettslag og sameie"@nb ;
+    skos:prefLabel "Burettslag og sameie"@nn ;
+    skos:broader los:10002 ;
+    xkos:isPartOf los:10002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10008 a skos:Concept ;
+    skos:prefLabel "Building application"@en ;
+    skos:prefLabel "Byggesak"@nb ;
+    skos:prefLabel "Byggjesak"@nn ;
+    skos:broader los:10003 ;
+    xkos:isPartOf los:10003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10009 a skos:Concept ;
+    skos:prefLabel "Property subdivision"@en ;
+    skos:prefLabel "Deling av eiendom"@nb ;
+    skos:prefLabel "Deling av eigedom"@nn ;
+    skos:broader los:10002 ;
+    xkos:isPartOf los:10002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "seksjonering"@nn ;
+    skos:scopeNote "Inkluderer seksjonering"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10010 a skos:Concept ;
+    skos:prefLabel "Property rights"@en ;
+    skos:prefLabel "Eiendomsrett"@nb ;
+    skos:prefLabel "Eigedomsrett"@nn ;
+    skos:broader los:10002 ;
+    xkos:isPartOf los:10002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "hefte på eigedom, skjøte, tinglysing, tomtefeste"@nn ;
+    skos:scopeNote "Inkluderer hefte på eigedom, skjøte, tinglysing, tomtefeste"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10011 a skos:Concept ;
+    skos:prefLabel "Protected property"@en ;
+    skos:prefLabel "Fredet eiendom"@nb ;
+    skos:prefLabel "Freda eigedom"@nn ;
+    skos:broader los:10002 ;
+    xkos:isPartOf los:10002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10012 a skos:Concept ;
+    skos:prefLabel "County and sub-county plan"@en ;
+    skos:prefLabel "Fylkesplan og fylkesdelplan"@nb ;
+    skos:prefLabel "Fylkesplan og fylkesdelplan"@nn ;
+    skos:broader los:10004 ;
+    xkos:isPartOf los:10004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10013 a skos:Concept ;
+    skos:prefLabel "Pre-application conference"@en ;
+    skos:prefLabel "Forhåndskonferanse"@nb ;
+    skos:prefLabel "Førehandskonferanse"@nn ;
+    skos:broader los:10003 ;
+    xkos:isPartOf los:10003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10014 a skos:Concept ;
+    skos:prefLabel "Excavation notice"@en ;
+    skos:prefLabel "Gravemelding"@nb ;
+    skos:prefLabel "Gravemelding"@nn ;
+    skos:broader los:10003 ;
+    xkos:isPartOf los:10003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10015 a skos:Concept ;
+    skos:prefLabel "Indoor environment"@en ;
+    skos:prefLabel "Innemiljø"@nb ;
+    skos:prefLabel "Innemiljø"@nn ;
+    skos:broader los:10002 ;
+    xkos:isPartOf los:10002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10016 a skos:Concept ;
+    skos:prefLabel "Appeal against building decision"@en ;
+    skos:prefLabel "Klage på byggesak"@nb ;
+    skos:prefLabel "Klage på byggjesak"@nn ;
+    skos:broader los:10003 ;
+    xkos:isPartOf los:10003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10017 a skos:Concept ;
+    skos:prefLabel "Municipal and sub-municipal plan"@en ;
+    skos:prefLabel "Kommuneplan og kommunedelplan"@nb ;
+    skos:prefLabel "Kommuneplan og kommunedelplan"@nn ;
+    skos:broader los:10004 ;
+    xkos:isPartOf los:10004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10018 a skos:Concept ;
+    skos:prefLabel "Building notice"@en ;
+    skos:prefLabel "Byggemelding"@nb ;
+    skos:prefLabel "Melding om bygging"@nn ;
+    skos:broader los:10003 ;
+    xkos:isPartOf los:10003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10019 a skos:Concept ;
+    skos:prefLabel "Report of illegal construction"@en ;
+    skos:prefLabel "Melding om ulovlige byggetiltak"@nb ;
+    skos:prefLabel "Melding om ulovlege byggjetiltak"@nn ;
+    skos:broader los:10003 ;
+    xkos:isPartOf los:10003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10020 a skos:Concept ;
+    skos:prefLabel "Notice to neighbours"@en ;
+    skos:prefLabel "Nabovarsel"@nb ;
+    skos:prefLabel "Nabovarsel"@nn ;
+    skos:broader los:10003 ;
+    xkos:isPartOf los:10003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10021 a skos:Concept ;
+    skos:prefLabel "Surveying"@en ;
+    skos:prefLabel "Oppmåling"@nb ;
+    skos:prefLabel "Oppmåling"@nn ;
+    skos:broader los:10002 ;
+    xkos:isPartOf los:10002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10022 a skos:Concept ;
+    skos:prefLabel "Private zoning plans"@en ;
+    skos:prefLabel "Private reguleringsplaner"@nb ;
+    skos:prefLabel "Private reguleringsplanar"@nn ;
+    skos:broader los:10004 ;
+    xkos:isPartOf los:10004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10023 a skos:Concept ;
+    skos:prefLabel "Radon measurement"@en ;
+    skos:prefLabel "Radonmåling"@nb ;
+    skos:prefLabel "Radonmåling"@nn ;
+    skos:broader los:10002 ;
+    xkos:isPartOf los:10002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10024 a skos:Concept ;
+    skos:prefLabel "Regional planning"@en ;
+    skos:prefLabel "Regional planlegging"@nb ;
+    skos:prefLabel "Regional planlegging"@nn ;
+    skos:broader los:10004 ;
+    xkos:isPartOf los:10004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10025 a skos:Concept ;
+    skos:prefLabel "Zoning plan"@en ;
+    skos:prefLabel "Reguleringsplan"@nb ;
+    skos:prefLabel "Reguleringsplan"@nn ;
+    skos:broader los:10004 ;
+    xkos:isPartOf los:10004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10026 a skos:Concept ;
+    skos:prefLabel "Pests"@en ;
+    skos:prefLabel "Skadedyr"@nb ;
+    skos:prefLabel "Skadedyr"@nn ;
+    skos:broader los:10002 ;
+    xkos:isPartOf los:10002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10027 a skos:Concept ;
+    skos:prefLabel "Thematic plan"@en ;
+    skos:prefLabel "Temaplan"@nb ;
+    skos:prefLabel "Temaplan"@nn ;
+    skos:broader los:10004 ;
+    xkos:isPartOf los:10004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:10028 a skos:Concept ;
+    skos:prefLabel "Water and sewage"@en ;
+    skos:prefLabel "Vann og avløp"@nb ;
+    skos:prefLabel "Vatn og avløp"@nn ;
+    skos:broader los:10002 ;
+    xkos:isPartOf los:10002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11001 a skos:Concept ;
+    skos:prefLabel "Civil protection and emergency preparedness"@en ;
+    skos:prefLabel "Samfunnssikkerhet og beredskap"@nb ;
+    skos:prefLabel "Samfunnstryggleik og beredskap"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:11002 ;
+    skos:narrower los:11003 ;
+    skos:narrower los:11004 ;
+    skos:narrower los:11005 ;
+    skos:narrower los:11006 ;
+    xkos:hasPart los:11002 ;
+    xkos:hasPart los:11003 ;
+    xkos:hasPart los:11004 ;
+    xkos:hasPart los:11005 ;
+    xkos:hasPart los:11006 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11002 a skos:Concept ;
+    skos:prefLabel "Fire safety"@en ;
+    skos:prefLabel "Brannsikkerhet"@nb ;
+    skos:prefLabel "Branntryggleik"@nn ;
+    skos:broader los:11001 ;
+    xkos:isPartOf los:11001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:11007 ;
+    skos:narrower los:11008 ;
+    skos:narrower los:11009 ;
+    skos:narrower los:11010 ;
+    skos:narrower los:11012 ;
+    skos:narrower los:11017 ;
+    xkos:hasPart los:11007 ;
+    xkos:hasPart los:11008 ;
+    xkos:hasPart los:11009 ;
+    xkos:hasPart los:11010 ;
+    xkos:hasPart los:11012 ;
+    xkos:hasPart los:11017 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11003 a skos:Concept ;
+    skos:prefLabel "Alerting"@en ;
+    skos:prefLabel "Varsling"@nb ;
+    skos:prefLabel "Varsling"@nn ;
+    skos:broader los:11001 ;
+    xkos:isPartOf los:11001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:11011 ;
+    skos:narrower los:11016 ;
+    skos:narrower los:11021 ;
+    skos:narrower los:11022 ;
+    xkos:hasPart los:11011 ;
+    xkos:hasPart los:11016 ;
+    xkos:hasPart los:11021 ;
+    xkos:hasPart los:11022 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11004 a skos:Concept ;
+    skos:prefLabel "The Armed Forces"@en ;
+    skos:prefLabel "Forsvaret"@nb ;
+    skos:prefLabel "Forsvaret"@nn ;
+    skos:broader los:11001 ;
+    xkos:isPartOf los:11001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:11013 ;
+    skos:narrower los:11019 ;
+    skos:narrower los:11020 ;
+    skos:narrower los:11024 ;
+    xkos:hasPart los:11013 ;
+    xkos:hasPart los:11019 ;
+    xkos:hasPart los:11020 ;
+    xkos:hasPart los:11024 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11005 a skos:Concept ;
+    skos:prefLabel "Crisis preparedness"@en ;
+    skos:prefLabel "Kriseberedskap"@nb ;
+    skos:prefLabel "Kriseberedskap"@nn ;
+    skos:broader los:11001 ;
+    xkos:isPartOf los:11001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:11014 ;
+    skos:narrower los:11015 ;
+    xkos:hasPart los:11014 ;
+    xkos:hasPart los:11015 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11006 a skos:Concept ;
+    skos:prefLabel "Civil defence"@en ;
+    skos:prefLabel "Sivilforsvaret"@nb ;
+    skos:prefLabel "Sivilforsvaret"@nn ;
+    skos:broader los:11001 ;
+    xkos:isPartOf los:11001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:11018 ;
+    skos:narrower los:11023 ;
+    xkos:hasPart los:11018 ;
+    xkos:hasPart los:11023 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11007 a skos:Concept ;
+    skos:prefLabel "Fire safety concern report"@en ;
+    skos:prefLabel "Bekymringsmelding om brannsikkerhet"@nb ;
+    skos:prefLabel "Bekymringsmelding om branntryggleik"@nn ;
+    skos:broader los:11002 ;
+    xkos:isPartOf los:11002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11008 a skos:Concept ;
+    skos:prefLabel "Fire inspection"@en ;
+    skos:prefLabel "Branntilsyn"@nb ;
+    skos:prefLabel "Branntilsyn"@nn ;
+    skos:broader los:11002 ;
+    xkos:isPartOf los:11002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11009 a skos:Concept ;
+    skos:prefLabel "Electrical safety"@en ;
+    skos:prefLabel "Elsikkerhet"@nb ;
+    skos:prefLabel "Elsikkerhet"@nn ;
+    skos:broader los:11002 ;
+    xkos:isPartOf los:11002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11010 a skos:Concept ;
+    skos:prefLabel "Chimney sweeping"@en ;
+    skos:prefLabel "Feiing"@nb ;
+    skos:prefLabel "Feiing"@nn ;
+    skos:broader los:11002 ;
+    xkos:isPartOf los:11002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11011 a skos:Concept ;
+    skos:prefLabel "Flood warning"@en ;
+    skos:prefLabel "Flomvarsel"@nb ;
+    skos:prefLabel "Flaumvarsel"@nn ;
+    skos:broader los:11003 ;
+    xkos:isPartOf los:11003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11012 a skos:Concept ;
+    skos:prefLabel "Fireworks"@en ;
+    skos:prefLabel "Fyrverkeri"@nb ;
+    skos:prefLabel "Fyrverkeri"@nn ;
+    skos:broader los:11002 ;
+    xkos:isPartOf los:11002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11013 a skos:Concept ;
+    skos:prefLabel "Home Guard"@en ;
+    skos:prefLabel "Heimevernet"@nb ;
+    skos:prefLabel "Heimevernet"@nn ;
+    skos:broader los:11004 ;
+    xkos:isPartOf los:11004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11014 a skos:Concept ;
+    skos:prefLabel "Crisis plan"@en ;
+    skos:prefLabel "Kriseplan"@nb ;
+    skos:prefLabel "Kriseplan"@nn ;
+    skos:broader los:11005 ;
+    xkos:isPartOf los:11005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11015 a skos:Concept ;
+    skos:prefLabel "Crisis team"@en ;
+    skos:prefLabel "Kriseteam"@nb ;
+    skos:prefLabel "Kriseteam"@nn ;
+    skos:broader los:11005 ;
+    xkos:isPartOf los:11005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11016 a skos:Concept ;
+    skos:prefLabel "Lightning warning"@en ;
+    skos:prefLabel "Lynvarsel"@nb ;
+    skos:prefLabel "Lynvarsel"@nn ;
+    skos:broader los:11003 ;
+    xkos:isPartOf los:11003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11017 a skos:Concept ;
+    skos:prefLabel "Notification of overnight stay"@en ;
+    skos:prefLabel "Melding om overnatting"@nb ;
+    skos:prefLabel "Melding om overnatting"@nn ;
+    skos:broader los:11002 ;
+    xkos:isPartOf los:11002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11018 a skos:Concept ;
+    skos:prefLabel "Emergency alert"@en ;
+    skos:prefLabel "Nødvarsel"@nb ;
+    skos:prefLabel "Nødvarsel"@nn ;
+    skos:broader los:11006 ;
+    xkos:isPartOf los:11006 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "flyalarm"@nn ;
+    skos:scopeNote "Inkluderer flyalarm"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11019 a skos:Concept ;
+    skos:prefLabel "Refresher training"@en ;
+    skos:prefLabel "Repetisjonstjeneste"@nb ;
+    skos:prefLabel "Repetisjonsteneste"@nn ;
+    skos:broader los:11004 ;
+    xkos:isPartOf los:11004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11020 a skos:Concept ;
+    skos:prefLabel "Military conscription assessment"@en ;
+    skos:prefLabel "Sesjon"@nb ;
+    skos:prefLabel "Sesjon"@nn ;
+    skos:broader los:11004 ;
+    xkos:isPartOf los:11004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11021 a skos:Concept ;
+    skos:prefLabel "Forest fire warning"@en ;
+    skos:prefLabel "Skogbrannvarsel"@nb ;
+    skos:prefLabel "Skogbrannvarsel"@nn ;
+    skos:broader los:11003 ;
+    xkos:isPartOf los:11003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11022 a skos:Concept ;
+    skos:prefLabel "Landslide warning"@en ;
+    skos:prefLabel "Skredvarsel"@nb ;
+    skos:prefLabel "Skredvarsel"@nn ;
+    skos:broader los:11003 ;
+    xkos:isPartOf los:11003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11023 a skos:Concept ;
+    skos:prefLabel "Shelter"@en ;
+    skos:prefLabel "Tilfluktsrom"@nb ;
+    skos:prefLabel "Tilfluktsrom"@nn ;
+    skos:broader los:11006 ;
+    xkos:isPartOf los:11006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:11024 a skos:Concept ;
+    skos:prefLabel "Compulsory military service"@en ;
+    skos:prefLabel "Verneplikt"@nb ;
+    skos:prefLabel "Verneplikt"@nn ;
+    skos:broader los:11004 ;
+    xkos:isPartOf los:11004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12001 a skos:Concept ;
+    skos:prefLabel "Tax and duties"@en ;
+    skos:prefLabel "Skatt og avgift"@nb ;
+    skos:prefLabel "Skatt og avgift"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:12002 ;
+    skos:narrower los:12003 ;
+    xkos:hasPart los:12002 ;
+    xkos:hasPart los:12003 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12002 a skos:Concept ;
+    skos:prefLabel "Fee"@en ;
+    skos:prefLabel "Avgift"@nb ;
+    skos:prefLabel "Avgift"@nn ;
+    skos:broader los:12001 ;
+    xkos:isPartOf los:12001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:12004 ;
+    skos:narrower los:12005 ;
+    skos:narrower los:12007 ;
+    skos:narrower los:12008 ;
+    skos:narrower los:12009 ;
+    skos:narrower los:12014 ;
+    xkos:hasPart los:12004 ;
+    xkos:hasPart los:12005 ;
+    xkos:hasPart los:12007 ;
+    xkos:hasPart los:12008 ;
+    xkos:hasPart los:12009 ;
+    xkos:hasPart los:12014 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12003 a skos:Concept ;
+    skos:prefLabel "Tax"@en ;
+    skos:prefLabel "Skatt"@nb ;
+    skos:prefLabel "Skatt"@nn ;
+    skos:broader los:12001 ;
+    xkos:isPartOf los:12001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:12006 ;
+    skos:narrower los:12010 ;
+    skos:narrower los:12011 ;
+    skos:narrower los:12012 ;
+    skos:narrower los:12013 ;
+    xkos:hasPart los:12006 ;
+    xkos:hasPart los:12010 ;
+    xkos:hasPart los:12011 ;
+    xkos:hasPart los:12012 ;
+    xkos:hasPart los:12013 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12004 a skos:Concept ;
+    skos:prefLabel "Employer's national insurance contribution"@en ;
+    skos:prefLabel "Arbeidsgiveravgift"@nb ;
+    skos:prefLabel "Arbeidsgjevaravgift"@nn ;
+    skos:broader los:12002 ;
+    xkos:isPartOf los:12002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12005 a skos:Concept ;
+    skos:prefLabel "Fees and charges for construction and property"@en ;
+    skos:prefLabel "Avgifter og gebyr for bygg og eiendom"@nb ;
+    skos:prefLabel "Avgifter og gebyr for bygg og eigedom"@nn ;
+    skos:broader los:12002 ;
+    xkos:isPartOf los:12002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "dokumentavgift, gebyr for byggjesak, gebyr for tilsyn og feiing, renovasjonsavgift, vass- og avløpsgebyrer"@nn ;
+    skos:scopeNote "Inkluderer dokumentavgift, gebyr for byggjesak, gebyr for tilsyn og feiing, renovasjonsavgift, vass- og avløpsgebyrer"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12006 a skos:Concept ;
+    skos:prefLabel "Property tax"@en ;
+    skos:prefLabel "Eiendomsskatt"@nb ;
+    skos:prefLabel "Eigedomsskatt"@nn ;
+    skos:broader los:12003 ;
+    xkos:isPartOf los:12003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12007 a skos:Concept ;
+    skos:prefLabel "Value added tax (VAT)"@en ;
+    skos:prefLabel "Merverdiavgift"@nb ;
+    skos:prefLabel "Meirverdiavgift"@nn ;
+    skos:broader los:12002 ;
+    xkos:isPartOf los:12002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12008 a skos:Concept ;
+    skos:prefLabel "Vehicle taxes"@en ;
+    skos:prefLabel "Motorvognavgifter"@nb ;
+    skos:prefLabel "Motorvognavgifter"@nn ;
+    skos:broader los:12002 ;
+    xkos:isPartOf los:12002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12009 a skos:Concept ;
+    skos:prefLabel "Studded tire fee"@en ;
+    skos:prefLabel "Piggdekkavgift"@nb ;
+    skos:prefLabel "Piggdekkavgift"@nn ;
+    skos:broader los:12002 ;
+    xkos:isPartOf los:12002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12010 a skos:Concept ;
+    skos:prefLabel "Tax certificate"@en ;
+    skos:prefLabel "Skatteattest"@nb ;
+    skos:prefLabel "Skatteattest"@nn ;
+    skos:broader los:12003 ;
+    xkos:isPartOf los:12003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12011 a skos:Concept ;
+    skos:prefLabel "Tax card, exemption card and advance tax"@en ;
+    skos:prefLabel "Skattekort, frikort og forskuddsskatt"@nb ;
+    skos:prefLabel "Skattekort, frikort og forskotsskatt"@nn ;
+    skos:broader los:12003 ;
+    xkos:isPartOf los:12003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12012 a skos:Concept ;
+    skos:prefLabel "Tax return"@en ;
+    skos:prefLabel "Skattemelding"@nb ;
+    skos:prefLabel "Skattemelding"@nn ;
+    skos:broader los:12003 ;
+    xkos:isPartOf los:12003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12013 a skos:Concept ;
+    skos:prefLabel "Tax settlement"@en ;
+    skos:prefLabel "Skatteoppgjør"@nb ;
+    skos:prefLabel "Skatteoppgjer"@nn ;
+    skos:broader los:12003 ;
+    xkos:isPartOf los:12003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:12014 a skos:Concept ;
+    skos:prefLabel "Customs duty"@en ;
+    skos:prefLabel "Toll"@nb ;
+    skos:prefLabel "Toll"@nn ;
+    skos:broader los:12002 ;
+    xkos:isPartOf los:12002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13001 a skos:Concept ;
+    skos:prefLabel "Social and economic security"@en ;
+    skos:prefLabel "Sosial og økonomisk trygghet"@nb ;
+    skos:prefLabel "Sosial og økonomisk tryggleik"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:13002 ;
+    skos:narrower los:13003 ;
+    skos:narrower los:13004 ;
+    xkos:hasPart los:13002 ;
+    xkos:hasPart los:13003 ;
+    xkos:hasPart los:13004 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13002 a skos:Concept ;
+    skos:prefLabel "Income security and expense coverage"@en ;
+    skos:prefLabel "Inntektssikring og utgiftsdekning"@nb ;
+    skos:prefLabel "Inntektssikring og utgiftsdekking"@nn ;
+    skos:broader los:13001 ;
+    xkos:isPartOf los:13001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:13005 ;
+    skos:narrower los:13006 ;
+    skos:narrower los:13007 ;
+    skos:narrower los:13008 ;
+    skos:narrower los:13009 ;
+    skos:narrower los:13010 ;
+    skos:narrower los:13011 ;
+    skos:narrower los:13012 ;
+    skos:narrower los:13013 ;
+    xkos:hasPart los:13005 ;
+    xkos:hasPart los:13006 ;
+    xkos:hasPart los:13007 ;
+    xkos:hasPart los:13008 ;
+    xkos:hasPart los:13009 ;
+    xkos:hasPart los:13010 ;
+    xkos:hasPart los:13011 ;
+    xkos:hasPart los:13012 ;
+    xkos:hasPart los:13013 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13003 a skos:Concept ;
+    skos:prefLabel "Housing services"@en ;
+    skos:prefLabel "Botilbud"@nb ;
+    skos:prefLabel "Butilbod"@nn ;
+    skos:broader los:13001 ;
+    xkos:isPartOf los:13001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:13014 ;
+    skos:narrower los:13018 ;
+    skos:narrower los:13020 ;
+    xkos:hasPart los:13014 ;
+    xkos:hasPart los:13018 ;
+    xkos:hasPart los:13020 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13004 a skos:Concept ;
+    skos:prefLabel "Social inclusion and participation"@en ;
+    skos:prefLabel "Sosial inkludering og deltakelse"@nb ;
+    skos:prefLabel "Sosial inkludering og deltaking"@nn ;
+    skos:broader los:13001 ;
+    xkos:isPartOf los:13001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:13015 ;
+    skos:narrower los:13016 ;
+    skos:narrower los:13017 ;
+    skos:narrower los:13019 ;
+    xkos:hasPart los:13015 ;
+    xkos:hasPart los:13016 ;
+    xkos:hasPart los:13017 ;
+    xkos:hasPart los:13019 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13005 a skos:Concept ;
+    skos:prefLabel "Social inclusion and participation for single parents"@en ;
+    skos:prefLabel "Sosial inkludering og deltakelse for enslig mor eller far"@nb ;
+    skos:prefLabel "Sosial inkludering og deltaking for einsleg mor eller far"@nn ;
+    skos:broader los:13002 ;
+    xkos:isPartOf los:13002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13006 a skos:Concept ;
+    skos:prefLabel "Social inclusion and participation in an emergency"@en ;
+    skos:prefLabel "Sosial inkludering og deltakelse i en nødsituasjon"@nb ;
+    skos:prefLabel "Sosial inkludering og deltaking i ein nødsituasjon"@nn ;
+    skos:broader los:13002 ;
+    xkos:isPartOf los:13002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "sjå https://www.nav.no/okonomisk-sosialhjelp#nod"@nn ;
+    skos:scopeNote "Inkluderer sjå https://www.nav.no/okonomisk-sosialhjelp#nod"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13007 a skos:Concept ;
+    skos:prefLabel "Social inclusion and participation during unemployment"@en ;
+    skos:prefLabel "Sosial inkludering og deltakelse ved arbeidsledighet"@nb ;
+    skos:prefLabel "Sosial inkludering og deltaking under arbeidsløyse"@nn ;
+    skos:broader los:13002 ;
+    xkos:isPartOf los:13002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "dagpengar"@nn ;
+    skos:scopeNote "Inkluderer dagpengar"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13008 a skos:Concept ;
+    skos:prefLabel "Social inclusion and participation after a death"@en ;
+    skos:prefLabel "Sosial inkludering og deltakelse ved dødsfall"@nb ;
+    skos:prefLabel "Sosial inkludering og deltaking ved dødsfall"@nn ;
+    skos:broader los:13002 ;
+    xkos:isPartOf los:13002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "barnepensjon, gravferdsstønad, ytingar til gjenlevande ektefelle og tidlegare familiepleiar"@nn ;
+    skos:scopeNote "Inkluderer barnepensjon, gravferdsstønad, ytingar til gjenlevande ektefelle og tidlegare familiepleiar"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13009 a skos:Concept ;
+    skos:prefLabel "Social inclusion and participation during illness or injury"@en ;
+    skos:prefLabel "Sosial inkludering og deltakelse ved egen sykdom og skade"@nb ;
+    skos:prefLabel "Sosial inkludering og deltaking ved eigen sjukdom og skade"@nn ;
+    skos:broader los:13002 ;
+    xkos:isPartOf los:13002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "arbeidsavklaringspengar, sjukepengar, uførleik, yrkesskade"@nn ;
+    skos:scopeNote "Inkluderer arbeidsavklaringspengar, sjukepengar, uførleik, yrkesskade"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13010 a skos:Concept ;
+    skos:prefLabel "Social inclusion and participation upon retirement age"@en ;
+    skos:prefLabel "Sosial inkludering og deltakelse ved oppnådd pensjonsalder"@nb ;
+    skos:prefLabel "Sosial inkludering og deltaking ved oppnådd pensjonsalder"@nn ;
+    skos:broader los:13002 ;
+    xkos:isPartOf los:13002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "alderspensjon, tenestepensjon"@nn ;
+    skos:scopeNote "Inkluderer alderspensjon, tenestepensjon"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13011 a skos:Concept ;
+    skos:prefLabel "Social inclusion and participation during family illness"@en ;
+    skos:prefLabel "Sosial inkludering og deltakelse ved sykdom i familien"@nb ;
+    skos:prefLabel "Sosial inkludering og deltaking ved sjukdom i familien"@nn ;
+    skos:broader los:13002 ;
+    xkos:isPartOf los:13002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "omsorgspengar, opplæringspengar, pleiepengar, sjukdom hos barn og andre nærståande"@nn ;
+    skos:scopeNote "Inkluderer omsorgspengar, opplæringspengar, pleiepengar, sjukdom hos barn og andre nærståande"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13012 a skos:Concept ;
+    skos:prefLabel "Social inclusion and participation during pregnancy, birth and adoption"@en ;
+    skos:prefLabel "Sosial inkludering og deltakelse ved svangerskap, fødsel og adopsjon"@nb ;
+    skos:prefLabel "Sosial inkludering og deltaking ved svangerskap, fødsel og adopsjon"@nn ;
+    skos:broader los:13002 ;
+    xkos:isPartOf los:13002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "eingongsstønad ved fødsel og adopsjon, foreldrepengar, svangerskapspengar"@nn ;
+    skos:scopeNote "Inkluderer eingongsstønad ved fødsel og adopsjon, foreldrepengar, svangerskapspengar"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13013 a skos:Concept ;
+    skos:prefLabel "Social inclusion and participation during education"@en ;
+    skos:prefLabel "Sosial inkludering og deltakelse ved utdanning"@nb ;
+    skos:prefLabel "Sosial inkludering og deltaking ved utdanning"@nn ;
+    skos:broader los:13002 ;
+    xkos:isPartOf los:13002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "stipend, studielån"@nn ;
+    skos:scopeNote "Inkluderer stipend, studielån"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13014 a skos:Concept ;
+    skos:prefLabel "Emergency accommodation"@en ;
+    skos:prefLabel "Akuttovernatting"@nb ;
+    skos:prefLabel "Akuttovernatting"@nn ;
+    skos:broader los:13003 ;
+    xkos:isPartOf los:13003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13015 a skos:Concept ;
+    skos:prefLabel "Children and youth"@en ;
+    skos:prefLabel "Barn og unge"@nb ;
+    skos:prefLabel "Barn og unge"@nn ;
+    skos:broader los:13004 ;
+    xkos:isPartOf los:13004 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "med innvandrarbakgrunn"@nn ;
+    skos:scopeNote "Inkluderer med innvandrarbakgrunn"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13016 a skos:Concept ;
+    skos:prefLabel "Elderly and individuals living alone"@en ;
+    skos:prefLabel "Eldre og enslige"@nb ;
+    skos:prefLabel "Eldre og enslige"@nn ;
+    skos:broader los:13004 ;
+    xkos:isPartOf los:13004 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "f.eks. seniorsenter"@nn ;
+    skos:scopeNote "Inkluderer f.eks. seniorsenter"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13017 a skos:Concept ;
+    skos:prefLabel "Refugees and asylum seekers"@en ;
+    skos:prefLabel "Flyktninger og asylsøkere"@nb ;
+    skos:prefLabel "Flyktningar og asylsøkjarar"@nn ;
+    skos:broader los:13004 ;
+    xkos:isPartOf los:13004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13018 a skos:Concept ;
+    skos:prefLabel "Municipal housing"@en ;
+    skos:prefLabel "Kommunal bolig"@nb ;
+    skos:prefLabel "Kommunal bustad"@nn ;
+    skos:broader los:13003 ;
+    xkos:isPartOf los:13003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13019 a skos:Concept ;
+    skos:prefLabel "Equality and diversity"@en ;
+    skos:prefLabel "Likestilling og mangfold"@nb ;
+    skos:prefLabel "Likestilling og mangfald"@nn ;
+    skos:broader los:13004 ;
+    xkos:isPartOf los:13004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:13020 a skos:Concept ;
+    skos:prefLabel "Temporary housing"@en ;
+    skos:prefLabel "Midlertidig bolig"@nb ;
+    skos:prefLabel "Mellombels bustad"@nn ;
+    skos:broader los:13003 ;
+    xkos:isPartOf los:13003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14001 a skos:Concept ;
+    skos:prefLabel "Traffic and transport"@en ;
+    skos:prefLabel "Trafikk og transport"@nb ;
+    skos:prefLabel "Trafikk og transport"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:14002 ;
+    skos:narrower los:14003 ;
+    skos:narrower los:14004 ;
+    skos:narrower los:14005 ;
+    skos:narrower los:14006 ;
+    skos:narrower los:14007 ;
+    skos:narrower los:14008 ;
+    skos:narrower los:14009 ;
+    skos:narrower los:14010 ;
+    skos:narrower los:14011 ;
+    skos:narrower los:14012 ;
+    xkos:hasPart los:14002 ;
+    xkos:hasPart los:14003 ;
+    xkos:hasPart los:14004 ;
+    xkos:hasPart los:14005 ;
+    xkos:hasPart los:14006 ;
+    xkos:hasPart los:14007 ;
+    xkos:hasPart los:14008 ;
+    xkos:hasPart los:14009 ;
+    xkos:hasPart los:14010 ;
+    xkos:hasPart los:14011 ;
+    xkos:hasPart los:14012 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14002 a skos:Concept ;
+    skos:prefLabel "Mobility"@en ;
+    skos:prefLabel "Mobilitet"@nb ;
+    skos:prefLabel "Mobilitet"@nn ;
+    skos:broader los:14001 ;
+    xkos:isPartOf los:14001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:14013 ;
+    skos:narrower los:14026 ;
+    skos:narrower los:14032 ;
+    skos:narrower los:14033 ;
+    skos:narrower los:14044 ;
+    xkos:hasPart los:14013 ;
+    xkos:hasPart los:14026 ;
+    xkos:hasPart los:14032 ;
+    xkos:hasPart los:14033 ;
+    xkos:hasPart los:14044 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14003 a skos:Concept ;
+    skos:prefLabel "Infrastructure for land mobility"@en ;
+    skos:prefLabel "Infrastruktur for mobilitet på land"@nb ;
+    skos:prefLabel "Infrastruktur for mobilitet på land"@nn ;
+    skos:broader los:14001 ;
+    xkos:isPartOf los:14001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:14014 ;
+    skos:narrower los:14036 ;
+    skos:narrower los:14046 ;
+    skos:narrower los:14049 ;
+    xkos:hasPart los:14014 ;
+    xkos:hasPart los:14036 ;
+    xkos:hasPart los:14046 ;
+    xkos:hasPart los:14049 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14004 a skos:Concept ;
+    skos:prefLabel "Means of transport in air"@en ;
+    skos:prefLabel "Fremkomstmiddel i luft"@nb ;
+    skos:prefLabel "Framkomstmiddel i luft"@nn ;
+    skos:broader los:14001 ;
+    xkos:isPartOf los:14001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:14015 ;
+    skos:narrower los:14017 ;
+    xkos:hasPart los:14015 ;
+    xkos:hasPart los:14017 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14005 a skos:Concept ;
+    skos:prefLabel "Infrastructure for water mobility"@en ;
+    skos:prefLabel "Infrastruktur for mobilitet på/i vann"@nb ;
+    skos:prefLabel "Infrastruktur for mobilitet på/i vann"@nn ;
+    skos:broader los:14001 ;
+    xkos:isPartOf los:14001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:14016 ;
+    skos:narrower los:14024 ;
+    skos:narrower los:14037 ;
+    xkos:hasPart los:14016 ;
+    xkos:hasPart los:14024 ;
+    xkos:hasPart los:14037 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14006 a skos:Concept ;
+    skos:prefLabel "Road user"@en ;
+    skos:prefLabel "Trafikant"@nb ;
+    skos:prefLabel "Trafikant"@nn ;
+    skos:broader los:14001 ;
+    xkos:isPartOf los:14001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:14018 ;
+    skos:narrower los:14020 ;
+    skos:narrower los:14027 ;
+    skos:narrower los:14031 ;
+    skos:narrower los:14039 ;
+    xkos:hasPart los:14018 ;
+    xkos:hasPart los:14020 ;
+    xkos:hasPart los:14027 ;
+    xkos:hasPart los:14031 ;
+    xkos:hasPart los:14039 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14007 a skos:Concept ;
+    skos:prefLabel "Means of transport on/in water"@en ;
+    skos:prefLabel "Fremkomstmiddel på/i vann"@nb ;
+    skos:prefLabel "Framkomstmiddel på/i vann"@nn ;
+    skos:broader los:14001 ;
+    xkos:isPartOf los:14001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:14019 ;
+    skos:narrower los:14045 ;
+    skos:narrower los:14050 ;
+    skos:narrower los:14051 ;
+    xkos:hasPart los:14019 ;
+    xkos:hasPart los:14045 ;
+    xkos:hasPart los:14050 ;
+    xkos:hasPart los:14051 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14008 a skos:Concept ;
+    skos:prefLabel "Means of transport on land"@en ;
+    skos:prefLabel "Fremkomstmiddel på land"@nb ;
+    skos:prefLabel "Framkomstmiddel på land"@nn ;
+    skos:broader los:14001 ;
+    xkos:isPartOf los:14001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:14021 ;
+    skos:narrower los:14022 ;
+    skos:narrower los:14030 ;
+    skos:narrower los:14035 ;
+    skos:narrower los:14038 ;
+    skos:narrower los:14040 ;
+    xkos:hasPart los:14021 ;
+    xkos:hasPart los:14022 ;
+    xkos:hasPart los:14030 ;
+    xkos:hasPart los:14035 ;
+    xkos:hasPart los:14038 ;
+    xkos:hasPart los:14040 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14009 a skos:Concept ;
+    skos:prefLabel "Freight and logistics"@en ;
+    skos:prefLabel "Frakt og logistikk"@nb ;
+    skos:prefLabel "Frakt og logistikk"@nn ;
+    skos:broader los:14001 ;
+    xkos:isPartOf los:14001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:14023 ;
+    skos:narrower los:14029 ;
+    xkos:hasPart los:14023 ;
+    xkos:hasPart los:14029 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14010 a skos:Concept ;
+    skos:prefLabel "Infrastructure for air mobility"@en ;
+    skos:prefLabel "Infrastruktur for mobilitet i luft"@nb ;
+    skos:prefLabel "Infrastruktur for mobilitet i luft"@nn ;
+    skos:broader los:14001 ;
+    xkos:isPartOf los:14001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:14025 ;
+    skos:narrower los:14028 ;
+    xkos:hasPart los:14025 ;
+    xkos:hasPart los:14028 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14011 a skos:Concept ;
+    skos:prefLabel "Dynamic traffic information"@en ;
+    skos:prefLabel "Dynamisk trafikkinformasjon"@nb ;
+    skos:prefLabel "Dynamisk trafikkinformasjon"@nn ;
+    skos:broader los:14001 ;
+    xkos:isPartOf los:14001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:14034 ;
+    skos:narrower los:14047 ;
+    skos:narrower los:14048 ;
+    xkos:hasPart los:14034 ;
+    xkos:hasPart los:14047 ;
+    xkos:hasPart los:14048 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14012 a skos:Concept ;
+    skos:prefLabel "Permit to operate a vehicle"@en ;
+    skos:prefLabel "Tillatelse til å føre fremkomstmiddel"@nb ;
+    skos:prefLabel "Tillatelse til å føre framkostmiddel"@nn ;
+    skos:broader los:14001 ;
+    xkos:isPartOf los:14001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:14041 ;
+    skos:narrower los:14042 ;
+    skos:narrower los:14043 ;
+    xkos:hasPart los:14041 ;
+    xkos:hasPart los:14042 ;
+    xkos:hasPart los:14043 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14013 a skos:Concept ;
+    skos:prefLabel "Vehicle sharing and rental"@en ;
+    skos:prefLabel "Deling og leie av fremkomstmiddel"@nb ;
+    skos:prefLabel "Deling og leiging av framkomstmiddel"@nn ;
+    skos:broader los:14002 ;
+    xkos:isPartOf los:14002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14014 a skos:Concept ;
+    skos:prefLabel "Fuel and charging stations"@en ;
+    skos:prefLabel "Drivstoff og ladestasjoner"@nb ;
+    skos:prefLabel "Drivstoff og ladestasjonar"@nn ;
+    skos:broader los:14003 ;
+    xkos:isPartOf los:14003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14015 a skos:Concept ;
+    skos:prefLabel "Drone"@en ;
+    skos:prefLabel "Drone"@nb ;
+    skos:prefLabel "Drone"@nn ;
+    skos:broader los:14004 ;
+    xkos:isPartOf los:14004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14016 a skos:Concept ;
+    skos:prefLabel "Fishing port"@en ;
+    skos:prefLabel "Fiskerihavn"@nb ;
+    skos:prefLabel "Fiskerihamn"@nn ;
+    skos:broader los:14005 ;
+    xkos:isPartOf los:14005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14017 a skos:Concept ;
+    skos:prefLabel "Plane and helicopter"@en ;
+    skos:prefLabel "Fly og helikopter"@nb ;
+    skos:prefLabel "Fly og helikopter"@nn ;
+    skos:broader los:14004 ;
+    xkos:isPartOf los:14004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14018 a skos:Concept ;
+    skos:prefLabel "Pedestrian"@en ;
+    skos:prefLabel "Fotgjenger"@nb ;
+    skos:prefLabel "Fotgjengar"@nn ;
+    skos:broader los:14006 ;
+    xkos:isPartOf los:14006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14019 a skos:Concept ;
+    skos:prefLabel "Recreational boat"@en ;
+    skos:prefLabel "Fritidsbåt"@nb ;
+    skos:prefLabel "Fritidsbåt"@nn ;
+    skos:broader los:14007 ;
+    xkos:isPartOf los:14007 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "vrakpant på fritdsbåt"@nn ;
+    skos:scopeNote "Inkluderer vrakpant på fritdsbåt"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14020 a skos:Concept ;
+    skos:prefLabel "Vehicle operator"@en ;
+    skos:prefLabel "Fører av fremkomstmiddel"@nb ;
+    skos:prefLabel "Førar av framkomstmiddel"@nn ;
+    skos:broader los:14006 ;
+    xkos:isPartOf los:14006 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "bilist, flygar, motorsyklist, togførar"@nn ;
+    skos:scopeNote "Inkluderer bilist, flygar, motorsyklist, togførar"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14021 a skos:Concept ;
+    skos:prefLabel "Workshop approval"@en ;
+    skos:prefLabel "Godkjenning av verksted"@nb ;
+    skos:prefLabel "Godkjenning av verkstad"@nn ;
+    skos:broader los:14008 ;
+    xkos:isPartOf los:14008 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14022 a skos:Concept ;
+    skos:prefLabel "Vehicle approval and registration"@en ;
+    skos:prefLabel "Godkjenning og registrering av fremkomstmiddel"@nb ;
+    skos:prefLabel "Godkjenning og registrering av framkomstmiddel"@nn ;
+    skos:broader los:14008 ;
+    xkos:isPartOf los:14008 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14023 a skos:Concept ;
+    skos:prefLabel "Freight transport"@en ;
+    skos:prefLabel "Godstransport"@nb ;
+    skos:prefLabel "Godstransport"@nn ;
+    skos:broader los:14009 ;
+    xkos:isPartOf los:14009 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14024 a skos:Concept ;
+    skos:prefLabel "Port"@en ;
+    skos:prefLabel "Havn"@nb ;
+    skos:prefLabel "Hamn"@nn ;
+    skos:broader los:14005 ;
+    xkos:isPartOf los:14005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14025 a skos:Concept ;
+    skos:prefLabel "Helipad"@en ;
+    skos:prefLabel "Helikopterdekk"@nb ;
+    skos:prefLabel "Helikopterdekk"@nn ;
+    skos:broader los:14010 ;
+    xkos:isPartOf los:14010 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14026 a skos:Concept ;
+    skos:prefLabel "Non-scheduled passenger transport"@en ;
+    skos:prefLabel "Ikke-rutesatt persontransport"@nb ;
+    skos:prefLabel "Ikkje-rutesett persontransport"@nn ;
+    skos:broader los:14002 ;
+    xkos:isPartOf los:14002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "drosjeløyve, køyresetel, løyve for ikkje-rutesett persontransport"@nn ;
+    skos:scopeNote "Inkluderer drosjeløyve, køyresetel, løyve for ikkje-rutesett persontransport"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14027 a skos:Concept ;
+    skos:prefLabel "Conductor"@en ;
+    skos:prefLabel "Konduktør"@nb ;
+    skos:prefLabel "Konduktør"@nn ;
+    skos:broader los:14006 ;
+    xkos:isPartOf los:14006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14028 a skos:Concept ;
+    skos:prefLabel "Airport"@en ;
+    skos:prefLabel "Lufthavn"@nb ;
+    skos:prefLabel "Lufthamn"@nn ;
+    skos:broader los:14010 ;
+    xkos:isPartOf los:14010 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14029 a skos:Concept ;
+    skos:prefLabel "Freight transport permit"@en ;
+    skos:prefLabel "Løyve for godstransport"@nb ;
+    skos:prefLabel "Løyve for godstransport"@nn ;
+    skos:broader los:14009 ;
+    xkos:isPartOf los:14009 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "løyve for godstransport med motorvogn"@nn ;
+    skos:scopeNote "Inkluderer løyve for godstransport med motorvogn"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14030 a skos:Concept ;
+    skos:prefLabel "Motor vehicle"@en ;
+    skos:prefLabel "Motorvogn"@nb ;
+    skos:prefLabel "Motorvogn"@nn ;
+    skos:broader los:14008 ;
+    xkos:isPartOf los:14008 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "motorsykkel, vrakpant på motorvogn"@nn ;
+    skos:scopeNote "Inkluderer motorsykkel, vrakpant på motorvogn"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14031 a skos:Concept ;
+    skos:prefLabel "Passenger"@en ;
+    skos:prefLabel "Passasjer"@nb ;
+    skos:prefLabel "Passasjer"@nn ;
+    skos:broader los:14006 ;
+    xkos:isPartOf los:14006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14032 a skos:Concept ;
+    skos:prefLabel "Private transport"@en ;
+    skos:prefLabel "Privat transport"@nb ;
+    skos:prefLabel "Privat transport"@nn ;
+    skos:broader los:14002 ;
+    xkos:isPartOf los:14002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14033 a skos:Concept ;
+    skos:prefLabel "Scheduled passenger transport"@en ;
+    skos:prefLabel "Rutesatt persontransport"@nb ;
+    skos:prefLabel "Rutesett persontransport"@nn ;
+    skos:broader los:14002 ;
+    xkos:isPartOf los:14002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "løyve for persontransport med fartøy, løyve for rutesett persontransport, reisebillett, reisegaranti, ruteinformasjon, ruteplanleggjar, takstar og kjøpsinformasjon"@nn ;
+    skos:scopeNote "Inkluderer løyve for persontransport med fartøy, løyve for rutesett persontransport, reisebillett, reisegaranti, ruteinformasjon, ruteplanleggjar, takstar og kjøpsinformasjon"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14034 a skos:Concept ;
+    skos:prefLabel "Real-time traffic information"@en ;
+    skos:prefLabel "Sanntids trafikkinformasjon"@nb ;
+    skos:prefLabel "Sanntids trafikkinformasjon"@nn ;
+    skos:broader los:14011 ;
+    xkos:isPartOf los:14011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14035 a skos:Concept ;
+    skos:prefLabel "Rail vehicle"@en ;
+    skos:prefLabel "Skinnegående kjøretøy"@nb ;
+    skos:prefLabel "Skinnegåande køyretøy"@nn ;
+    skos:broader los:14008 ;
+    xkos:isPartOf los:14008 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14036 a skos:Concept ;
+    skos:prefLabel "Rail-based..."@en ;
+    skos:prefLabel "Skinnegående..."@nb ;
+    skos:prefLabel "Skinnegåande..."@nn ;
+    skos:broader los:14003 ;
+    xkos:isPartOf los:14003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "haldeplass for skinnegåande køyretøy"@nn ;
+    skos:scopeNote "Inkluderer haldeplass for skinnegåande køyretøy"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14037 a skos:Concept ;
+    skos:prefLabel "Small boat harbour"@en ;
+    skos:prefLabel "Småbåthavn"@nb ;
+    skos:prefLabel "Småbåthamn"@nn ;
+    skos:broader los:14005 ;
+    xkos:isPartOf los:14005 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14038 a skos:Concept ;
+    skos:prefLabel "Bicycle and e-bike"@en ;
+    skos:prefLabel "Sykkel og elsykkel"@nb ;
+    skos:prefLabel "Sykkel og elsykkel"@nn ;
+    skos:broader los:14008 ;
+    xkos:isPartOf los:14008 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14039 a skos:Concept ;
+    skos:prefLabel "Cyclist"@en ;
+    skos:prefLabel "Syklist"@nb ;
+    skos:prefLabel "Syklist"@nn ;
+    skos:broader los:14006 ;
+    xkos:isPartOf los:14006 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14040 a skos:Concept ;
+    skos:prefLabel "Trailer"@en ;
+    skos:prefLabel "Tilhenger"@nb ;
+    skos:prefLabel "Tilhengar"@nn ;
+    skos:broader los:14008 ;
+    xkos:isPartOf los:14008 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14041 a skos:Concept ;
+    skos:prefLabel "Permit to operate an aircraft"@en ;
+    skos:prefLabel "Tillatelse til å føre fremkomstmiddel i luft"@nb ;
+    skos:prefLabel "Tillatelse til å føre framkostmiddel i luft"@nn ;
+    skos:broader los:14012 ;
+    xkos:isPartOf los:14012 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "dronesertifikat, flysertifikat"@nn ;
+    skos:scopeNote "Inkluderer dronesertifikat, flysertifikat"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14042 a skos:Concept ;
+    skos:prefLabel "Permit to operate a land vehicle"@en ;
+    skos:prefLabel "Tillatelse til å føre fremkomstmiddel på land"@nb ;
+    skos:prefLabel "Tillatelse til å føre framkostmiddel på land"@nn ;
+    skos:broader los:14012 ;
+    xkos:isPartOf los:14012 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "førarkort, internasjonalt førarkort, kjørekort, truckførarbevis"@nn ;
+    skos:scopeNote "Inkluderer førarkort, internasjonalt førarkort, kjørekort, truckførarbevis"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14043 a skos:Concept ;
+    skos:prefLabel "Permit to operate a watercraft"@en ;
+    skos:prefLabel "Tillatelse til å føre fremkomstmiddel på/i vann"@nb ;
+    skos:prefLabel "Tillatelse til å føre framkostmiddel på/i vann"@nn ;
+    skos:broader los:14012 ;
+    xkos:isPartOf los:14012 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "båtførarbevis, fritidsskipparsertifikat, internasjonalt båtsertifikat, icc"@nn ;
+    skos:scopeNote "Inkluderer båtførarbevis, fritidsskipparsertifikat, internasjonalt båtsertifikat, icc"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14044 a skos:Concept ;
+    skos:prefLabel "Transport for person with special needs"@en ;
+    skos:prefLabel "Transport for person med særskilt behov"@nb ;
+    skos:prefLabel "Transport for person med særskilt behov"@nn ;
+    skos:broader los:14002 ;
+    xkos:isPartOf los:14002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "parkeringsløyve for forflyttingshemma, hc-kort, skuleskyss, tt-kort"@nn ;
+    skos:scopeNote "Inkluderer parkeringsløyve for forflyttingshemma, hc-kort, skuleskyss, tt-kort"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14045 a skos:Concept ;
+    skos:prefLabel "Personal watercraft"@en ;
+    skos:prefLabel "Vannscooter"@nb ;
+    skos:prefLabel "Vasskuter"@nn ;
+    skos:broader los:14007 ;
+    xkos:isPartOf los:14007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14046 a skos:Concept ;
+    skos:prefLabel "Maintenance"@en ;
+    skos:prefLabel "Vedlikehold"@nb ;
+    skos:prefLabel "Vedlikehald"@nn ;
+    skos:broader los:14003 ;
+    xkos:isPartOf los:14003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "brøyting, feiing og strøing, gravemelding, ledningsnett"@nn ;
+    skos:scopeNote "Inkluderer brøyting, feiing og strøing, gravemelding, ledningsnett"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14047 a skos:Concept ;
+    skos:prefLabel "Road and driving conditions"@en ;
+    skos:prefLabel "Vei- og føreforhold"@nb ;
+    skos:prefLabel "Veg- og føreforhold"@nn ;
+    skos:broader los:14011 ;
+    xkos:isPartOf los:14011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14048 a skos:Concept ;
+    skos:prefLabel "Roadworks"@en ;
+    skos:prefLabel "Vegarbeid"@nb ;
+    skos:prefLabel "Vegarbeid"@nn ;
+    skos:broader los:14011 ;
+    xkos:isPartOf los:14011 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14049 a skos:Concept ;
+    skos:prefLabel "Road network"@en ;
+    skos:prefLabel "Vegnett"@nb ;
+    skos:prefLabel "Vegnett"@nn ;
+    skos:broader los:14003 ;
+    xkos:isPartOf los:14003 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "aksellastrestriksjonar, bominformasjon, gangveg, gatelys, haldeplass, kart/topologi, møteplass, parkering, privat veg, innkøyrsel, rasteplass, snuplass, sykkelsti, trafikksignal og reguleringar"@nn ;
+    skos:scopeNote "Inkluderer aksellastrestriksjonar, bominformasjon, gangveg, gatelys, haldeplass, kart/topologi, møteplass, parkering, privat veg, innkøyrsel, rasteplass, snuplass, sykkelsti, trafikksignal og reguleringar"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14050 a skos:Concept ;
+    skos:prefLabel "Hovercraft"@en ;
+    skos:prefLabel "Luftputefartøy"@nb ;
+    skos:prefLabel "Luftputefartøy"@nn ;
+    skos:broader los:14007 ;
+    xkos:isPartOf los:14007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:14051 a skos:Concept ;
+    skos:prefLabel "Ship"@en ;
+    skos:prefLabel "Skip"@nb ;
+    skos:prefLabel "Skip"@nn ;
+    skos:broader los:14007 ;
+    xkos:isPartOf los:14007 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15001 a skos:Concept ;
+    skos:prefLabel "Enterprise"@en ;
+    skos:prefLabel "Virksomhet"@nb ;
+    skos:prefLabel "Verksemd"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    xkos:belongsTo los:level1 ;
+    skos:narrower los:15002 ;
+    skos:narrower los:15003 ;
+    skos:narrower los:15004 ;
+    xkos:hasPart los:15002 ;
+    xkos:hasPart los:15003 ;
+    xkos:hasPart los:15004 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15002 a skos:Concept ;
+    skos:prefLabel "Business sector"@en ;
+    skos:prefLabel "Næringsliv"@nb ;
+    skos:prefLabel "Næringsliv"@nn ;
+    skos:broader los:15001 ;
+    xkos:isPartOf los:15001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:15005 ;
+    skos:narrower los:15007 ;
+    skos:narrower los:15008 ;
+    skos:narrower los:15009 ;
+    skos:narrower los:15011 ;
+    skos:narrower los:15012 ;
+    skos:narrower los:15013 ;
+    xkos:hasPart los:15005 ;
+    xkos:hasPart los:15007 ;
+    xkos:hasPart los:15008 ;
+    xkos:hasPart los:15009 ;
+    xkos:hasPart los:15011 ;
+    xkos:hasPart los:15012 ;
+    xkos:hasPart los:15013 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15003 a skos:Concept ;
+    skos:prefLabel "Public sector enterprise"@en ;
+    skos:prefLabel "Offentlig virksomhet"@nb ;
+    skos:prefLabel "Offentleg verksemd"@nn ;
+    skos:broader los:15001 ;
+    xkos:isPartOf los:15001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:15006 ;
+    xkos:hasPart los:15006 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15004 a skos:Concept ;
+    skos:prefLabel "Voluntary and non-profit organisation"@en ;
+    skos:prefLabel "Frivillig og ideell virksomhet"@nb ;
+    skos:prefLabel "Frivillig og ideell verksemd"@nn ;
+    skos:broader los:15001 ;
+    xkos:isPartOf los:15001 ;
+    xkos:belongsTo los:level2 ;
+    skos:narrower los:15010 ;
+    xkos:hasPart los:15010 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15005 a skos:Concept ;
+    skos:prefLabel "Business development"@en ;
+    skos:prefLabel "Næringsutvikling"@nb ;
+    skos:prefLabel "Næringsutvikling"@nn ;
+    skos:broader los:15002 ;
+    xkos:isPartOf los:15002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "næringsareal, næringsklynger, stønad til bedrifter"@nn ;
+    skos:scopeNote "Inkluderer næringsareal, næringsklynger, stønad til bedrifter"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15006 a skos:Concept ;
+    skos:prefLabel "Public procurement"@en ;
+    skos:prefLabel "Offentlige anskaffelser"@nb ;
+    skos:prefLabel "Offentleg innkjøp"@nn ;
+    skos:broader los:15003 ;
+    xkos:isPartOf los:15003 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15007 a skos:Concept ;
+    skos:prefLabel "Patent, design and trademark"@en ;
+    skos:prefLabel "Patent, design og varemerke"@nb ;
+    skos:prefLabel "Patent, design og varemerke"@nn ;
+    skos:broader los:15002 ;
+    xkos:isPartOf los:15002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15008 a skos:Concept ;
+    skos:prefLabel "Reporting for businesses"@en ;
+    skos:prefLabel "Rapportering for næringsdrivende"@nb ;
+    skos:prefLabel "Rapportering for næringsdrivande"@nn ;
+    skos:broader los:15002 ;
+    xkos:isPartOf los:15002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15009 a skos:Concept ;
+    skos:prefLabel "Licences and permits"@en ;
+    skos:prefLabel "Tillatelse og løyve"@nb ;
+    skos:prefLabel "Tillating og løyve"@nn ;
+    skos:broader los:15002 ;
+    xkos:isPartOf los:15002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "bevilling og løyve, krav og standardar til enkeltbransjar, sertifisering og autorisasjon"@nn ;
+    skos:scopeNote "Inkluderer bevilling og løyve, krav og standardar til enkeltbransjar, sertifisering og autorisasjon"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15010 a skos:Concept ;
+    skos:prefLabel "Grants for voluntary and non-profit organisations"@en ;
+    skos:prefLabel "Tilskuddsordninger for frivillig og ideell virksomhet"@nb ;
+    skos:prefLabel "Tilskotsordningar for frivillig og ideell verksemd"@nn ;
+    skos:broader los:15004 ;
+    xkos:isPartOf los:15004 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15011 a skos:Concept ;
+    skos:prefLabel "Grants for business"@en ;
+    skos:prefLabel "Tilskuddsordninger for næring"@nb ;
+    skos:prefLabel "Tilskotsordningar for næring"@nn ;
+    skos:broader los:15002 ;
+    xkos:isPartOf los:15002 ;
+    xkos:belongsTo los:level3 ;
+    xkos:inclusionNote "avløysartilskot, jordbrukstilskot, produksjonstilskot, skogbrukstilskot, stønad til bedrifter, tilskot til økologisk landbruk"@nn ;
+    skos:scopeNote "Inkluderer avløysartilskot, jordbrukstilskot, produksjonstilskot, skogbrukstilskot, stønad til bedrifter, tilskot til økologisk landbruk"@nn ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15012 a skos:Concept ;
+    skos:prefLabel "Supervision and inspection of business activity"@en ;
+    skos:prefLabel "Tilsyn og kontroll med næringsvirksomhet"@nb ;
+    skos:prefLabel "Tilsyn og kontroll med næringsverksemd"@nn ;
+    skos:broader los:15002 ;
+    xkos:isPartOf los:15002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:15013 a skos:Concept ;
+    skos:prefLabel "Foreign company"@en ;
+    skos:prefLabel "Utenlandsk bedrift"@nb ;
+    skos:prefLabel "Utanlandsk bedrift"@nn ;
+    skos:broader los:15002 ;
+    xkos:isPartOf los:15002 ;
+    xkos:belongsTo los:level3 ;
+    skos:inScheme <https://id.norge.no/los> .
+
+los:00001 a skos:Collection ;
+    skos:prefLabel "Municipality"@en ;
+    skos:prefLabel "Kommune"@nb ;
+    skos:prefLabel "Kommune"@nn ;
+    skos:member los:01011 ;
+    skos:member los:02006 ;
+    skos:member los:02007 ;
+    skos:member los:02008 ;
+    skos:member los:02009 ;
+    skos:member los:02010 ;
+    skos:member los:02011 ;
+    skos:member los:02013 ;
+    skos:member los:02014 ;
+    skos:member los:03006 ;
+    skos:member los:03008 ;
+    skos:member los:03011 ;
+    skos:member los:03012 ;
+    skos:member los:04011 ;
+    skos:member los:04020 ;
+    skos:member los:04023 ;
+    skos:member los:04030 ;
+    skos:member los:04039 ;
+    skos:member los:04043 ;
+    skos:member los:04048 ;
+    skos:member los:04049 ;
+    skos:member los:05007 ;
+    skos:member los:05011 ;
+    skos:member los:05012 ;
+    skos:member los:06009 ;
+    skos:member los:06010 ;
+    skos:member los:06011 ;
+    skos:member los:06012 ;
+    skos:member los:06013 ;
+    skos:member los:06014 ;
+    skos:member los:06015 ;
+    skos:member los:06016 ;
+    skos:member los:06017 ;
+    skos:member los:06018 ;
+    skos:member los:06019 ;
+    skos:member los:06020 ;
+    skos:member los:06021 ;
+    skos:member los:06023 ;
+    skos:member los:06024 ;
+    skos:member los:06028 ;
+    skos:member los:06030 ;
+    skos:member los:06031 ;
+    skos:member los:06032 ;
+    skos:member los:06033 ;
+    skos:member los:06034 ;
+    skos:member los:07008 ;
+    skos:member los:07009 ;
+    skos:member los:07010 ;
+    skos:member los:07012 ;
+    skos:member los:07013 ;
+    skos:member los:07014 ;
+    skos:member los:07015 ;
+    skos:member los:07016 ;
+    skos:member los:07017 ;
+    skos:member los:07018 ;
+    skos:member los:07019 ;
+    skos:member los:07021 ;
+    skos:member los:07022 ;
+    skos:member los:07023 ;
+    skos:member los:07024 ;
+    skos:member los:07025 ;
+    skos:member los:07026 ;
+    skos:member los:07027 ;
+    skos:member los:07028 ;
+    skos:member los:07029 ;
+    skos:member los:07030 ;
+    skos:member los:07031 ;
+    skos:member los:07033 ;
+    skos:member los:07034 ;
+    skos:member los:07035 ;
+    skos:member los:07036 ;
+    skos:member los:07037 ;
+    skos:member los:07038 ;
+    skos:member los:07039 ;
+    skos:member los:07040 ;
+    skos:member los:07041 ;
+    skos:member los:08006 ;
+    skos:member los:09015 ;
+    skos:member los:09016 ;
+    skos:member los:09018 ;
+    skos:member los:09019 ;
+    skos:member los:09021 ;
+    skos:member los:09022 ;
+    skos:member los:09023 ;
+    skos:member los:09024 ;
+    skos:member los:09027 ;
+    skos:member los:09028 ;
+    skos:member los:09031 ;
+    skos:member los:09032 ;
+    skos:member los:09033 ;
+    skos:member los:09034 ;
+    skos:member los:09036 ;
+    skos:member los:09037 ;
+    skos:member los:09043 ;
+    skos:member los:09047 ;
+    skos:member los:09054 ;
+    skos:member los:09056 ;
+    skos:member los:09058 ;
+    skos:member los:09063 ;
+    skos:member los:09064 ;
+    skos:member los:09065 ;
+    skos:member los:09066 ;
+    skos:member los:09067 ;
+    skos:member los:09068 ;
+    skos:member los:09069 ;
+    skos:member los:09070 ;
+    skos:member los:09071 ;
+    skos:member los:09072 ;
+    skos:member los:09073 ;
+    skos:member los:09074 ;
+    skos:member los:09075 ;
+    skos:member los:09076 ;
+    skos:member los:09077 ;
+    skos:member los:09078 ;
+    skos:member los:09079 ;
+    skos:member los:09081 ;
+    skos:member los:09085 ;
+    skos:member los:09086 ;
+    skos:member los:09089 ;
+    skos:member los:10005 ;
+    skos:member los:10006 ;
+    skos:member los:10008 ;
+    skos:member los:10009 ;
+    skos:member los:10010 ;
+    skos:member los:10011 ;
+    skos:member los:10012 ;
+    skos:member los:10013 ;
+    skos:member los:10014 ;
+    skos:member los:10015 ;
+    skos:member los:10016 ;
+    skos:member los:10017 ;
+    skos:member los:10018 ;
+    skos:member los:10019 ;
+    skos:member los:10020 ;
+    skos:member los:10021 ;
+    skos:member los:10022 ;
+    skos:member los:10023 ;
+    skos:member los:10024 ;
+    skos:member los:10025 ;
+    skos:member los:10027 ;
+    skos:member los:10028 ;
+    skos:member los:11007 ;
+    skos:member los:11008 ;
+    skos:member los:11009 ;
+    skos:member los:11010 ;
+    skos:member los:11011 ;
+    skos:member los:11012 ;
+    skos:member los:11014 ;
+    skos:member los:11015 ;
+    skos:member los:11016 ;
+    skos:member los:11017 ;
+    skos:member los:11018 ;
+    skos:member los:11021 ;
+    skos:member los:11022 ;
+    skos:member los:11023 ;
+    skos:member los:12005 ;
+    skos:member los:12006 ;
+    skos:member los:13006 ;
+    skos:member los:13014 ;
+    skos:member los:13015 ;
+    skos:member los:13016 ;
+    skos:member los:13017 ;
+    skos:member los:13019 ;
+    skos:member los:13020 ;
+    skos:member los:14013 ;
+    skos:member los:14014 ;
+    skos:member los:14016 ;
+    skos:member los:14019 ;
+    skos:member los:14024 ;
+    skos:member los:14025 ;
+    skos:member los:14026 ;
+    skos:member los:14028 ;
+    skos:member los:14033 ;
+    skos:member los:14034 ;
+    skos:member los:14036 ;
+    skos:member los:14037 ;
+    skos:member los:14038 ;
+    skos:member los:14044 ;
+    skos:member los:14045 ;
+    skos:member los:14046 ;
+    skos:member los:14047 ;
+    skos:member los:14048 ;
+    skos:member los:14049 ;
+    skos:member los:15005 ;
+    skos:member los:15009 ;
+    skos:member los:15010 ;
+    skos:member los:15011 ;
+    skos:member los:15012 .
+
+los:00002 a skos:Collection ;
+    skos:prefLabel "County authority"@en ;
+    skos:prefLabel "Fylkeskommune"@nb ;
+    skos:prefLabel "Fylkeskommune"@nn .
+
+los:00003 a skos:Collection ;
+    skos:prefLabel "State"@en ;
+    skos:prefLabel "Stat"@nb ;
+    skos:prefLabel "Stat"@nn .
+
+los:00004 a skos:Collection ;
+    skos:prefLabel "Starting and running a business"@en ;
+    skos:prefLabel "Starte og drive en bedrift"@nb ;
+    skos:prefLabel "Starte og drive ei verksemd"@nn .
+
+los:00005 a skos:Collection ;
+    skos:prefLabel "Seriously ill child"@en ;
+    skos:prefLabel "Alvorlig sykt barn"@nb ;
+    skos:prefLabel "Alvorleg sjukt barn"@nn ;
+    skos:member los:01012 ;
+    skos:member los:01013 ;
+    skos:member los:04012 ;
+    skos:member los:04028 ;
+    skos:member los:04034 ;
+    skos:member los:04035 ;
+    skos:member los:04036 ;
+    skos:member los:05016 ;
+    skos:member los:09053 ;
+    skos:member los:13008 ;
+    skos:member los:13011 ;
+    skos:member los:13012 .
+
+los:00006 a skos:Collection ;
+    skos:prefLabel "New in Norway"@en ;
+    skos:prefLabel "Ny i Norge"@nb ;
+    skos:prefLabel "Ny i Noreg"@nn .
+
+los:00007 a skos:Collection ;
+    skos:prefLabel "Death and inheritance"@en ;
+    skos:prefLabel "Dødsfall og arv"@nb ;
+    skos:prefLabel "Dødsfall og arv"@nn .
+
+los:00008 a skos:Collection ;
+    skos:prefLabel "Starting and running a voluntary organisation"@en ;
+    skos:prefLabel "Starte og drive en frivillig organisasjon"@nb ;
+    skos:prefLabel "Starte og drive ein frivillig organisasjon"@nn .
+
+los:00009 a skos:Collection ;
+    skos:prefLabel "Losing and finding a job"@en ;
+    skos:prefLabel "Miste og finne jobb"@nb ;
+    skos:prefLabel "Miste og finne jobb"@nn .
+
+los:00010 a skos:Collection ;
+    skos:prefLabel "Having a child"@en ;
+    skos:prefLabel "Få barn"@nb ;
+    skos:prefLabel "Få barn"@nn .
+
+los:level1 a xkos:ClassificationLevel ;
+    skos:prefLabel "Nivå 1"@nb ;
+    skos:prefLabel "Nivå 1"@nn .
+
+los:level2 a xkos:ClassificationLevel ;
+    skos:prefLabel "Nivå 2"@nb ;
+    skos:prefLabel "Nivå 2"@nn .
+
+los:level3 a xkos:ClassificationLevel ;
+    skos:prefLabel "Nivå 3"@nb ;
+    skos:prefLabel "Nivå 3"@nn .

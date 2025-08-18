@@ -1,0 +1,10 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - deployment-skosmos-store.yaml
+  - service-skosmos-store.yaml
+images:
+  - name: skosmos-store
+    newName: ghcr.io/fellesdatakatalog/skosmos-config/skosmos-store
+    newTag: $(GIT_COMMIT_SHA)

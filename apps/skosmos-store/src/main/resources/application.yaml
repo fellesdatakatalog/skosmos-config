@@ -1,0 +1,29 @@
+logging.level:
+  root: ERROR
+  no.fdk: DEBUG
+application:
+  fuseki:
+    realm: skosmos
+    port: 8080
+    context-path: fuseki
+    store-path: store
+    dataset-name: skosmos
+    enable-verbose-logging: false
+  cors:
+    working-directory: user.dir
+    originPatterns: ${CORS_ORIGIN_PATTERNS}
+server:
+  port: 5050
+
+---
+spring:
+  config.activate.on-profile: dev
+  cors:
+    working-directory: java.io.tmpdir
+    originPatterns: "*"
+---
+spring:
+  config.activate.on-profile: test
+  cors:
+    working-directory: java.io.tmpdir
+    originPatterns: "*"

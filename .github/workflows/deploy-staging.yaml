@@ -18,7 +18,7 @@ jobs:
     if: ${{ github.actor != 'dependabot[bot]' && github.event.pull_request.draft == false }}
     strategy:
       matrix:
-        app_name: [Skosmos]
+        app_name: [Skosmos,skosmos-store]
     uses: Informasjonsforvaltning/workflows/.github/workflows/build-push.yaml@main
     with:
       app_name: ${{ matrix.app_name }}
@@ -37,9 +37,12 @@ jobs:
     name: Deploy images to staging environment
     if: github.event.pull_request.draft == false
     needs: [build]
+    strategy:
+      matrix:
+        app_name: [skosmos,skosmos-store]
     uses: Informasjonsforvaltning/workflows/.github/workflows/kustomize-deploy.yaml@main
     with:
-      app_name: skosmos-config
+      app_name: ${{ matrix.app_name }}
       environment: staging
       cluster: digdir-fdk-dev
       monorepo_app: true
