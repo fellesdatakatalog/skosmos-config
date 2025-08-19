@@ -18,8 +18,8 @@ jobs:
     with:
       app_name: ${{ matrix.app_name }}
       monorepo_app: true
-      environment: staging
-      gh_environment: staging
+      environment: demo
+      gh_environment: demo
       build_env: true
       build_env_name: BINARY
       build_env_value: ${{ matrix.app_name }}
