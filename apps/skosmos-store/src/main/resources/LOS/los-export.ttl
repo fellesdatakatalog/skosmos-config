@@ -218,18 +218,79 @@ los:00004 a skos:Collection ;
 
 los:00005 a skos:Collection ;
     skos:inScheme <https://id.norge.no/los> ;
-    skos:member los:01012,
-        los:01013,
-        los:04012,
-        los:04028,
-        los:04034,
-        los:04035,
-        los:04036,
-        los:05016,
-        los:09053,
-        los:13008,
-        los:13011,
-        los:13012 ;
+    skos:member los:01012 ;
+    skos:member los:01013 ;
+    skos:member los:03005 ;
+    skos:member los:03007 ;
+    skos:member los:03009 ;
+    skos:member los:03010 ;
+    skos:member los:03013 ;
+    skos:member los:04009 ;
+    skos:member los:04010 ;
+    skos:member los:04012 ;
+    skos:member los:04014 ;
+    skos:member los:04015 ;
+    skos:member los:04016 ;
+    skos:member los:04019 ;
+    skos:member los:04021 ;
+    skos:member los:04022 ;
+    skos:member los:04024 ;
+    skos:member los:04025 ;
+    skos:member los:04026 ;
+    skos:member los:04027 ;
+    skos:member los:04028 ;
+    skos:member los:04029 ;
+    skos:member los:04031 ;
+    skos:member los:04034 ;
+    skos:member los:04035 ;
+    skos:member los:04036 ;
+    skos:member los:04037 ;
+    skos:member los:04038 ;
+    skos:member los:04040 ;
+    skos:member los:04041 ;
+    skos:member los:04042 ;
+    skos:member los:04044 ;
+    skos:member los:04045 ;
+    skos:member los:04046 ;
+    skos:member los:04050 ;
+    skos:member los:05016 ;
+    skos:member los:05018 ;
+    skos:member los:06026 ;
+    skos:member los:06027 ;
+    skos:member los:06029 ;
+    skos:member los:09013 ;
+    skos:member los:09014 ;
+    skos:member los:09020 ;
+    skos:member los:09025 ;
+    skos:member los:09026 ;
+    skos:member los:09029 ;
+    skos:member los:09030 ;
+    skos:member los:09035 ;
+    skos:member los:09038 ;
+    skos:member los:09039 ;
+    skos:member los:09040 ;
+    skos:member los:09041 ;
+    skos:member los:09042 ;
+    skos:member los:09044 ;
+    skos:member los:09046 ;
+    skos:member los:09049 ;
+    skos:member los:09050 ;
+    skos:member los:09051 ;
+    skos:member los:09052 ;
+    skos:member los:09053 ;
+    skos:member los:09055 ;
+    skos:member los:09057 ;
+    skos:member los:09059 ;
+    skos:member los:09060 ;
+    skos:member los:09061 ;
+    skos:member los:09062 ;
+    skos:member los:09080 ;
+    skos:member los:09087 ;
+    skos:member los:09088 ;
+    skos:member los:13008 ;
+    skos:member los:13011 ;
+    skos:member los:13012 ;
+    skos:member los:13018 ;
     skos:prefLabel "Seriously ill child"@en,
         "Alvorlig sykt barn"@nb,
         "Alvorleg sjukt barn"@nn .
@@ -5188,3 +5249,4 @@ los:level3 a xkos:ClassificationLevel ;
         los:13001,
         los:14001,
         los:15001 .
+
