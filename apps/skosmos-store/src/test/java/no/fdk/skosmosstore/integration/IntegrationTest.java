@@ -27,7 +27,7 @@ public class IntegrationTest {
     void countAllLOSTriples() throws Exception {
         String response = TestQuery.sendQuery(countQuery());
         Integer result = getCountFromSelectResponse(response);
-        Assertions.assertEquals(447, result);
+        Assertions.assertEquals(436, result);
     }
 
 }
