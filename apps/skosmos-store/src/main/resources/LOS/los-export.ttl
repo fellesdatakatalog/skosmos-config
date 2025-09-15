@@ -3,6 +3,16 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xkos: <http://rdf-vocabulary.ddialliance.org/xkos#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+# ========== Labels for XKOS properties ==========
+# ---------- These are displayed in the GUI ------
+
+xkos:belongsTo rdfs:label "belongs to"@en, "tilhører"@nb, "høyrer til"@nn .
+
+
+# ========== Los ==========
 
 los:00001 a skos:Collection ;
     skos:inScheme <https://id.norge.no/los> ;

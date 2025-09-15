@@ -85,9 +85,6 @@
 
 :los a skosmos:Vocabulary, void:Dataset ;
     dc:title "Los"@en, "Los"@nb, "Los"@nn ;
-    dc:description "Los is a shared vocabulary for public services and assets in Norway."@en ,
-                   "Los er et felles vokabular for klassifisering av offentlige tjenester og ressurser i Norge"@nb ,
-                   "Los er et felles vokabular for klassifisering av offentlege tenester og ressursar i Norge"@nn ;
     skosmos:shortName "Los";
     dc:subject <https://id.norge.no/los> ;
     void:uriSpace "https://id.norge.no/los" ;
