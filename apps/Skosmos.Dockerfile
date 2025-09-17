@@ -83,6 +83,12 @@ RUN php composer.phar install --no-dev --no-autoloader
 
 # skosmos layer
 COPY apps/Skosmos/. /var/www/html
+
+# [terje] overwrite specific frontend templates
+COPY apps/custom-views/base-template.twig /var/www/html/src/view/base-template.twig
+COPY apps/custom-views/feedback.twig /var/www/html/src/view/feedback.twig
+COPY apps/custom-views/landing.twig /var/www/html/src/view/landing.twig
+
 RUN php composer.phar install --no-dev
 
 # install Node modules (from npm-installer stage)
@@ -90,6 +96,7 @@ COPY --from=npm-installer /usr/src/app/node_modules /var/www/html/node_modules
 
 # Configure Skosmos
 COPY apps/config/config-docker.ttl /var/www/html/config.ttl
+
 
 HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD curl -f http://localhost || exit 1
 
