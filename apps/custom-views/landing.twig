@@ -1,0 +1,47 @@
+{% set pageType = 'landing' %}
+{% extends "base-template.twig" %}
+{% block title %}{{ GlobalConfig.serviceNameLong(request.lang) }}{% endblock %}
+{% block description %}{{ GlobalConfig.serviceDescription(request.lang) }}{% endblock %}
+{% block url %}{{ BaseHref }}{{ request.langurl }}{% endblock %}
+
+{% block content %}
+<div class="col-lg-7 mb-gutterwidth mb-lg-0">
+  <div class="px-3 py-4 bg-medium" id="vocabulary-list">
+    {% if request.vocabList|length == 0 %}
+    <h2 class="fs-3 fw-bold">{{ "No vocabularies on the server!" | trans }}</h2>
+    {% else %}
+      {% if category_label %}
+      <h2 class="fs-3 fw-bold pb-3">{{ category_label }}</h2>
+      {% else %}
+      <h2 class="fs-3 fw-bold pb-3">{{ "Vocabularies" | trans }}</h2>
+      {% endif %}
+      {% for vocabClassName,vocabArray in request.vocabList %}
+      <div class="vocab-category border-top pb-4">
+        <h3 class="fs-4 pt-2">{{ vocabClassName }}</h3>
+        <ul class="list-group">
+        {% for vocab in vocabArray %}
+          <li class="list-group-item ps-0 py-1"><a class="fs-5 fw-bold" href="{{ vocab.id }}/{{ request.lang }}/{% if request.contentLang != request.lang and request.contentLang != '' and request.contentLang in vocab.config.languages %}?clang={{ request.contentLang }}{% endif %}">{{ vocab.title }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+<div class="col-lg-5 d-flex flex-column">
+      <div class="bg-dark px-4 py-4 mb-gutterwidth text-light" id="welcome-box">
+        <h2 class="fw-bold fs-3 my-3">Velkommen til Digdirs vokabularer</h2>
+        <p class="fs-5">
+        Vi bruker Skosmos for å publisere vokabularene vi forvalter. Skosmos er et web-basert verktøy for å utforske kontrollerte vokabularer.
+        Du kan søke i vokabularene med vanlig tekstsøk, gjøre SPARQL-spørringer, og slå opp på endepunkter (API).
+        Innholdet i vokabularene er tilgjengelig som menneskelesbare sider og maskinlesbare dokumenter.
+        </p>
+        <p class="fs-5">Skosmos utvikles av Nasjonalbiblioteket i Finland.</p>
+      </div>
+
+      <div class="bg-medium px-5 py-5 flex-grow-1 d-flex align-items-center" id="info-box">
+        <a class="fs-5 text-dark text-decoration-none" href="https://github.com/NatLibFi/Skosmos">Skosmos er åpen kildekode og på GitHub <i class="fa-solid fa-arrow-right ps-2"></i></a>
+      </div>
+</div>
+{% endblock %}
+

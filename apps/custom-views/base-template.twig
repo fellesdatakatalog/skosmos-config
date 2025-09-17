@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="{{ request.lang }}" prefix="og: https://ogp.me/ns#">
+<head>
+<base href="{{ BaseHref }}">
+<link rel="shortcut icon" href="favicon.ico">
+<title>{% block title %}{{ GlobalConfig.serviceName }}{% endblock %}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="generator" content="Skosmos {{ request.version }}">
+<meta name="title" content="{{ block('title') }}">
+<meta property="og:title" content="{{ block('title') }}">
+{% if block('description') is defined and block('description') is not empty %}
+<meta name="description" content="{{ block('description') }}">
+<meta property="og:description" content="{{ block('description') }}">
+{% endif %}
+{% if block('url') is defined and block('url') is not empty %}
+<link rel="canonical" href="{{ block('url') }}">
+<meta property="og:url" content="{{ block('url') }}">
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ GlobalConfig.serviceName }}">
+<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" media="screen, print" rel="stylesheet" type="text/css">
+<link href="resource/css/fonts.css" media="screen, print" rel="stylesheet" type="text/css">
+<link href="resource/css/skosmos.css" media="screen, print" rel="stylesheet" type="text/css">
+<link href="resource/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="resource/fontawesome/css/solid.css" rel="stylesheet">
+<link href="resource/fontawesome/css/regular.css" rel="stylesheet">
+{% if GlobalConfig.customCss %}
+<link href="{{ GlobalConfig.customCss }}" media="screen, print" rel="stylesheet" type="text/css">
+{% endif %}
+{% for plugin, files in request.plugins.pluginsCSS %}{% for file in files %}<link href="{{ file }}" media="screen, print" rel="stylesheet" type="text/css">{% endfor %}{% endfor %}
+</head>
+<body class="{% if pageType =='landing' %}bg-white frontpage-logo{% else %}{% if pageType == 'concept' or pageType == 'vocab-home' %}bg-medium vocab-{{ request.vocabid }}{% else %}bg-light{% endif %}{% endif %}">
+  <header>
+    <a class="visually-hidden" id="skiptocontent" href="{{ request.langurl }}#maincontent">Skip to main</a>
+    <div class="container-fluid bg-dark text-bg-dark">
+      <div class="row">
+        <div class="col-md-5">
+          {% if request.vocabid == '' and request.page != 'about' and request.page != 'feedback' %}
+            <span class="fs-6 py-3 text-light">Felles vokabularer</span>
+          {% else %}
+            <a id="skosmos-logo-top" href="{{ request.lang }}/{% if request.contentLang and request.contentLang != request.lang %}?clang={{ request.contentLang }}{% endif %}{% if request.queryParam('anylang') == 'on' %}{% if request.contentLang == request.lang %}?{% else %}&{% endif %}anylang=on{% endif %}">
+              <h2 class="visually-hidden">Skosmos</h2>
+            </a>
+          {% endif %}
+            </div>
+            <div class="col-md-7 text-end px-4">
+          <ul class="list-inline nav nav-pills d-flex justify-content-end ms-auto my-auto text-light gx-3 py-3" id="topbar-nav">
+            <li class="list-inline-item nav-item">
+              <a href="{{ request.lang }}/{% if request.contentLang and request.contentLang != request.lang %}?clang={{ request.contentLang }}{% endif %}{% if request.queryParam('anylang') == 'on' %}{% if request.contentLang == request.lang %}?{% else %}&{% endif %}anylang=on{% endif %}" id="navi1" class="fs-6 text-light topbar-nav-link ms-3 text-decoration-none" >
+                       <i class="fa-solid fa-house"></i>&nbsp;{{ "Vocabularies" | trans }}
+              </a>
+            </li>
+            <li class="list-inline-item nav-item">
+              <a href="{{ request.lang }}/about{% if request.contentLang and request.contentLang != request.lang %}?clang={{ request.contentLang }}{% endif %}{% if request.queryParam('anylang') == 'on' %}{% if request.contentLang == request.lang %}?{% else %}&{% endif %}anylang=on{% endif %}" id="navi2" class="fs-6 text-light topbar-nav-link ms-3 text-decoration-none">
+                       <i class="fa-solid fa-circle-info"></i>&nbsp;{{ "About" | trans }}
+              </a>
+            </li>
+            <li class="list-inline-item nav-item">
+              <a href="{% if request.vocabid and vocab.title%}{{ request.vocabid }}/{% endif %}{{ request.lang }}/feedback{% if request.contentLang and request.contentLang != request.lang %}?clang={{ request.contentLang }}{% endif %}{% if request.queryParam('anylang') == 'on' %}{% if request.contentLang == request.lang %}?{% else %}&{% endif %}anylang=on{% endif %}" id="navi3" class="fs-6 text-light topbar-nav-link ms-3 text-decoration-none">
+                       <i class="fa-solid fa-comment"></i>&nbsp;{{ "Feedback" | trans }}
+              </a>
+            </li>
+            {% if languages|length > 1 %}
+            {% for langcode, langdata in languages %}
+            {% if request.lang != langcode %}
+            <li class="list-inline-item nav-item language">
+              <a class="fs-6 text-light ms-3 text-decoration-none" id="language-{{ langcode }}" href="{{ request.langurl(langcode) }}"> {{ langdata.name }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% if pageType == 'landing' or pageType == 'vocab-home' or pageType == 'concept' %}
+    <div class="container-fluid bg-white py-4" id="headerbar">
+      <div id="headerbar-top-slot" class="row"></div>
+      <div class="row">
+        {% if pageType == 'landing' %}
+        <div class="col px-4" id="skosmos-logo">
+          <h1 class="visually-hidden">Skosmos</h1>
+        </div>
+        {% else %}
+        <div class="col-7 px-3">
+          {% if pageType == 'vocab-home' %}
+            <h1 class="fw-bold" id="vocab-title"><a class="text-decoration-none" href="{% if request.vocabid != '' %}{{ request.vocabid  }}/{% endif %}{{ request.lang }}/{% if request.contentLang != request.lang %}?clang={{ request.contentLang }}{% endif %}">{{ request.vocab.title(request.contentLang) }}</a></h1>
+          {% else %}
+            <h2 class="fw-bold" id="vocab-title"><a class="text-decoration-none" href="{% if request.vocabid != '' %}{{ request.vocabid  }}/{% endif %}{{ request.lang }}/{% if request.contentLang != request.lang %}?clang={{ request.contentLang }}{% endif %}">{{ request.vocab.title(request.contentLang) }}</a></h2>
+          {% endif %}
+        </div>
+        <div class="col-5">
+          <div id="search-vocab"></div>
+        </div>
+        {% endif %}
+      </div>
+      <div id="headerbar-bottom-slot" class="row"></div>
+    </div>
+    
+    {% endif %}
+  </header>
+  <main id="main-container" class="{{pageType}}{% if list_style %} {{ list_style }}{% endif %}">
+    <div class="container">
+      <noscript>
+        <strong>We're sorry but Skosmos doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      </noscript>
+      <div id="main-container-row" class="row" tabindex="-1">
+      {% block content %}
+      {% endblock %}
+      </div>
+    </div>
+  </main>
+  <footer class="bg-white pb-5 mt-5">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-5 pe-5">
+          <p class="fs-6">
+                    Digitaliseringsdirektoratet er ansvarlig for løsningen.
+          </p>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5 px-3">
+          <span class="fs-6 fw-bold">{{ "Ta kontakt!" | trans }}</span>
+          <p><a class="text-decoration-none" href="https://data.norge.no/contact">https://data.norge.no/contact</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  {% include "scripts.inc.twig" %}
+</body>
+</html>

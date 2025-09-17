@@ -1,0 +1,13 @@
+{% set pageType = 'feedback' %}
+{% extends "base-template.twig" %}
+
+{% block url %}{{ BaseHref }}{{ request.langurl }}{% endblock %}
+
+{% block content %}
+
+  <h1 class="fs-3 mb-5">{{ 'Contact us!' | trans}}</h1>
+
+  <p class="fs-5 mb-5">Dette skjemaet er foreløpig deaktivert.</p>
+  <p class="fs-5 mb-5">Har du spørsmål til Los, delta i diskusjonen på <a class="fs-5 fw-bold" href="https://datalandsbyen.norge.no/category/20/revisjon-av-los">Datalandsbyen</a></p>
+  
+{% endblock %}

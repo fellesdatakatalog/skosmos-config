@@ -36,25 +36,25 @@ RUN apt-get update && apt-get install -y \
 # fixes warnings like perl: warning: Setting locale failed.
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     locale-gen \
-        ar_AE.utf8 \
-        da_DK.utf8 \
-        de_DE.utf8 \
+        # ar_AE.utf8 \
+        # da_DK.utf8 \
+        # de_DE.utf8 \
         en_GB.utf8 \
-        en_US.utf8 \
-        es_ES.utf8 \
-        fa_IR.utf8 \
-        fi_FI.utf8 \
-        fr_FR.utf8 \
-        it_IT.utf8 \
+        # en_US.utf8 \
+        # es_ES.utf8 \
+        # fa_IR.utf8 \
+        # fi_FI.utf8 \
+        # fr_FR.utf8 \
+        # it_IT.utf8 \
         nb_NO.utf8 \
-        nl_NL.utf8 \
-        nn_NO.utf8 \
-        pl_PL.utf8 \
-        pt_PT.utf8 \
-        pt_BR.utf8 \
-        ru_RU.utf8 \
-        sv_SE.utf8 \
-        zh_CN.utf8
+        # nl_NL.utf8 \
+        nn_NO.utf8
+        # pl_PL.utf8 \
+        # pt_PT.utf8 \
+        # pt_BR.utf8 \
+        # ru_RU.utf8 \
+        # sv_SE.utf8 \
+        # zh_CN.utf8
 ENV LANGUAGE=en_US:en
 ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
@@ -73,6 +73,11 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
         -e 's!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/1!g' \
         "/etc/apache2/apache2.conf"
 
+# [terje] overwrite specific frontend templates
+COPY apps/custom-views/base-template.twig ./view/base-template.twig
+COPY apps/custom-views/feedback.twig ./view/feedback.twig
+COPY apps/custom-views/landing.twig ./view/landing.twig
+
 WORKDIR /var/www/html
 RUN rm index.html
 
@@ -90,6 +95,7 @@ COPY --from=npm-installer /usr/src/app/node_modules /var/www/html/node_modules
 
 # Configure Skosmos
 COPY apps/config/config-docker.ttl /var/www/html/config.ttl
+
 
 HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD curl -f http://localhost || exit 1
 
