@@ -95,4 +95,5 @@
     skosmos:defaultLanguage "nn";
     skosmos:fallbackLanguages ("nn" "nb" "en") ;
     void:sparqlEndpoint <http://skosmos-store:8080/fuseki/skosmos/query> ;
-    skosmos:sparqlGraph <https://id.norge.no/los> .
+    skosmos:sparqlGraph <https://id.norge.no/los> ;
+    void:dataDump <https://raw.githubusercontent.com/fellesdatakatalog/skosmos-config/refs/heads/main/apps/skosmos-store/src/main/resources/LOS/los-export.ttl> .
