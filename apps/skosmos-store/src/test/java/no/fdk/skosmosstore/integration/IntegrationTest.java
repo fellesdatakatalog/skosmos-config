@@ -1,8 +1,6 @@
 package no.fdk.skosmosstore.integration;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jayway.jsonpath.JsonPath;
 import no.fdk.skosmosstore.utils.TestQuery;
 import org.junit.jupiter.api.*;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest(properties = "spring.profiles.active=test")
 @Tag("integration")
 public class IntegrationTest {
-    ObjectMapper mapper = new ObjectMapper();
 
     private String countQuery(String graph) {
         return "SELECT (COUNT(DISTINCT ?subj) AS ?count)\n" +
@@ -19,9 +16,9 @@ public class IntegrationTest {
                 "WHERE { ?subj ?pred ?obj . }\n";
     }
 
-    private Integer getCountFromSelectResponse(String response) throws JsonProcessingException {
-        JsonNode jsonNode = mapper.readTree(response);
-        return jsonNode.get("results").get("bindings").get(0).get("count").get("value").asInt();
+    private Integer getCountFromSelectResponse(String response) {
+        Object value = JsonPath.read(response, "$.results.bindings[0].count.value");
+        return Integer.valueOf(value.toString());
     }
 
     @Test
