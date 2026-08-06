@@ -96,4 +96,22 @@
     skosmos:fallbackLanguages ("nn" "nb" "en") ;
     void:sparqlEndpoint <http://skosmos-store:8080/fuseki/skosmos/query> ;
     skosmos:sparqlGraph <https://id.norge.no/los> ;
-    void:dataDump <https://raw.githubusercontent.com/fellesdatakatalog/skosmos-config/refs/heads/main/apps/skosmos-store/src/main/resources/LOS/los-export.ttl> .
+    void:dataDump <https://raw.githubusercontent.com/fellesdatakatalog/skosmos-config/refs/heads/main/apps/skosmos-store/src/main/resources/LOS/los-rc1.ttl> .
+
+
+:los-beta-archived a skosmos:Vocabulary, void:Dataset ;
+    dc:title "Los 4.0 Beta (archived)"@en,
+            "Los 4.0 Beta (arkivert)"@nb,
+            "Los 4.0 Beta (arkivert)"@nn ;
+    skosmos:shortName "Los Beta";
+    dc:subject <https://id.norge.no/los-beta-archived> ;
+    void:uriSpace "https://id.norge.no/los-beta-archived" ;
+    skosmos:mainConceptScheme <https://id.norge.no/los-beta-archived> ;
+    skosmos:groupClass skos:Collection ;
+    skosmos:showTopConcepts true ;
+    skosmos:language "en", "nn", "nb";
+    skosmos:defaultLanguage "nn";
+    skosmos:fallbackLanguages ("nn" "nb" "en") ;
+    void:sparqlEndpoint <http://skosmos-store:8080/fuseki/skosmos/query> ;
+    skosmos:sparqlGraph <https://id.norge.no/los-beta-archived> ;
+    void:dataDump <https://raw.githubusercontent.com/fellesdatakatalog/skosmos-config/refs/heads/main/apps/skosmos-store/src/main/resources/LOS/los-beta-archived.ttl> .

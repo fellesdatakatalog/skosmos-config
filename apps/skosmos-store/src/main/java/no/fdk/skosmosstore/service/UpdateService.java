@@ -54,7 +54,8 @@ public class UpdateService {
     @EventListener(ApplicationReadyEvent.class)
     public void updateGraphs() {
         log.info("updating graphs");
-        updateGraph("https://id.norge.no/los", readTurtleResource("LOS/los-export.ttl"));
+        updateGraph("https://id.norge.no/los", readTurtleResource("LOS/los-rc1.ttl"));
+        updateGraph("https://id.norge.no/los-beta-archived", readTurtleResource("LOS/los-beta-archived.ttl"));
 
         String path = "%s/%s".formatted(fusekiConfiguration.getStorePath(), fusekiConfiguration.getDatasetName());
         compactAction.compact(path);
