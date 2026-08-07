@@ -90,6 +90,10 @@ COPY apps/custom-views/base-template.twig /var/www/html/src/view/base-template.t
 COPY apps/custom-views/feedback.twig /var/www/html/src/view/feedback.twig
 COPY apps/custom-views/landing.twig /var/www/html/src/view/landing.twig
 
+# Digdir overlays: configurable skosmos:searchProperty
+COPY apps/skosmos-overlays/VocabularyConfig.php /var/www/html/src/model/VocabularyConfig.php
+COPY apps/skosmos-overlays/GenericSparql.php /var/www/html/src/model/sparql/GenericSparql.php
+
 RUN php composer.phar install --no-dev
 
 # install Node modules (from npm-installer stage)
