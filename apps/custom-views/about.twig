@@ -1,0 +1,21 @@
+{% set pageType = 'about' %}
+{% extends "base-template.twig" %}
+{% block title %}{{ "About" | trans}} - {{ GlobalConfig.serviceName }}{% endblock %}
+{% block description %}{{ GlobalConfig.aboutDescription(request.lang) }}{% endblock %}
+{% block url %}{{ BaseHref }}{{ request.langurl }}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="pb-3">
+    <h1 class="mb-5">{{"About" | trans }}</h1>
+    <div id="about-slot">
+    </div>
+  </div>
+
+  <div id="version">
+    {% set version = request.version %}
+    <p>{% trans %}Skosmos version %version%{% endtrans %}</p>
+  </div>
+</div>
+{% endblock %}
