@@ -85,6 +85,7 @@ RUN php composer.phar install --no-dev --no-autoloader
 COPY apps/Skosmos/. /var/www/html
 
 # [terje] overwrite specific frontend templates
+COPY apps/custom-views/about.twig /var/www/html/src/view/about.twig
 COPY apps/custom-views/base-template.twig /var/www/html/src/view/base-template.twig
 COPY apps/custom-views/feedback.twig /var/www/html/src/view/feedback.twig
 COPY apps/custom-views/landing.twig /var/www/html/src/view/landing.twig
