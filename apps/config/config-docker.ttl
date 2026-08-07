@@ -4,6 +4,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dc: <http://purl.org/dc/terms/> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix wv: <http://vocab.org/waiver/terms/norms> .
 @prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
@@ -96,7 +97,44 @@
     skosmos:fallbackLanguages ("nn" "nb" "en") ;
     void:sparqlEndpoint <http://skosmos-store:8080/fuseki/skosmos/query> ;
     skosmos:sparqlGraph <https://id.norge.no/los> ;
-    void:dataDump <https://raw.githubusercontent.com/fellesdatakatalog/skosmos-config/refs/heads/main/apps/skosmos-store/src/main/resources/LOS/los-rc1.ttl> .
+    void:dataDump <https://raw.githubusercontent.com/fellesdatakatalog/skosmos-config/refs/heads/main/apps/skosmos-store/src/main/resources/LOS/los-rc1.ttl> ;
+    skosmos:propertyLabelOverride
+        [
+            skosmos:property xkos:inclusionNote ;
+            rdfs:label "Omfatter"@nb, "Omfattar"@nn, "Includes"@en
+        ],
+        [
+            skosmos:property xkos:exclusionNote ;
+            rdfs:label "Omfatter ikke"@nb, "Omfattar ikkje"@nn, "Excludes"@en
+        ] ;
+    skosmos:propertyOrder [
+        a skosmos:PropertyOrder ;
+        rdf:value (
+            rdf:type
+            dc:isReplacedBy
+            skos:definition
+            xkos:inclusionNote
+            xkos:exclusionNote
+            skos:broader
+            isothes:broaderGeneric
+            isothes:broaderPartitive
+            isothes:broaderInstantial
+            skos:narrower
+            isothes:narrowerGeneric
+            isothes:narrowerPartitive
+            isothes:narrowerInstantial
+            skos:related
+            skos:altLabel
+            skos:note
+            skos:scopeNote
+            skos:historyNote
+            rdfs:comment
+            dc11:source
+            dc:source
+            skosmos:memberOf
+            skosmos:memberOfArray
+        )
+    ] .
 
 
 :los-beta-archived a skosmos:Vocabulary, void:Dataset ;
@@ -114,4 +152,41 @@
     skosmos:fallbackLanguages ("nn" "nb" "en") ;
     void:sparqlEndpoint <http://skosmos-store:8080/fuseki/skosmos/query> ;
     skosmos:sparqlGraph <https://id.norge.no/los-beta-archived> ;
-    void:dataDump <https://raw.githubusercontent.com/fellesdatakatalog/skosmos-config/refs/heads/main/apps/skosmos-store/src/main/resources/LOS/los-beta-archived.ttl> .
+    void:dataDump <https://raw.githubusercontent.com/fellesdatakatalog/skosmos-config/refs/heads/main/apps/skosmos-store/src/main/resources/LOS/los-beta-archived.ttl> ;
+    skosmos:propertyLabelOverride
+        [
+            skosmos:property xkos:inclusionNote ;
+            rdfs:label "Omfatter"@nb, "Omfattar"@nn, "Includes"@en
+        ],
+        [
+            skosmos:property xkos:exclusionNote ;
+            rdfs:label "Omfatter ikke"@nb, "Omfattar ikkje"@nn, "Excludes"@en
+        ] ;
+    skosmos:propertyOrder [
+        a skosmos:PropertyOrder ;
+        rdf:value (
+            rdf:type
+            dc:isReplacedBy
+            skos:definition
+            xkos:inclusionNote
+            xkos:exclusionNote
+            skos:broader
+            isothes:broaderGeneric
+            isothes:broaderPartitive
+            isothes:broaderInstantial
+            skos:narrower
+            isothes:narrowerGeneric
+            isothes:narrowerPartitive
+            isothes:narrowerInstantial
+            skos:related
+            skos:altLabel
+            skos:note
+            skos:scopeNote
+            skos:historyNote
+            rdfs:comment
+            dc11:source
+            dc:source
+            skosmos:memberOf
+            skosmos:memberOfArray
+        )
+    ] .
