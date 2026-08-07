@@ -134,7 +134,10 @@
             skosmos:memberOf
             skosmos:memberOfArray
         )
-    ] .
+    ] ;
+    skosmos:searchProperty
+        xkos:inclusionNote,
+        xkos:exclusionNote .
 
 
 :los-beta-archived a skosmos:Vocabulary, void:Dataset ;
@@ -189,4 +192,7 @@
             skosmos:memberOf
             skosmos:memberOfArray
         )
-    ] .
+    ] ;
+    skosmos:searchProperty
+        xkos:inclusionNote,
+        xkos:exclusionNote .
