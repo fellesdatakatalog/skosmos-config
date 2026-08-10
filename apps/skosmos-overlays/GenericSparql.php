@@ -944,23 +944,29 @@ EOF;
      * @param string $searchLang language code used for matching labels (null means any language)
      * @return string sparql query snippet
      */
-    protected function generateConceptSearchQueryCondition($term, $searchLang)
+    protected function generateConceptSearchFilterCondition($term, $substringSearch = false)
     {
         # use appropriate matching function depending on query type: =, strstarts, strends or full regex
         if (preg_match('/^[^\*]+$/', $term)) { // exact query
             $term = str_replace('\\', '\\\\', $term); // quote slashes
             $term = str_replace('\'', '\\\'', mb_strtolower($term, 'UTF-8')); // make lowercase and escape single quotes
-            $filtercond = "LCASE(STR(?match)) = '$term'";
+            $filtercond = $substringSearch ?
+                "CONTAINS(LCASE(STR(?match)), '$term')" :
+                "LCASE(STR(?match)) = '$term'";
         } elseif (preg_match('/^[^\*]+\*$/', $term)) { // prefix query
             $term = substr($term, 0, -1); // remove the final asterisk
             $term = str_replace('\\', '\\\\', $term); // quote slashes
             $term = str_replace('\'', '\\\'', mb_strtolower($term, 'UTF-8')); // make lowercase and escape single quotes
-            $filtercond = "STRSTARTS(LCASE(STR(?match)), '$term')";
+            $filtercond = $substringSearch ?
+                "CONTAINS(LCASE(STR(?match)), '$term')" :
+                "STRSTARTS(LCASE(STR(?match)), '$term')";
         } elseif (preg_match('/^\*[^\*]+$/', $term)) { // suffix query
             $term = substr($term, 1); // remove the preceding asterisk
             $term = str_replace('\\', '\\\\', $term); // quote slashes
             $term = str_replace('\'', '\\\'', mb_strtolower($term, 'UTF-8')); // make lowercase and escape single quotes
-            $filtercond = "STRENDS(LCASE(STR(?match)), '$term')";
+            $filtercond = $substringSearch ?
+                "CONTAINS(LCASE(STR(?match)), '$term')" :
+                "STRENDS(LCASE(STR(?match)), '$term')";
         } else { // too complicated - have to use a regex
             # make sure regex metacharacters are not passed through
             $term = str_replace('\\', '\\\\', preg_quote($term));
@@ -969,9 +975,63 @@ EOF;
             $filtercond = "REGEX(STR(?match), '^$term$', 'i')";
         }
 
+        return $filtercond;
+    }
+
+    protected function generateConceptSearchQueryCondition($term, $searchLang, $substringSearch = false)
+    {
+        $filtercond = $this->generateConceptSearchFilterCondition($term, $substringSearch);
+
         $labelcondMatch = ($searchLang) ? "&& (?prop = skos:notation || LANGMATCHES(lang(?match), ?langParam))" : "";
 
         return "?s ?prop ?match . FILTER ($filtercond $labelcondMatch)";
+    }
+
+    /**
+     * Split searchable properties into label fields and longer text fields.
+     * Text fields (e.g. skosmos:searchProperty) use substring matching.
+     *
+     * @param string[] $props
+     * @return array{0: string[], 1: string[]}
+     */
+    protected function splitSearchProperties(array $props)
+    {
+        $labelProps = array('skos:prefLabel', 'skos:altLabel', 'skos:notation', 'skos:hiddenLabel');
+        $labels = array();
+        $texts = array();
+
+        foreach ($props as $prop) {
+            if (in_array($prop, $labelProps, true)) {
+                $labels[] = $prop;
+            } else {
+                $texts[] = $prop;
+            }
+        }
+
+        return array($labels, $texts);
+    }
+
+    /**
+     * @param string[] $props
+     * @param string $term
+     * @param string|null $searchLang
+     * @param string $langClause
+     * @param boolean $substringSearch
+     * @return string
+     */
+    protected function generateConceptSearchMatchBlock(array $props, $term, $searchLang, $langClause, $substringSearch)
+    {
+        $valuesProp = $this->formatValues('?prop', $props);
+        $propPriorityValues = $this->generateConceptSearchPropertyValues($props, $langClause);
+        $textcond = $this->generateConceptSearchQueryCondition($term, $searchLang, $substringSearch);
+
+        return <<<EOQ
+     { 
+     $valuesProp
+     $propPriorityValues
+     $textcond
+     ?s ?prop ?match }
+EOQ;
     }
 
 
@@ -1016,9 +1076,6 @@ EOF;
      */
     protected function generateConceptSearchQueryInner($term, $lang, $searchLang, $props, $unique, $filterGraph)
     {
-        $valuesProp = $this->formatValues('?prop', $props);
-        $textcond = $this->generateConceptSearchQueryCondition($term, $searchLang);
-
         $rawterm = str_replace(array('\\', '*', '"'), array('\\\\', '', '\"'), $term);
         // graph clause, if necessary
         $graphClause = $filterGraph != '' ? 'GRAPH ?graph' : '';
@@ -1051,17 +1108,21 @@ EOF;
         $hitgroup = $unique ? 'GROUP BY ?s ?label ?notation' : '';
 
         $langClause = $this->generateLangClause($searchLang);
-        $propPriorityValues = $this->generateConceptSearchPropertyValues($props, $langClause);
+        list($labelProps, $textProps) = $this->splitSearchProperties($props);
+        $matchParts = array();
+        if (!empty($labelProps)) {
+            $matchParts[] = $this->generateConceptSearchMatchBlock($labelProps, $term, $searchLang, $langClause, false);
+        }
+        if (!empty($textProps)) {
+            $matchParts[] = $this->generateConceptSearchMatchBlock($textProps, $term, $searchLang, $langClause, true);
+        }
+        $matchBlock = count($matchParts) === 1 ? $matchParts[0] : implode("\n     UNION\n", $matchParts);
 
         $query = <<<EOQ
    SELECT DISTINCT ?s ?label ?notation $hitvar
    WHERE {
     $graphClause {
-     { 
-     $valuesProp
-     $propPriorityValues
-     $textcond
-     ?s ?prop ?match }
+     $matchBlock
      OPTIONAL {
       ?s skos:prefLabel ?label .
       FILTER ($labelcondLabel)
