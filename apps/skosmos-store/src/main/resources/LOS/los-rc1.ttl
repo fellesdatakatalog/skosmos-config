@@ -8,22 +8,17 @@
 @prefix xkos: <http://rdf-vocabulary.ddialliance.org/xkos#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# ========== Labels for XKOS properties ==========
-# ---------- These are displayed in the GUI ------
-
-xkos:inclusionNote
-    rdfs:label "Omfatter"@nb,
-        "Omfattar"@nn,
-        "Includes"@en ;
-    rdfs:comment "Eksempler og presiseringer av hva begrepet omfatter."@nb,
-        "Døme og presiseringar av kva omgrepet omfattar."@nn .
-
-xkos:exclusionNote
-    rdfs:label "Omfatter ikke"@nb,
-        "Omfattar ikkje"@nn,
-        "Excludes"@en ;
+xkos:exclusionNote rdfs:label "Excludes"@en,
+        "Omfatter ikke"@nb,
+        "Omfattar ikkje"@nn ;
     rdfs:comment "Eksempler og presiseringer av hva begrepet ikke omfatter."@nb,
         "Døme og presiseringar av kva omgrepet ikkje omfattar."@nn .
+
+xkos:inclusionNote rdfs:label "Includes"@en,
+        "Omfatter"@nb,
+        "Omfattar"@nn ;
+    rdfs:comment "Eksempler og presiseringer av hva begrepet omfatter."@nb,
+        "Døme og presiseringar av kva omgrepet omfattar."@nn .
 
 los:001 a skos:Collection ;
     skos:member los:020007,
@@ -125,12 +120,34 @@ los:001 a skos:Collection ;
         los:150004,
         los:150007,
         los:150017,
+        los:150018,
+        los:150019,
+        los:150020,
+        los:150021,
         los:150022,
+        los:150024,
+        los:150025,
+        los:150026,
+        los:150027,
+        los:150028,
         los:150029,
         los:150048,
         los:150054,
         los:150055,
-        los:150056 ;
+        los:150056,
+        los:150057,
+        los:150058,
+        los:150061,
+        los:150062,
+        los:150063,
+        los:150064,
+        los:150065,
+        los:150066,
+        los:150067,
+        los:150068,
+        los:150069,
+        los:150070,
+        los:150071 ;
     skos:prefLabel "Municipality"@en,
         "Kommune"@nb,
         "Kommune"@nn ;
@@ -164,7 +181,7 @@ los:002 a skos:Collection ;
         los:150002,
         los:150003,
         los:150004 ;
-    skos:prefLabel "County Council"@en,
+    skos:prefLabel "County municipality"@en,
         "Fylkeskommune"@nb,
         "Fylkeskommune"@nn ;
     euvoc:status concept-status:CURRENT .
@@ -572,15 +589,8 @@ los:040019 a skos:Concept ;
     euvoc:status concept-status:CURRENT .
 
 los:040020 a skos:Concept ;
-    skos:altLabel "Smoking"@en,
-        "e-cigarettes"@en,
-        "snus"@en,
-        "Røyk"@nb,
-        "e-sigaretter"@nb,
-        "snus"@nb,
-        "Røyk"@nn,
-        "e-sigarettar"@nn,
-        "snus"@nn ;
+    xkos:inclusionNote "røyk, snus og e-sigaretter"@nb,
+        "røyk, snus og e-sigarettar"@nn ;
     skos:broader los:040002 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Tobacco"@en,
@@ -726,9 +736,8 @@ los:040052 a skos:Concept ;
     euvoc:status concept-status:CURRENT .
 
 los:040053 a skos:Concept ;
-    skos:altLabel "Adverse effects"@en,
-        "Bivirkninger"@nb,
-        "Biverknader"@nn ;
+    xkos:inclusionNote "bivirkninger"@nb,
+        "biverknader"@nn ;
     skos:broader los:040009 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Medication safety"@en,
@@ -1031,7 +1040,7 @@ los:070018 a skos:Concept ;
         "Jakt og fangst"@nn ;
     skos:broader los:070012 ;
     skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Fisheries management"@en,
+    skos:prefLabel "Hunting and trapping management"@en,
         "Jakt- og fangstforvaltning"@nb,
         "Jakt- og fangstforvaltning"@nn ;
     euvoc:status concept-status:CURRENT .
@@ -1109,7 +1118,7 @@ los:070031 a skos:Concept ;
         "utsleppsreduksjon, klimatilpassing, klimabudsjett"@nn ;
     skos:broader los:070005 ;
     skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Emissions allowances"@en,
+    skos:prefLabel "Climate measures"@en,
         "Klimatiltak"@nb,
         "Klimatiltak"@nn ;
     euvoc:status concept-status:CURRENT .
@@ -1117,8 +1126,6 @@ los:070031 a skos:Concept ;
 los:070033 a skos:Concept ;
     xkos:inclusionNote "storm, tørke, styrtregn, hetebølge, kulde"@nb,
         "storm, tørke, styrtregn, hetebølgje, kulde"@nn ;
-    skos:altLabel "Vær/ekstremvær"@nb,
-        "Vêr/ekstremvêr"@nn ;
     skos:broader los:070006 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Weather and extreme weather"@en,
@@ -1446,7 +1453,7 @@ los:080059 a skos:Concept ;
 
 los:080060 a skos:Concept ;
     xkos:inclusionNote "mobbing, krenkelser, skoleregler, aktivitetsplikt, trygt og godt skolemiljø"@nb,
-        "mobbing, krenking, skulemiljøreglar, aktivitetsplikt, trygt og godt skulemiljø"@nn ;
+        "mobbing, krenkingar, skulereglar, aktivitetsplikt, trygt og godt skulemiljø"@nn ;
     skos:broader los:080012 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Psychosocial school environment"@en,
@@ -1565,7 +1572,7 @@ los:080101 a skos:Concept ;
 los:080102 a skos:Concept ;
     skos:broader los:080012 ;
     skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Safe and inclusive school environment"@en,
+    skos:prefLabel "Safe and positive school environment"@en,
         "Trygt og godt skolemiljø"@nb,
         "Trygt og godt skulemiljø"@nn ;
     euvoc:status concept-status:CURRENT .
@@ -1739,7 +1746,7 @@ los:100011 a skos:Concept ;
         "eigenberedskapslager, drikkevatn, matlager, legemiddel, batteri, radio, kontantar, utstyr for fleire døgn"@nn ;
     skos:broader los:100002 ;
     skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Emergency supplies"@en,
+    skos:prefLabel "Emergency stockpile"@en,
         "Beredskapslager"@nb,
         "Beredskapslager"@nn ;
     euvoc:status concept-status:CURRENT .
@@ -1855,14 +1862,6 @@ los:100020 a skos:Concept ;
 los:100021 a skos:Concept ;
     xkos:inclusionNote "flomvarsel, skredvarsel, skogbrannvarsel, lynvarsel, ekstremværvarsel, farevarsel"@nb,
         "flaumvarsel, skredvarsel, skogbrannvarsel, lynvarsel, ekstremvêrvarsel, farevarsel"@nn ;
-    skos:altLabel "Flomvarsel"@nb,
-        "lynvarsel"@nb,
-        "skogbrannvarsel"@nb,
-        "skredvarsel"@nb,
-        "Flaumvarsel"@nn,
-        "lynvarsel"@nn,
-        "skogbrannvarsel"@nn,
-        "skredvarsel"@nn ;
     skos:broader los:100004 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Natural hazard alerts"@en,
@@ -1957,7 +1956,7 @@ los:100030 a skos:Concept ;
         "Melding om overnatting"@nn ;
     skos:broader los:100005 ;
     skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Temporary accommodation in buildings"@en,
+    skos:prefLabel "Temporary overnight accommodation in buildings"@en,
         "Midlertidig overnatting i bygg"@nb,
         "Mellombels overnatting i bygg"@nn ;
     euvoc:status concept-status:CURRENT .
@@ -2187,15 +2186,6 @@ los:100050 a skos:Concept ;
 los:100051 a skos:Concept ;
     xkos:inclusionNote "røykvarsler, brannalarm, komfyrvakt, slokkeutstyr og andre tiltak for brannsikkerhet i bygninger"@nb,
         "røykvarslar, brannalarm, komfyrvakt, sløkkjeutstyr og andre tiltak for branntryggleik i bygningar"@nn ;
-    skos:altLabel "Smoke alarm"@en,
-        "fire alarm"@en,
-        "stove guard"@en,
-        "Røykvarsler"@nb,
-        "brannalarm"@nb,
-        "komfyrvakt"@nb,
-        "Røykvarslar"@nn,
-        "brannalarm"@nn,
-        "komfyrvakt"@nn ;
     skos:broader los:100005 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Fire safety in buildings"@en,
@@ -2598,7 +2588,7 @@ los:140030 a skos:Concept ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Procurement process"@en,
         "Anskaffelsesprosess"@nb,
-        "Innkjøpsprosess"@nn ;
+        "Anskaffingsprosess"@nn ;
     euvoc:status concept-status:CURRENT .
 
 los:140031 a skos:Concept ;
@@ -2706,106 +2696,6 @@ los:150016 a skos:Concept ;
         "Kollektivknutepunkt"@nn ;
     euvoc:status concept-status:CURRENT .
 
-los:150018 a skos:Concept ;
-    xkos:inclusionNote "grunnvann , overflatevann , brønn"@nb,
-        "grunnvatn , overflatevatn , brønn"@nn ;
-    skos:altLabel "Vannkilde"@nb,
-        "Vasskjelde"@nn ;
-    skos:broader los:150017 ;
-    skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Drinking water source"@en,
-        "Drikkevannskilde"@nb,
-        "Drikkevasskjelde"@nn ;
-    euvoc:status concept-status:CURRENT .
-
-los:150019 a skos:Concept ;
-    xkos:inclusionNote "vannverk , renseprosess for drikkevann , desinfeksjonsanlegg"@nb,
-        "vassverk , reinseprosess for drikkevatn , desinfeksjonsanlegg"@nn ;
-    skos:broader los:150017 ;
-    skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Water treatment facility"@en,
-        "Vannbehandlingsanlegg"@nb,
-        "Vassbehandlingsanlegg"@nn ;
-    euvoc:status concept-status:CURRENT .
-
-los:150020 a skos:Concept ;
-    xkos:inclusionNote "reservoar , vannmagasin"@nb,
-        "reservoar , vassmagasin"@nn ;
-    skos:broader los:150017 ;
-    skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Service reservoir"@en,
-        "Høydebasseng"@nb,
-        "Høgdebasseng"@nn ;
-    euvoc:status concept-status:CURRENT .
-
-los:150021 a skos:Concept ;
-    xkos:inclusionNote "vannledning , ledningsnett , distribusjonsledning"@nb,
-        "vassleidning , leidningsnett , distribusjonsleidning"@nn ;
-    skos:altLabel "Distribusjonsnett for vann"@nb,
-        "Distribusjonsnett for vatn"@nn ;
-    skos:broader los:150017 ;
-    skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Drinking water distribution network"@en,
-        "Distribusjonsnett for drikkevann"@nb,
-        "Distribusjonsnett for drikkevatn"@nn ;
-    euvoc:status concept-status:CURRENT .
-
-los:150024 a skos:Concept ;
-    xkos:inclusionNote "spillvannsledning , sanitæravløp"@nb,
-        "spillvassleidning , sanitæravløp"@nn ;
-    skos:broader los:150023 ;
-    skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Sanitary sewer network"@en,
-        "Spillvannsnett"@nb,
-        "Spillvassnett"@nn ;
-    euvoc:status concept-status:CURRENT .
-
-los:150025 a skos:Concept ;
-    xkos:inclusionNote "overvannsledning , overvannsanlegg , flomvei , åpne overvannsløsninger"@nb,
-        "overvassleidning , overvassanlegg , flaumveg , opne overvassløysingar"@nn ;
-    skos:broader los:150023 ;
-    skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Stormwater network"@en,
-        "Overvannsnett"@nb,
-        "Overvassnett"@nn ;
-    euvoc:status concept-status:CURRENT .
-
-los:150026 a skos:Concept ;
-    xkos:inclusionNote "pumpestasjon for spillvann, overvann og drensvann"@nb,
-        "pumpestasjon for spillvatn, overvatn og drensvatn"@nn ;
-    skos:altLabel "Avløpspumpestasjon"@nb,
-        "Avløpspumpestasjon"@nn ;
-    skos:broader los:150022 ;
-    skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Wastewater pumping station"@en,
-        "Pumpestasjon for avløp"@nb,
-        "Pumpestasjon for avløp"@nn ;
-    euvoc:status concept-status:CURRENT .
-
-los:150027 a skos:Concept ;
-    xkos:inclusionNote "kommunalt renseanlegg, behandling av spillvann, slambehandling"@nb,
-        "kommunalt reinseanlegg, behandling av spillvatn, slambehandling"@nn ;
-    skos:altLabel "Avløpsrenseanlegg"@nb,
-        "Renseanlegg"@nb,
-        "Avløpsreinseanlegg"@nn,
-        "Reinseanlegg"@nn ;
-    skos:broader los:150022 ;
-    skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Wastewater treatment plant"@en,
-        "Renseanlegg for avløp"@nb,
-        "Reinseanlegg for avløp"@nn ;
-    euvoc:status concept-status:CURRENT .
-
-los:150028 a skos:Concept ;
-    xkos:inclusionNote "slamanlegg , slambehandling , avløpsslam"@nb,
-        "slamanlegg , slambehandling , avløpsslam"@nn ;
-    skos:broader los:150022 ;
-    skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Sludge treatment facility"@en,
-        "Slambehandlingsanlegg"@nb,
-        "Slambehandlingsanlegg"@nn ;
-    euvoc:status concept-status:CURRENT .
-
 los:150030 a skos:Concept ;
     xkos:inclusionNote "miljøstasjon , returpunkt , kommunal gjenvinningsstasjon"@nb,
         "miljøstasjon , returpunkt , kommunal gjenvinningsstasjon"@nn ;
@@ -2851,8 +2741,6 @@ los:150036 a skos:Concept ;
 los:150037 a skos:Concept ;
     xkos:inclusionNote "kraftverk, vannkraftverk, vindkraftverk, solkraftanlegg, varmekraftverk"@nb,
         "kraftverk, vasskraftverk, vindkraftverk, solkraftanlegg, varmekraftverk"@nn ;
-    skos:altLabel "Kraftproduksjon"@nb,
-        "Kraftproduksjon"@nn ;
     skos:broader los:150033 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Power generation facility"@en,
@@ -2905,8 +2793,6 @@ los:150043 a skos:Concept ;
 los:150044 a skos:Concept ;
     xkos:inclusionNote "fiber, aksessnett, bredbåndsinfrastruktur"@nb,
         "fiber, aksessnett, breidbandsinfrastruktur"@nn ;
-    skos:altLabel "Bredbånd"@nb,
-        "Breidband"@nn ;
     skos:broader los:150042 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Broadband network"@en,
@@ -2975,7 +2861,7 @@ los:150051 a skos:Concept ;
 los:150052 a skos:Concept ;
     skos:broader los:150048 ;
     skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Public outdoor area"@en,
+    skos:prefLabel "Public open space"@en,
         "Friområde"@nb,
         "Friområde"@nn ;
     euvoc:status concept-status:CURRENT .
@@ -3003,12 +2889,12 @@ los:010003 a skos:Concept ;
     euvoc:status concept-status:CURRENT .
 
 los:010005 a skos:Concept ;
-    xkos:inclusionNote "fysisk arbeidsmiljø, psykososialt arbeidsmiljø, organisatorisk arbeidsmiljø, ergonomi, vernearbeid"@nb,
-        "fysisk arbeidsmiljø, psykososialt arbeidsmiljø, organisatorisk arbeidsmiljø, ergonomi, vernearbeid"@nn ;
+    xkos:inclusionNote "fysisk arbeidsmiljø, psykososialt arbeidsmiljø, organisatorisk arbeidsmiljø, ergonomi, vernearbeid, sikkerhet på arbeidsplassen"@nb,
+        "fysisk arbeidsmiljø, psykososialt arbeidsmiljø, organisatorisk arbeidsmiljø, ergonomi, vernearbeid, tryggleik på arbeidsplassen"@nn ;
     skos:broader los:010001 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Work environment"@en,
-        "Arbeidsmiljø og sikkerhet"@nb,
+        "Arbeidsmiljø"@nb,
         "Arbeidsmiljø"@nn ;
     euvoc:status concept-status:CURRENT .
 
@@ -3028,7 +2914,7 @@ los:010009 a skos:Concept ;
     skos:broader los:010001 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Workplace accommodation"@en,
-        "Inkludering i arbeidslivet"@nb,
+        "Tilrettelegging i arbeidslivet"@nb,
         "Tilrettelegging i arbeidslivet"@nn ;
     euvoc:status concept-status:CURRENT .
 
@@ -3038,7 +2924,7 @@ los:010012 a skos:Concept ;
     skos:broader los:010001 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Unemployment and temporary layoff"@en,
-        "Oppsigelse og avslutning av arbeidsforhold"@nb,
+        "Arbeidsledighet og permittering"@nb,
         "Arbeidsløyse og permittering"@nn ;
     euvoc:status concept-status:CURRENT .
 
@@ -3277,7 +3163,7 @@ los:030030 a skos:Concept ;
 los:030031 a skos:Concept ;
     skos:broader los:030017 ;
     skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Assistance measures"@en,
+    skos:prefLabel "Child welfare support measures"@en,
         "Hjelpetiltak"@nb,
         "Hjelpetiltak"@nn ;
     euvoc:status concept-status:CURRENT .
@@ -3387,9 +3273,6 @@ los:040041 a skos:Concept ;
     euvoc:status concept-status:CURRENT .
 
 los:040044 a skos:Concept ;
-    skos:altLabel "Digital home follow-up"@en,
-        "Digital hjemmeoppfølging"@nb,
-        "Digital heimeoppfølging"@nn ;
     skos:broader los:040007 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Welfare technology"@en,
@@ -3565,9 +3448,8 @@ los:040072 a skos:Concept ;
     euvoc:status concept-status:CURRENT .
 
 los:040073 a skos:Concept ;
-    skos:altLabel "Care pathway"@en,
-        "Pakkeforløp"@nb,
-        "Pakkeforløp"@nn ;
+    xkos:inclusionNote "pakkeforløp og andre standardiserte pasientforløp"@nb,
+        "pakkeforløp og andre standardiserte pasientforløp"@nn ;
     skos:broader los:040013 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Patient pathway"@en,
@@ -4319,15 +4201,11 @@ los:090013 a skos:Concept ;
     euvoc:status concept-status:CURRENT .
 
 los:090018 a skos:Concept ;
-    xkos:inclusionNote "søknad, tillatelse, nabovarsel, dispensasjon i byggesak, tilsyn og klage på byggesak, byggesaksgebyr og tilsynsgebyr"@nb,
-        "søknad, løyve, nabovarsel, dispensasjon i byggjesak, tilsyn og klage på byggjesak, byggjesaksgebyr og tilsynsgebyr"@nn ;
-    skos:altLabel "Byggesøknad"@nb,
-        "byggetillatelse"@nb,
-        "Byggjesøknad"@nn,
-        "byggjeløyve"@nn ;
+    xkos:inclusionNote "byggesøknad, byggetillatelse, nabovarsel, dispensasjon i byggesak, tilsyn og klage på byggesak, byggesaksgebyr og tilsynsgebyr"@nb,
+        "byggjesøknad, byggjeløyve, nabovarsel, dispensasjon i byggjesak, tilsyn og klage på byggjesak, byggjesaksgebyr og tilsynsgebyr"@nn ;
     skos:broader los:090004 ;
     skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Building case"@en,
+    skos:prefLabel "Building permit case"@en,
         "Byggesak"@nb,
         "Byggjesak"@nn ;
     euvoc:status concept-status:CURRENT .
@@ -4645,7 +4523,7 @@ los:120035 a skos:Concept ;
         "pleie av sjukt barn eller nærståande, søknad, legeerklæring, gradering og utbetaling"@nn ;
     skos:broader los:120011 ;
     skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "Care allowance"@en,
+    skos:prefLabel "Attendance allowance"@en,
         "Pleiepenger"@nb,
         "Pleiepengar"@nn ;
     euvoc:status concept-status:CURRENT .
@@ -4751,8 +4629,6 @@ los:130027 a skos:Concept ;
 los:130028 a skos:Concept ;
     xkos:inclusionNote "rutetider, ruteplanlegger, avganger, forsinkelser og reiseinformasjon"@nb,
         "rutetider, ruteplanleggjar, avgangar, forseinkingar og reiseinformasjon"@nn ;
-    skos:altLabel "Ruteplanlegger"@nb,
-        "Ruteplanleggjar"@nn ;
     skos:broader los:130025 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Route information"@en,
@@ -4805,7 +4681,6 @@ los:140012 a skos:Concept ;
     skos:prefLabel "Farming"@en,
         "Jordbruk"@nb,
         "Jordbruk"@nn ;
-    euvoc:comment "3235" ;
     euvoc:status concept-status:CURRENT .
 
 los:140013 a skos:Concept ;
@@ -4819,7 +4694,6 @@ los:140013 a skos:Concept ;
     skos:prefLabel "Forestry"@en,
         "Skogbruk"@nb,
         "Skogbruk"@nn ;
-    euvoc:comment "3235" ;
     euvoc:status concept-status:CURRENT .
 
 los:140014 a skos:Concept ;
@@ -4833,60 +4707,29 @@ los:140014 a skos:Concept ;
     skos:prefLabel "Reindeer husbandry"@en,
         "Reindrift"@nb,
         "Reindrift"@nn ;
-    euvoc:comment "3235" ;
     euvoc:status concept-status:CURRENT .
 
 los:140015 a skos:Concept ;
-    xkos:inclusionNote "odel, konsesjon, boplikt, driveplikt og forvaltning av landbrukseiendom"@nb,
-        "odel, konsesjon, buplikt, driveplikt og forvaltning av landbrukseigedom"@nn ;
-    skos:altLabel "Allodial rights"@en,
-        "Concession"@en,
-        "Duty to farm"@en,
-        "Farm"@en,
-        "Residence requirement"@en,
-        "Boplikt"@nb,
-        "Driveplikt"@nb,
-        "Gård"@nb,
-        "Gårdsbruk"@nb,
-        "Konsesjon"@nb,
-        "Odel"@nb,
-        "Småbruk"@nb,
-        "Buplikt"@nn,
-        "Driveplikt"@nn,
-        "Gard"@nn,
-        "Gardsbruk"@nn,
-        "Konsesjon"@nn,
-        "Odel"@nn,
-        "Småbruk"@nn ;
+    xkos:inclusionNote "odel, konsesjon, boplikt, driveplikt, gård, gårdsbruk, småbruk og forvaltning av landbrukseiendom"@nb,
+        "odel, konsesjon, buplikt, driveplikt, gard, gardsbruk, småbruk og forvaltning av landbrukseigedom"@nn ;
     skos:broader los:140011 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Agricultural property"@en,
         "Landbrukseiendom"@nb,
         "Landbrukseigedom"@nn ;
-    euvoc:comment "3235" ;
     euvoc:status concept-status:CURRENT .
 
 los:140016 a skos:Concept ;
     xkos:inclusionNote "yrkesfiske, fiskeriforvaltning, akvakultur, oppdrett og offentlige virkemidler rettet mot fiskeri og havbruk"@nb,
         "yrkesfiske, fiskeriforvaltning, akvakultur, oppdrett og offentlege verkemiddel retta mot fiskeri og havbruk"@nn ;
-    skos:altLabel "Aquaculture"@en,
-        "Fish farming"@en,
-        "Fishing"@en,
-        "Seafood industry"@en,
-        "Akvakultur"@nb,
-        "Fiske"@nb,
-        "Oppdrett"@nb,
+    skos:altLabel "Seafood industry"@en,
         "Sjømatnæring"@nb,
-        "Akvakultur"@nn,
-        "Fiske"@nn,
-        "Oppdrett"@nn,
         "Sjømatnæring"@nn ;
     skos:broader los:140011 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Fisheries and aquaculture"@en,
         "Fiskeri og havbruk"@nb,
         "Fiskeri og havbruk"@nn ;
-    euvoc:comment "3235" ;
     euvoc:status concept-status:CURRENT .
 
 los:140023 a skos:Concept ;
@@ -4938,10 +4781,6 @@ los:140036 a skos:Concept ;
 los:150007 a skos:Concept ;
     xkos:inclusionNote "parkeringsplass, parkeringsanlegg, parkeringshus, innfartsparkering og HC-parkering"@nb,
         "parkeringsplass, parkeringsanlegg, parkeringshus, innfartsparkering og HC-parkering"@nn ;
-    skos:altLabel "Parkeringsanlegg"@nb,
-        "Parkeringsplass"@nb,
-        "Parkeringsanlegg"@nn,
-        "Parkeringsplass"@nn ;
     skos:broader los:150003 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Parking"@en,
@@ -4967,6 +4806,112 @@ los:150015 a skos:Concept ;
     skos:prefLabel "Airport infrastructure"@en,
         "Lufthavnanlegg"@nb,
         "Lufthamnanlegg"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150018 a skos:Concept ;
+    xkos:inclusionNote "grunnvann, overflatevann, brønn, råvannsmagasin og andre kilder som brukes til drikkevannsproduksjon"@nb,
+        "grunnvatn, overflatevatn, brønn, råvassmagasin og andre kjelder som blir brukte til drikkevassproduksjon"@nn ;
+    skos:altLabel "Vannkilde"@nb,
+        "Vasskjelde"@nn ;
+    skos:broader los:150017 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Drinking water source"@en,
+        "Drikkevannskilde"@nb,
+        "Drikkevasskjelde"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150019 a skos:Concept ;
+    xkos:inclusionNote "vannverk, renseprosesser for drikkevann, desinfeksjonsanlegg og andre anlegg for behandling av råvann"@nb,
+        "vassverk, reinseprosessar for drikkevatn, desinfeksjonsanlegg og andre anlegg for behandling av råvatn"@nn ;
+    skos:broader los:150017 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Water treatment facility"@en,
+        "Vannbehandlingsanlegg"@nb,
+        "Vassbehandlingsanlegg"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150020 a skos:Concept ;
+    xkos:inclusionNote "høydebasseng, servicebasseng, utjevningsbasseng og andre magasiner i drikkevannsforsyningen"@nb,
+        "høgdebasseng, servicebasseng, utjamningsbasseng og andre magasin i drikkevassforsyninga"@nn ;
+    skos:broader los:150017 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Service reservoir"@en,
+        "Høydebasseng"@nb,
+        "Høgdebasseng"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150021 a skos:Concept ;
+    xkos:inclusionNote "vannledninger, distribusjonsledninger, forsyningsnett, kummer og tilhørende innretninger for distribusjon av drikkevann"@nb,
+        "vassleidningar, distribusjonsleidningar, forsyningsnett, kummar og tilhøyrande innretningar for distribusjon av drikkevatn"@nn ;
+    skos:altLabel "Distribusjonsnett for vann"@nb,
+        "Distribusjonsnett for vatn"@nn ;
+    skos:broader los:150017 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Drinking water distribution network"@en,
+        "Distribusjonsnett for drikkevann"@nb,
+        "Distribusjonsnett for drikkevatn"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150024 a skos:Concept ;
+    xkos:inclusionNote "spillvannsledninger, sanitæravløp og ledningsnett som transporterer spillvann; omfatter også fellesledninger i den grad de transporterer spillvann"@nb,
+        "spillvassleidningar, sanitæravløp og leidningsnett som transporterer spillvatn; omfattar òg fellesleidningar i den grad dei transporterer spillvatn"@nn ;
+    skos:altLabel "Transportnett for avløpsvann"@nb,
+        "Transportnett for spillvann"@nb,
+        "Transportnett for avløpsvatn"@nn,
+        "Transportnett for spillvatn"@nn ;
+    skos:broader los:150022 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Sanitary sewer network"@en,
+        "Spillvannsnett"@nb,
+        "Spillvassnett"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150025 a skos:Concept ;
+    xkos:inclusionNote "overvannsledninger, kanaler, renner, kummer og tilhørende innretninger for oppsamling og avledning av overvann"@nb,
+        "overvassleidningar, kanalar, renner, kummar og tilhøyrande innretningar for oppsamling og avleiing av overvatn"@nn ;
+    skos:broader los:150065 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Stormwater network"@en,
+        "Overvannsnett"@nb,
+        "Overvassnett"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150026 a skos:Concept ;
+    xkos:inclusionNote "pumpestasjoner for sanitært eller industrielt avløpsvann, inkludert pumpestasjoner i fellesavløpssystem"@nb,
+        "pumpestasjonar for sanitært eller industrielt avløpsvatn, inkludert pumpestasjonar i fellesavløpssystem"@nn ;
+    skos:altLabel "Avløpspumpestasjon"@nb,
+        "Pumpestasjon for avløp"@nb,
+        "Avløpspumpestasjon"@nn,
+        "Pumpestasjon for avløp"@nn ;
+    skos:broader los:150022 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Wastewater pumping station"@en,
+        "Pumpestasjon for spillvann"@nb,
+        "Pumpestasjon for spillvatn"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150027 a skos:Concept ;
+    xkos:inclusionNote "kommunale og andre renseanlegg for sanitært eller industrielt avløpsvann, inkludert mekaniske, biologiske og kjemiske rensetrinn"@nb,
+        "kommunale og andre reinseanlegg for sanitært eller industrielt avløpsvatn, inkludert mekaniske, biologiske og kjemiske reinsetrinn"@nn ;
+    skos:altLabel "Avløpsrenseanlegg"@nb,
+        "Renseanlegg"@nb,
+        "Avløpsreinseanlegg"@nn,
+        "Reinseanlegg"@nn ;
+    skos:broader los:150022 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Wastewater treatment plant"@en,
+        "Renseanlegg for avløp"@nb,
+        "Reinseanlegg for avløp"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150028 a skos:Concept ;
+    xkos:inclusionNote "anlegg for behandling, stabilisering, avvanning, hygienisering eller annen håndtering av avløpsslam"@nb,
+        "anlegg for behandling, stabilisering, avvatning, hygienisering eller anna handtering av avløpsslam"@nn ;
+    skos:broader los:150022 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Sludge treatment facility"@en,
+        "Slambehandlingsanlegg"@nb,
+        "Slambehandlingsanlegg"@nn ;
     euvoc:status concept-status:CURRENT .
 
 los:150035 a skos:Concept ;
@@ -5011,6 +4956,144 @@ los:150056 a skos:Concept ;
     skos:prefLabel "Water and wastewater fees"@en,
         "Vann- og avløpsgebyr"@nb,
         "Vass- og avløpsgebyr"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150057 a skos:Concept ;
+    xkos:inclusionNote "trykkøkningsstasjoner, trykkreduksjonsstasjoner og andre anlegg for regulering av trykk i drikkevannsnettet"@nb,
+        "trykkaukingsstasjonar, trykkreduksjonsstasjonar og andre anlegg for regulering av trykk i drikkevassnettet"@nn ;
+    skos:altLabel "Trykkreguleringsstasjon for drikkevann"@nb,
+        "Trykkreguleringsstasjon for drikkevatn"@nn ;
+    skos:broader los:150017 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Drinking water pressure regulation facility"@en,
+        "Trykkreguleringsanlegg for drikkevann"@nb,
+        "Trykkreguleringsanlegg for drikkevatn"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150058 a skos:Concept ;
+    xkos:inclusionNote "vannkiosk, offentlig tappepunkt og annet fast punkt for utlevering eller påfylling av drikkevann"@nb,
+        "vasskiosk, offentleg tappepunkt og anna fast punkt for utlevering eller påfylling av drikkevatn"@nn ;
+    skos:altLabel "Offentlig tappepunkt"@nb,
+        "Vannkiosk"@nb,
+        "Offentleg tappepunkt"@nn,
+        "Vasskiosk"@nn ;
+    skos:broader los:150017 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Drinking water station"@en,
+        "Drikkevannsstasjon"@nb,
+        "Drikkevassstasjon"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150061 a skos:Concept ;
+    xkos:inclusionNote "utjevningsbasseng, magasiner og andre anlegg som midlertidig lagrer spillvann eller fellesavløp før videre transport eller rensing"@nb,
+        "utjamningsbasseng, magasin og andre anlegg som mellombels lagrar spillvatn eller fellesavløp før vidare transport eller reinsing"@nn ;
+    skos:broader los:150022 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Wastewater detention facility"@en,
+        "Fordrøyningsanlegg i avløpsnett"@nb,
+        "Fordrøyingsanlegg i avløpsnett"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150062 a skos:Concept ;
+    xkos:inclusionNote "regnvannsoverløp, nødoverløp og overløp ved pumpestasjoner, fellesledninger eller andre deler av avløpsnettet"@nb,
+        "regnvassoverløp, nødoverløp og overløp ved pumpestasjonar, fellesleidningar eller andre delar av avløpsnettet"@nn ;
+    skos:altLabel "Avløpsoverløp"@nb,
+        "Regnvannsoverløp"@nb,
+        "Avløpsoverløp"@nn,
+        "Regnvassoverløp"@nn ;
+    skos:broader los:150022 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Sewer overflow"@en,
+        "Overløp i avløpsnett"@nb,
+        "Overløp i avløpsnett"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150063 a skos:Concept ;
+    xkos:inclusionNote "septiktank, septikkum og andre anlegg for mekanisk utskilling og oppsamling av slam fra sanitært avløpsvann"@nb,
+        "septiktank, septikkum og andre anlegg for mekanisk utskiljing og oppsamling av slam frå sanitært avløpsvatn"@nn ;
+    skos:altLabel "Septikkum"@nb,
+        "Septiktank"@nb,
+        "Septikkum"@nn,
+        "Septiktank"@nn ;
+    skos:broader los:150022 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Septic tank"@en,
+        "Slamavskiller"@nb,
+        "Slamavskiljar"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150064 a skos:Concept ;
+    xkos:inclusionNote "bobiltømmestasjon, båttømmestasjon og toalettømmeanlegg for gråvann og svartvann fra fritidsbåter, bobiler, campingvogner, busser og andre mobile sanitærløsninger"@nb,
+        "bobiltømmestasjon, båttømmestasjon og toalettømmeanlegg for gråvatn og svartvatn frå fritidsbåtar, bubilar, campingvogner, bussar og andre mobile sanitærløysingar"@nn ;
+    skos:altLabel "Tømmestasjon"@nb,
+        "Tømmestasjon"@nn ;
+    skos:broader los:150022 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Sanitary wastewater disposal station"@en,
+        "Tømmestasjon for sanitært avløpsvann"@nb,
+        "Tømmestasjon for sanitært avløpsvatn"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150066 a skos:Concept ;
+    xkos:inclusionNote "planlagt eller tilrettelagt trasé som leder store overvannsmengder på overflaten, inkludert åpne vannveier, terrengdrag og veier utformet som flomvei"@nb,
+        "planlagd eller tilrettelagd trasé som leier store overvassmengder på overflata, inkludert opne vassvegar, terrengdrag og vegar utforma som flaumveg"@nn ;
+    skos:broader los:150065 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Flood route"@en,
+        "Flomvei"@nb,
+        "Flaumveg"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150067 a skos:Concept ;
+    xkos:inclusionNote "pumpestasjoner og pumpeanlegg som primært brukes til å transportere eller avlede overvann"@nb,
+        "pumpestasjonar og pumpeanlegg som primært blir brukte til å transportere eller leie bort overvatn"@nn ;
+    skos:broader los:150065 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Stormwater pumping station"@en,
+        "Pumpestasjon for overvann"@nb,
+        "Pumpestasjon for overvatn"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150068 a skos:Concept ;
+    xkos:inclusionNote "åpne og lukkede fordrøyningsmagasiner, bassenger, dammer og flerbruksarealer som midlertidig lagrer overvann"@nb,
+        "opne og lukka fordrøyingsmagasin, basseng, dammar og fleirbruksareal som mellombels lagrar overvatn"@nn ;
+    skos:broader los:150065 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Stormwater detention facility"@en,
+        "Fordrøyningsanlegg for overvann"@nb,
+        "Fordrøyingsanlegg for overvatn"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150069 a skos:Concept ;
+    xkos:exclusionNote "Regnvannsoverløp, nødoverløp og andre overløp i avløpsnett hører til Overløp i avløpsnett."@nb,
+        "Regnvassoverløp, nødoverløp og andre overløp i avløpsnett høyrer til Overløp i avløpsnett."@nn ;
+    xkos:inclusionNote "overløpskonstruksjoner som leder overvann videre når kapasiteten i overvannsanlegget overskrides"@nb,
+        "overløpskonstruksjonar som leier overvatn vidare når kapasiteten i overvassanlegget blir overskriden"@nn ;
+    skos:broader los:150065 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Stormwater overflow"@en,
+        "Overløp for overvann"@nb,
+        "Overløp for overvatn"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150070 a skos:Concept ;
+    xkos:inclusionNote "regnbed, infiltrasjonsbassenger, infiltrasjonsgrøfter, infiltrasjonskummer og andre anlegg som fører overvann ned i grunnen"@nb,
+        "regnbed, infiltrasjonsbasseng, infiltrasjonsgrøfter, infiltrasjonskummar og andre anlegg som fører overvatn ned i grunnen"@nn ;
+    skos:broader los:150065 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Stormwater infiltration facility"@en,
+        "Infiltrasjonsanlegg for overvann"@nb,
+        "Infiltrasjonsanlegg for overvatn"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150071 a skos:Concept ;
+    xkos:inclusionNote "tekniske eller naturbaserte anlegg som renser forurenset overvann, inkludert sedimentasjonsbassenger og filteranlegg; omfatter behandling før utslipp, infiltrasjon eller gjenbruk"@nb,
+        "tekniske eller naturbaserte anlegg som reinsar forureina overvatn, inkludert sedimentasjonsbasseng og filteranlegg; omfattar behandling før utslepp, infiltrasjon eller gjenbruk"@nn ;
+    skos:broader los:150065 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:prefLabel "Stormwater treatment facility"@en,
+        "Renseanlegg for overvann"@nb,
+        "Reinseanlegg for overvatn"@nn ;
     euvoc:status concept-status:CURRENT .
 
 los:010004 a skos:Concept ;
@@ -5100,9 +5183,6 @@ los:030015 a skos:Concept ;
     euvoc:status concept-status:CURRENT .
 
 los:040043 a skos:Concept ;
-    skos:altLabel "Caregivers"@en,
-        "Omsorgspersoner"@nb,
-        "Omsorgspersonar"@nn ;
     skos:broader los:040007 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Next of kin"@en,
@@ -5223,9 +5303,6 @@ los:050021 a skos:Concept ;
 los:050029 a skos:Concept ;
     xkos:inclusionNote "kontonummer for utbetaling, registrering av konto, endring av kontonummer, utenlandsk bankkonto, IBAN, BIC, SWIFT"@nb,
         "kontonummer for utbetaling, registrering av konto, endring av kontonummer, utanlandsk bankkonto, IBAN, BIC, SWIFT"@nn ;
-    skos:altLabel "Bank account"@en,
-        "Bankkonto"@nb,
-        "Bankkonto"@nn ;
     skos:broader los:050002 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Account number"@en,
@@ -5300,7 +5377,7 @@ los:080064 a skos:Concept ;
         "rett til skuleskyss, vedtak om skuleskyss, reisefølgje, innlosjering"@nn ;
     skos:broader los:080012 ;
     skos:inScheme <https://id.norge.no/los> ;
-    skos:prefLabel "School transport and boarding"@en,
+    skos:prefLabel "School transport"@en,
         "Skoleskyss"@nb,
         "Skuleskyss"@nn ;
     euvoc:status concept-status:CURRENT .
@@ -5456,7 +5533,7 @@ los:130022 a skos:Concept ;
     euvoc:status concept-status:CURRENT .
 
 los:140004 a skos:Concept ;
-    xkos:inclusionNote "årsrapport, årsrekneskap, rapportering til offentlege myndigheiter, dokumentasjon og opplysningsplikt"@nb,
+    xkos:inclusionNote "årsrapport, årsregnskap, rapportering til offentlige myndigheter, dokumentasjon og opplysningsplikt"@nb,
         "årsrapport, årsrekneskap, rapportering til offentlege styresmakter, dokumentasjon og opplysningsplikt"@nn ;
     skos:altLabel "Rapportering for næringsdrivende"@nb,
         "Rapportering for næringsdrivande"@nn ;
@@ -5486,10 +5563,8 @@ los:140008 a skos:Concept ;
 los:140010 a skos:Concept ;
     xkos:inclusionNote "patentsøknad, registrering av varemerke, designbeskyttelse og immaterielle rettigheter knyttet til virksomhet"@nb,
         "patentsøknad, registrering av varemerke, designvern og immaterielle rettar knytte til verksemd"@nn ;
-    skos:altLabel "Patent"@nb,
-        "design og varemerke"@nb,
-        "Patent"@nn,
-        "design og varemerke"@nn ;
+    skos:altLabel "Patent, design og varemerke"@nb,
+        "Patent, design og varemerke"@nn ;
     skos:broader los:140001 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Patents, trademarks and designs"@en,
@@ -5550,8 +5625,8 @@ los:140025 a skos:Concept ;
     euvoc:status concept-status:CURRENT .
 
 los:140027 a skos:Concept ;
-    xkos:inclusionNote "årsregnskap, årsmelding, årsberetning, innsending, revisjon og offentliggjøring"@nb,
-        "årsrekneskap, årsmelding, årsberetning, innsending, revisjon og offentleggjering"@nn ;
+    xkos:inclusionNote "årsregnskap, årsmelding, innsending, revisjon og offentliggjøring"@nb,
+        "årsrekneskap, årsmelding, innsending, revisjon og offentleggjering"@nn ;
     skos:broader los:140004 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Financial statements and annual reporting"@en,
@@ -5596,18 +5671,6 @@ los:150004 a skos:Concept ;
         "Vegnett"@nn ;
     euvoc:status concept-status:CURRENT .
 
-los:150023 a skos:Concept ;
-    xkos:inclusionNote "ledningsnett for avløp , fellesledning , separatsystem"@nb,
-        "leidningsnett for avløp , fellesleidning , separatsystem"@nn ;
-    skos:broader los:150022 ;
-    skos:inScheme <https://id.norge.no/los> ;
-    skos:narrower los:150024,
-        los:150025 ;
-    skos:prefLabel "Sewer network"@en,
-        "Avløpsnett"@nb,
-        "Avløpsnett"@nn ;
-    euvoc:status concept-status:CURRENT .
-
 los:010002 a skos:Concept ;
     xkos:inclusionNote "arbeidsavtale, arbeidsgiver, arbeidstaker, frilanser, fagorganisering, ansettelse, oppsigelse"@nb,
         "arbeidsavtale, arbeidsgivar, arbeidstakar, frilansar, fagorganisering, tilsetjing, oppseiing"@nn ;
@@ -5628,7 +5691,7 @@ los:010006 a skos:Concept ;
     skos:broader los:010001 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:prefLabel "Job seeking"@en,
-        "Arbeidssøking og rekruttering"@nb,
+        "Arbeidssøking"@nb,
         "Arbeidssøking"@nn ;
     euvoc:status concept-status:CURRENT .
 
@@ -5638,7 +5701,7 @@ los:010007 a skos:Concept ;
     skos:narrower los:010008,
         los:010014 ;
     skos:prefLabel "Labour market measures"@en,
-        "Kompetanse i arbeidslivet"@nb,
+        "Arbeidsmarkedstiltak"@nb,
         "Arbeidsmarknadstiltak"@nn ;
     euvoc:status concept-status:CURRENT .
 
@@ -5755,7 +5818,7 @@ los:060003 a skos:Concept ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:narrower los:060013,
         los:060014 ;
-    skos:prefLabel "Library services"@en,
+    skos:prefLabel "Library"@en,
         "Bibliotek"@nb,
         "Bibliotek"@nn ;
     euvoc:status concept-status:CURRENT .
@@ -5905,10 +5968,8 @@ los:120004 a skos:Concept ;
 los:120012 a skos:Concept ;
     xkos:inclusionNote "foreldrepenger, svangerskapspenger og engangsstønad ved fødsel eller adopsjon"@nb,
         "foreldrepengar, svangerskapspengar og eingongsstønad ved fødsel eller adopsjon"@nn ;
-    skos:altLabel "Inntektssikring og utgiftsdekning ved svangerskap"@nb,
-        "fødsel og adopsjon"@nb,
-        "Inntektssikring og utgiftsdekking ved svangerskap"@nn,
-        "fødsel og adopsjon"@nn ;
+    skos:altLabel "Inntektssikring og utgiftsdekning ved svangerskap, fødsel og adopsjon"@nb,
+        "Inntektssikring og utgiftsdekking ved svangerskap, fødsel og adopsjon"@nn ;
     skos:broader los:120002 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:narrower los:120036,
@@ -6175,9 +6236,6 @@ los:040013 a skos:Concept ;
     euvoc:status concept-status:CURRENT .
 
 los:040042 a skos:Concept ;
-    skos:altLabel "Care support and respite"@en,
-        "Omsorgsstøtte og avlastning"@nb,
-        "Omsorgsstøtte og avlasting"@nn ;
     skos:broader los:040007 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:narrower los:040076,
@@ -6283,8 +6341,6 @@ los:100004 a skos:Concept ;
 los:100007 a skos:Concept ;
     xkos:inclusionNote "vern, evakuering, tilfluktsrom og tjeneste i Sivilforsvaret"@nb,
         "vern, evakuering, tilfluktsrom og teneste i Sivilforsvaret"@nn ;
-    skos:altLabel "Sivilforsvaret"@nb,
-        "Sivilforsvaret"@nn ;
     skos:broader los:100001 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:narrower los:100034,
@@ -6431,8 +6487,6 @@ los:020001 a skos:Concept ;
     euvoc:status concept-status:CURRENT .
 
 los:020003 a skos:Concept ;
-    skos:altLabel "Politikk og valg"@nb,
-        "Politikk og val"@nn ;
     skos:broader los:020001 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:narrower los:020011,
@@ -6654,39 +6708,7 @@ los:140006 a skos:Concept ;
         los:140032 ;
     skos:prefLabel "Public procurement"@en,
         "Offentlige anskaffelser"@nb,
-        "Offentlege innkjøp"@nn ;
-    euvoc:status concept-status:CURRENT .
-
-los:150017 a skos:Concept ;
-    xkos:exclusionNote "Dette begrepet gjelder kilder, behandlingsanlegg og distribusjonsnett."@nb,
-        "Dette begrepet gjeld kjelder, behandlingsanlegg og distribusjonsnett."@nn ;
-    xkos:inclusionNote "drikkevannskilde , vannbehandlingsanlegg , høydebasseng , distribusjonsnett for drikkevann"@nb,
-        "drikkevasskjelde , vassbehandlingsanlegg , høgdebasseng , distribusjonsnett for drikkevatn"@nn ;
-    skos:altLabel "Vannforsyningsinfrastruktur"@nb,
-        "Vassforsyningsinfrastruktur"@nn ;
-    skos:broader los:150001 ;
-    skos:inScheme <https://id.norge.no/los> ;
-    skos:narrower los:150018,
-        los:150019,
-        los:150020,
-        los:150021 ;
-    skos:prefLabel "Drinking water infrastructure"@en,
-        "Drikkevannsinfrastruktur"@nb,
-        "Drikkevassinfrastruktur"@nn ;
-    euvoc:status concept-status:CURRENT .
-
-los:150022 a skos:Concept ;
-    xkos:inclusionNote "avløpsnett , spillvannsledning , overvannsnett , pumpestasjon , renseanlegg , slambehandlingsanlegg"@nb,
-        "avløpsnett , spillvassleidning , overvassnett , pumpestasjon , reinseanlegg , slambehandlingsanlegg"@nn ;
-    skos:broader los:150001 ;
-    skos:inScheme <https://id.norge.no/los> ;
-    skos:narrower los:150023,
-        los:150026,
-        los:150027,
-        los:150028 ;
-    skos:prefLabel "Wastewater infrastructure"@en,
-        "Avløpsinfrastruktur"@nb,
-        "Avløpsinfrastruktur"@nn ;
+        "Offentlege anskaffingar"@nn ;
     euvoc:status concept-status:CURRENT .
 
 los:030001 a skos:Concept ;
@@ -6831,8 +6853,6 @@ los:090005 a skos:Concept ;
 los:100008 a skos:Concept ;
     xkos:inclusionNote "sesjon, førstegangstjeneste, repetisjonstjeneste, Heimevernet, fritak og utsettelse"@nb,
         "sesjon, førstegongsteneste, repetisjonsteneste, Heimevernet, fritak og utsetjing"@nn ;
-    skos:altLabel "Forsvaret"@nb,
-        "Forsvaret"@nn ;
     skos:broader los:100001 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:narrower los:100037,
@@ -6915,20 +6935,16 @@ los:130025 a skos:Concept ;
 los:140011 a skos:Concept ;
     xkos:exclusionNote "Omfatter ikke mattrygghet, ernæring, forbrukerrettigheter, naturvern eller næringsutvikling generelt."@nb,
         "Omfattar ikkje mattryggleik, ernæring, forbrukarrettar, naturvern eller næringsutvikling generelt."@nn ;
-    xkos:inclusionNote "3235"@nb,
-        "3235"@nn ;
     skos:altLabel "Agriculture and fisheries"@en,
         "Primary industries"@en,
         "Landbruk og fiskeri"@nb,
         "Landbruk og havbruk"@nb,
-        "Mat"@nb,
+        "Mat, fiske og landbruk"@nb,
         "Primærnæringer"@nb,
-        "fiske og landbruk"@nb,
         "Landbruk og fiskeri"@nn,
         "Landbruk og havbruk"@nn,
-        "Mat"@nn,
-        "Primærnæringar"@nn,
-        "fiske og landbruk"@nn ;
+        "Mat, fiske og landbruk"@nn,
+        "Primærnæringar"@nn ;
     skos:broader los:140001 ;
     skos:inScheme <https://id.norge.no/los> ;
     skos:narrower los:140012,
@@ -6939,7 +6955,6 @@ los:140011 a skos:Concept ;
     skos:prefLabel "Agriculture, fisheries and aquaculture"@en,
         "Landbruk, fiske og havbruk"@nb,
         "Landbruk, fiske og havbruk"@nn ;
-    euvoc:comment "3235" ;
     euvoc:status concept-status:CURRENT .
 
 los:150033 a skos:Concept ;
@@ -7185,6 +7200,24 @@ los:150002 a skos:Concept ;
         "Transportinfrastruktur"@nn ;
     euvoc:status concept-status:CURRENT .
 
+los:150017 a skos:Concept ;
+    xkos:inclusionNote "drikkevannskilde, vannbehandlingsanlegg, høydebasseng, distribusjonsnett for drikkevann, trykkreguleringsanlegg og drikkevannsstasjon"@nb,
+        "drikkevasskjelde, vassbehandlingsanlegg, høgdebasseng, distribusjonsnett for drikkevatn, trykkreguleringsanlegg og drikkevassstasjon"@nn ;
+    skos:altLabel "Vannforsyningsinfrastruktur"@nb,
+        "Vassforsyningsinfrastruktur"@nn ;
+    skos:broader los:150001 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:narrower los:150018,
+        los:150019,
+        los:150020,
+        los:150021,
+        los:150057,
+        los:150058 ;
+    skos:prefLabel "Drinking water infrastructure"@en,
+        "Drikkevannsinfrastruktur"@nb,
+        "Drikkevassinfrastruktur"@nn ;
+    euvoc:status concept-status:CURRENT .
+
 los:040003 a skos:Concept ;
     skos:broader los:040001 ;
     skos:inScheme <https://id.norge.no/los> ;
@@ -7314,20 +7347,21 @@ los:130001 a skos:Concept ;
     skos:topConceptOf <https://id.norge.no/los> ;
     euvoc:status concept-status:CURRENT .
 
-los:150001 a skos:Concept ;
+los:150065 a skos:Concept ;
+    xkos:inclusionNote "infrastruktur for oppsamling, avledning, pumping, fordrøyning, overløp, infiltrasjon eller rensing av overvann"@nb,
+        "infrastruktur for oppsamling, avleiing, pumping, fordrøying, overløp, infiltrasjon eller reinsing av overvatn"@nn ;
+    skos:broader los:150001 ;
     skos:inScheme <https://id.norge.no/los> ;
-    skos:narrower los:150002,
-        los:150017,
-        los:150022,
-        los:150029,
-        los:150033,
-        los:150041,
-        los:150048,
-        los:150056 ;
-    skos:prefLabel "Infrastructure"@en,
-        "Infrastruktur"@nb,
-        "Infrastruktur"@nn ;
-    skos:topConceptOf <https://id.norge.no/los> ;
+    skos:narrower los:150025,
+        los:150066,
+        los:150067,
+        los:150068,
+        los:150069,
+        los:150070,
+        los:150071 ;
+    skos:prefLabel "Stormwater infrastructure"@en,
+        "Overvannsinfrastruktur"@nb,
+        "Overvassinfrastruktur"@nn ;
     euvoc:status concept-status:CURRENT .
 
 los:010001 a skos:Concept ;
@@ -7440,6 +7474,23 @@ los:120002 a skos:Concept ;
         "Økonomiske ytingar og inntektssikring"@nn ;
     euvoc:status concept-status:CURRENT .
 
+los:150001 a skos:Concept ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:narrower los:150002,
+        los:150017,
+        los:150022,
+        los:150029,
+        los:150033,
+        los:150041,
+        los:150048,
+        los:150056,
+        los:150065 ;
+    skos:prefLabel "Infrastructure"@en,
+        "Infrastruktur"@nb,
+        "Infrastruktur"@nn ;
+    skos:topConceptOf <https://id.norge.no/los> ;
+    euvoc:status concept-status:CURRENT .
+
 los:150003 a skos:Concept ;
     xkos:inclusionNote "veinett, bro, tunnel, parkering, rasteplass, gatelys og teknisk veiutstyr"@nb,
         "vegnett, bru, tunnel, parkering, rasteplass, gatelys og teknisk vegutstyr"@nn ;
@@ -7456,6 +7507,26 @@ los:150003 a skos:Concept ;
     skos:prefLabel "Road infrastructure"@en,
         "Veginfrastruktur"@nb,
         "Veginfrastruktur"@nn ;
+    euvoc:status concept-status:CURRENT .
+
+los:150022 a skos:Concept ;
+    xkos:exclusionNote "Infrastruktur som primært håndterer overvann, hører til Overvannsinfrastruktur."@nb,
+        "Infrastruktur som primært handterer overvatn, høyrer til Overvassinfrastruktur."@nn ;
+    xkos:inclusionNote "infrastruktur for oppsamling, transport, pumping, fordrøyning, overløp, rensing og slambehandling av sanitært og industrielt avløpsvann"@nb,
+        "infrastruktur for oppsamling, transport, pumping, fordrøying, overløp, reinsing og slambehandling av sanitært og industrielt avløpsvatn"@nn ;
+    skos:broader los:150001 ;
+    skos:inScheme <https://id.norge.no/los> ;
+    skos:narrower los:150024,
+        los:150026,
+        los:150027,
+        los:150028,
+        los:150061,
+        los:150062,
+        los:150063,
+        los:150064 ;
+    skos:prefLabel "Wastewater infrastructure"@en,
+        "Spillvannsinfrastruktur"@nb,
+        "Spillvassinfrastruktur"@nn ;
     euvoc:status concept-status:CURRENT .
 
 los:040002 a skos:Concept ;
@@ -7578,9 +7649,9 @@ los:080001 a skos:Concept ;
     euvoc:status concept-status:CURRENT .
 
 <https://id.norge.no/los> a skos:ConceptScheme ;
-    dct:description "LOS is a shared controlled vocabulary for classifying public services, information and resources in Norway. This is a release candidate. Feedback can be submitted via https://datalandsbyen.norge.no/category/20/revisjon-av-los"@en,
-        "LOS er et felles kontrollert vokabular for klassifisering av offentlige tjenester, informasjon og ressurser i Norge. Dette er en publiseringskandidat. Tilbakemeldinger kan sendes via https://datalandsbyen.norge.no/category/20/revisjon-av-los"@nb,
-        "LOS er eit felles kontrollert vokabular for klassifisering av offentlege tenester, informasjon og ressursar i Noreg. Dette er ein utgivingskandidat. Tilbakemeldingar kan sendast via https://datalandsbyen.norge.no/category/20/revisjon-av-los"@nn ;
+    dct:description "Los is a shared controlled vocabulary for classifying public services, information and resources in Norway. This is a release candidate. Feedback can be submitted via https://datalandsbyen.norge.no/category/20/revisjon-av-los"@en,
+        "Los er et felles kontrollert vokabular for klassifisering av offentlige tjenester, informasjon og ressurser i Norge. Dette er en publiseringskandidat. Tilbakemeldinger kan sendes via https://datalandsbyen.norge.no/category/20/revisjon-av-los"@nb,
+        "Los er eit felles kontrollert vokabular for klassifisering av offentlege tenester, informasjon og ressursar i Noreg. Dette er ein utgivingskandidat. Tilbakemeldingar kan sendast via https://datalandsbyen.norge.no/category/20/revisjon-av-los"@nn ;
     dct:hasVersion "4.0.0-rc.1" ;
     dct:issued "2026-08-06"^^xsd:date ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -7590,7 +7661,7 @@ los:080001 a skos:Concept ;
     dct:title "Los"@en,
         "Los"@nb,
         "Los"@nn ;
-    owl:versionInfo "LOS 4.0 RC1" ;
+    owl:versionInfo "Los 4.0 RC1" ;
     skos:hasTopConcept los:010001,
         los:020001,
         los:030001,
@@ -7606,6 +7677,6 @@ los:080001 a skos:Concept ;
         los:130001,
         los:140001,
         los:150001 ;
-    skos:prefLabel "LOS"@en,
-        "LOS"@nb,
-        "LOS"@nn .
+    skos:prefLabel "Los"@en,
+        "Los"@nb,
+        "Los"@nn .
