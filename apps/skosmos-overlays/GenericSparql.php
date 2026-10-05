@@ -939,31 +939,66 @@ EOF;
     }
 
     /**
+     * Lowercase and escape a string for use inside a SPARQL single-quoted literal.
+     * @param string $term
+     * @return string
+     */
+    protected function escapeSparqlStringLiteral($term)
+    {
+        $term = str_replace('\\', '\\\\', $term);
+        return str_replace('\'', '\\\'', mb_strtolower($term, 'UTF-8'));
+    }
+
+    /**
+     * Strip wildcards and escape the search term for match-quality comparison.
+     * @param string $term
+     * @return string
+     */
+    protected function normalizeSearchTermForMatchQuality($term)
+    {
+        return $this->escapeSparqlStringLiteral(str_replace('*', '', $term));
+    }
+
+    /**
+     * SPARQL BIND that scores how closely ?match fits the search term.
+     * 0 = exact, 1 = prefix (term at start of a larger string), 2 = substring elsewhere.
+     * @param string $term search term (may include wildcards)
+     * @return string
+     */
+    protected function generateMatchQualityBind($term)
+    {
+        $qualityTerm = $this->normalizeSearchTermForMatchQuality($term);
+        if ($qualityTerm === '') {
+            return '';
+        }
+
+        return <<<EOQ
+  BIND(IF(LCASE(STR(?match)) = '$qualityTerm', 0,
+         IF(STRSTARTS(LCASE(STR(?match)), '$qualityTerm'), 1, 2)) AS ?matchQuality)
+EOQ;
+    }
+
+    /**
      * Generate condition for matching labels in SPARQL
      * @param string $term search term
-     * @param string $searchLang language code used for matching labels (null means any language)
+     * @param boolean $substringSearch whether to use CONTAINS instead of exact/prefix/suffix
      * @return string sparql query snippet
      */
     protected function generateConceptSearchFilterCondition($term, $substringSearch = false)
     {
         # use appropriate matching function depending on query type: =, strstarts, strends or full regex
         if (preg_match('/^[^\*]+$/', $term)) { // exact query
-            $term = str_replace('\\', '\\\\', $term); // quote slashes
-            $term = str_replace('\'', '\\\'', mb_strtolower($term, 'UTF-8')); // make lowercase and escape single quotes
+            $term = $this->escapeSparqlStringLiteral($term);
             $filtercond = $substringSearch ?
                 "CONTAINS(LCASE(STR(?match)), '$term')" :
                 "LCASE(STR(?match)) = '$term'";
         } elseif (preg_match('/^[^\*]+\*$/', $term)) { // prefix query
-            $term = substr($term, 0, -1); // remove the final asterisk
-            $term = str_replace('\\', '\\\\', $term); // quote slashes
-            $term = str_replace('\'', '\\\'', mb_strtolower($term, 'UTF-8')); // make lowercase and escape single quotes
+            $term = $this->escapeSparqlStringLiteral(substr($term, 0, -1)); // remove the final asterisk
             $filtercond = $substringSearch ?
                 "CONTAINS(LCASE(STR(?match)), '$term')" :
                 "STRSTARTS(LCASE(STR(?match)), '$term')";
         } elseif (preg_match('/^\*[^\*]+$/', $term)) { // suffix query
-            $term = substr($term, 1); // remove the preceding asterisk
-            $term = str_replace('\\', '\\\\', $term); // quote slashes
-            $term = str_replace('\'', '\\\'', mb_strtolower($term, 'UTF-8')); // make lowercase and escape single quotes
+            $term = $this->escapeSparqlStringLiteral(substr($term, 1)); // remove the preceding asterisk
             $filtercond = $substringSearch ?
                 "CONTAINS(LCASE(STR(?match)), '$term')" :
                 "STRENDS(LCASE(STR(?match)), '$term')";
@@ -985,30 +1020,6 @@ EOF;
         $labelcondMatch = ($searchLang) ? "&& (?prop = skos:notation || LANGMATCHES(lang(?match), ?langParam))" : "";
 
         return "?s ?prop ?match . FILTER ($filtercond $labelcondMatch)";
-    }
-
-    /**
-     * Split searchable properties into label fields and longer text fields.
-     * Text fields (e.g. skosmos:searchProperty) use substring matching.
-     *
-     * @param string[] $props
-     * @return array{0: string[], 1: string[]}
-     */
-    protected function splitSearchProperties(array $props)
-    {
-        $labelProps = array('skos:prefLabel', 'skos:altLabel', 'skos:notation', 'skos:hiddenLabel');
-        $labels = array();
-        $texts = array();
-
-        foreach ($props as $prop) {
-            if (in_array($prop, $labelProps, true)) {
-                $labels[] = $prop;
-            } else {
-                $texts[] = $prop;
-            }
-        }
-
-        return array($labels, $texts);
     }
 
     /**
@@ -1040,7 +1051,7 @@ EOQ;
      * Known label properties keep Skosmos default priorities; other configured
      * search properties (e.g. xkos:inclusionNote) get priority 9 so they rank
      * below pref/alt/notation/hidden matches. Priority must remain a single digit
-     * because ranking uses SUBSTR(?hit,1,1).
+     * because ranking uses SUBSTR(?hit,1,1); match quality uses the second digit.
      *
      * @param string[] $props properties included in the search
      * @param string $langClause language clause from generateLangClause()
@@ -1098,9 +1109,10 @@ EOQ;
         /*
          * This query does some tricks to obtain a list of unique concepts.
          * From each match generated by the text index, a string such as
-         * "1en@example" is generated, where the first character is a number
-         * encoding the property and priority, then comes the language tag and
-         * finally the original literal after an @ sign. Of these, the MIN
+         * "10en@example" is generated, where the first character is a number
+         * encoding the property and priority, the second character is match
+         * quality (0 exact, 1 prefix, 2 substring), then comes the language tag
+         * and finally the original literal after an @ sign. Of these, the MIN
          * function is used to pick the best match for each concept. Finally,
          * the structure is unpacked to get back the original string. Phew!
          */
@@ -1108,15 +1120,15 @@ EOQ;
         $hitgroup = $unique ? 'GROUP BY ?s ?label ?notation' : '';
 
         $langClause = $this->generateLangClause($searchLang);
-        list($labelProps, $textProps) = $this->splitSearchProperties($props);
-        $matchParts = array();
-        if (!empty($labelProps)) {
-            $matchParts[] = $this->generateConceptSearchMatchBlock($labelProps, $term, $searchLang, $langClause, false);
-        }
-        if (!empty($textProps)) {
-            $matchParts[] = $this->generateConceptSearchMatchBlock($textProps, $term, $searchLang, $langClause, true);
-        }
-        $matchBlock = count($matchParts) === 1 ? $matchParts[0] : implode("\n     UNION\n", $matchParts);
+        // All searchable properties (labels and configured text fields) use CONTAINS.
+        // Match-quality ranking still prefers exact and prefix hits over substring hits.
+        $matchBlock = $this->generateConceptSearchMatchBlock($props, $term, $searchLang, $langClause, true);
+        $qualityTerm = $this->normalizeSearchTermForMatchQuality($term);
+        // Second digit of ?matchstr: 0 exact, 1 prefix, 2 substring — so MIN prefers closer matches
+        // within the same property priority. Language starts at character 3 when present.
+        $matchQualityExpr = $qualityTerm === ''
+            ? '0'
+            : "IF(LCASE(STR(?match)) = '$qualityTerm', 0, IF(STRSTARTS(LCASE(STR(?match)), '$qualityTerm'), 1, 2))";
 
         $query = <<<EOQ
    SELECT DISTINCT ?s ?label ?notation $hitvar
@@ -1128,7 +1140,8 @@ EOQ;
       FILTER ($labelcondLabel)
      } $labelcondFallback
      BIND(IF(langMatches(LANG(?match),'$lang'), ?pri, ?pri+1) AS ?npri)
-     BIND(CONCAT(STR(?npri), LANG(?match), '@', STR(?match)) AS ?matchstr)
+     BIND(($matchQualityExpr) AS ?mq)
+     BIND(CONCAT(STR(?npri), STR(?mq), LANG(?match), '@', STR(?match)) AS ?matchstr)
      OPTIONAL { ?s skos:notation ?notation }
     }
     $filterGraph
@@ -1223,14 +1236,24 @@ EOQ;
         $labelpriority = <<<EOQ
   FILTER(BOUND(?s))
   BIND(STR(SUBSTR(?hit,1,1)) AS ?pri)
-  BIND(IF((SUBSTR(STRBEFORE(?hit, '@'),1) != ?pri), STRLANG(STRAFTER(?hit, '@'), SUBSTR(STRBEFORE(?hit, '@'),2)), STRAFTER(?hit, '@')) AS ?match)
+  BIND(STRBEFORE(?hit, '@') AS ?hitmeta)
+  BIND(IF(STRLEN(?hitmeta) > 2, STRLANG(STRAFTER(?hit, '@'), SUBSTR(?hitmeta, 3)), STRAFTER(?hit, '@')) AS ?match)
   BIND(IF((?pri = "1" || ?pri = "2") && ?match != ?label, ?match, ?unbound) as ?plabel)
   BIND(IF((?pri = "3" || ?pri = "4"), ?match, ?unbound) as ?alabel)
   BIND(IF((?pri = "7" || ?pri = "8"), ?match, ?unbound) as ?hlabel)
 EOQ;
         $innerquery = $this->generateConceptSearchQueryInner($params->getSearchTerm(), $params->getLang(), $params->getSearchLang(), $props, $unique, $filterGraph);
+        $matchQualityBind = '';
+        $matchQualityGroup = '';
+        $matchQualityOrder = '';
         if ($params->getSearchTerm() === '*' || $params->getSearchTerm() === '') {
             $labelpriority = '';
+        } else {
+            $matchQualityBind = $this->generateMatchQualityBind($term);
+            if ($matchQualityBind !== '') {
+                $matchQualityGroup = '?matchQuality';
+                $matchQualityOrder = '?matchQuality';
+            }
         }
         $query = <<<EOQ
 SELECT DISTINCT ?s ?label ?plabel ?alabel ?hlabel ?graph ?notation (GROUP_CONCAT(DISTINCT STR(?type);separator=' ') as ?types) $extravars 
@@ -1241,6 +1264,7 @@ WHERE {
   $innerquery
   }
   $labelpriority
+  $matchQualityBind
   $formattedtype
   { $pgcond 
    ?s a ?type .
@@ -1250,8 +1274,8 @@ WHERE {
  }
  $filterGraph
 }
-GROUP BY ?s ?match ?label ?plabel ?alabel ?hlabel ?notation ?graph
-ORDER BY LCASE(STR(?match)) LANG(?match) $orderextra
+GROUP BY ?s ?match ?label ?plabel ?alabel ?hlabel ?notation ?graph $matchQualityGroup
+ORDER BY $matchQualityOrder LCASE(STR(?match)) LANG(?match) $orderextra
 EOQ;
         return $query;
     }
