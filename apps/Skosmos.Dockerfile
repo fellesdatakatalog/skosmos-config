@@ -16,7 +16,7 @@ LABEL description="A Docker image for Skosmos with Apache httpd."
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     apache2 \
     curl \
     git \
